@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .wrap{
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+        }
+        .wrap div{
+            width: 150px;
+            height: 150px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="button" value="按钮1" class="btn1">
+    <input type="button" value="按钮2" class="btn1">
+    <input type="button" value="按钮3" class="btn1">
+    <div class="wrap">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+    </div>
+    <script type="text/javascript">
+        // 获取三个按钮
+        var btn1 = document.getElementsByClassName('btn1')[0];
+        var btn2 = document.getElementsByClassName('btn1')[1];
+        var btn3 = document.getElementsByClassName('btn1')[2];
+
+        // 获取三个div
+        var div1 = document.getElementsByTagName('div')[1];
+        var div2 = document.getElementsByTagName('div')[2];
+        var div3 = document.getElementsByTagName('div')[3];
+
+        // 给按钮添加点击事件
+        btn1.onclick = function(){
+            div1.style.display = 'block';
+            div2.style.display = 'none';
+            div3.style.display = 'none';
+            btn1.style.backgroundColor = 'yellow';
+            btn2.style.backgroundColor = '';
+            btn3.style.backgroundColor = '';
+        }
+        btn2.onclick = function(){
+            div1.style.display = 'none';
+            div2.style.display = 'block';
+            div3.style.display = 'none';
+            btn2.style.backgroundColor = 'yellow';
+            btn1.style.backgroundColor = '';
+            btn3.style.backgroundColor = '';
+        }
+        btn3.onclick = function(){
+            div1.style.display = 'none';
+            div2.style.display = 'none';
+            div3.style.display = 'block';
+            btn3.style.backgroundColor = 'yellow';
+            btn1.style.backgroundColor = '';
+            btn2.style.backgroundColor = '';
+        }
+    </script>
+</body>
+</html>

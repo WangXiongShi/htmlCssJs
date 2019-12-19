@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<style type="text/css">
+		#redDiv{
+			width: 188px;
+			height: 188px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="redDiv"></div>
+	<script type="text/javascript">
+	var redDiv = document.querySelector('#redDiv');
+	var i = 0;
+	// redDiv.addEventListener('touchstart',function(){
+	// 	redDiv.innerHTML = '开始触摸';
+	// });
+
+	// redDiv.addEventListener('touchmove',function(){
+	// 	i++;
+	// 	redDiv.innerHTML = '触摸移动' + i;
+	// });
+
+	// redDiv.addEventListener('touchend',function(){
+	// 	i++;
+	// 	redDiv.innerHTML = '手指离开' + i;
+	// });
+
+	// 事件被系统终止时触发
+	redDiv.addEventListener('touchcancel',function(){
+		// i++;
+		// redDiv.innerHTML = '手指离开' + i;
+		redDiv.style.backgroundColor = 'yellow';
+	});
+	</script>
+</body>
+</html>

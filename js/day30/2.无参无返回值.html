@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2.无参无返回值</title>
+</head>
+<body>
+	<button id="btn">按钮</button>
+	<script type="text/javascript">
+		
+		// 无参数无返回值函数
+		function fn() {
+
+		}
+
+		// 调用
+		fn();
+
+
+		// 以id获取方法获取btn按钮
+		var btn = document.getElementById('btn');
+		function clickFn(){
+			alert('我是一个无参无返回值的函数');
+		}
+		
+		btn.onclick = function(){
+			clickFn();
+		}
+
+
+
+	</script>
+</body>
+</html>

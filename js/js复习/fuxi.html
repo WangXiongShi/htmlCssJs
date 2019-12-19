@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		section{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<!-- <button>隐藏</button> -->
+	<button>增加</button>
+	<!-- <section></section> -->
+	<ul>
+		<!-- <li>1</li>
+		<li>2</li>
+		<li>3</li> -->
+	</ul>
+	<script type="text/javascript">
+	// var lis = document.getElementsByTagName('li');
+	// for(var i=0; i<lis.length; i++){
+	// 	lis[i].onclick = function(){
+	// 		for(var j=0; j<lis.length; j++){
+	// 			lis[j].style.background = '';
+	// 		}
+	// 		this.style.background = 'red';
+	// 	}
+	// }
+	// var uls = document.getElementsByTagName('ul');
+	// var btn = document.getElementsByTagName('button')[0];
+	// btn.onclick = function(){
+	// 	var li = document.
+	// 	uls[0].innerHTML = '<li>哈哈哈</li>';
+	// 	console.log(1);
+	// }
+	
+	// function foo(){
+	// 	var a = b = 200;
+	// }
+	// foo();
+	// console.log(a);  //a是局部变量 b是全局
+
+	// // 变量提升
+	// console.log(hah);
+	// var hah = 200;
+
+
+
+
+	// 随机一组(5个数)不相同的数           面试题
+	// var arr = [];	//1 创建一组空的数组赋值给arr
+	// while (arr.length < 5) {	//2 arr的长度为0-4
+	//      var rand = randFn(20, 26);
+	//      var bol = true; //定义开关
+	//      for(var i = 0; i < arr.length; i++){//随机数和数组中所有的数进行对比,查看是否相同
+	//           if(arr[i] == rand){ //如果相同就把开关改成false,不让往数组中添加数
+	//                bol = false;
+	//           }
+	//      }
+	//      if(bol == true){ //判断,如果开关为true代表随机出来的数跟数组中的数对比发现没有重复
+	//           arr.push(rand); //随机数在数组中没有重复就添加到数组中
+	//      }
+	// }
+
+	    // 第三种
+    var arr = [];
+    while(arr.length < 5){
+        var num = randFn(1, 10);
+        if(arr.indexOf(num) == -1){
+            arr.push(num);
+        }
+    }
+    // console.log(arr);
+	console.log(arr);
+	function randFn(min,max){
+		return parseInt(Math.random() * (max - min + 1) + min);
+	}
+	</script>
+</body>
+</html>

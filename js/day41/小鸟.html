@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			width: 66px;
+			height: 66px;
+			background-color: red;
+			border-radius: 50%;
+			/*display: none;*/
+			position: absolute;
+			transition-duration: 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+		var box = document.querySelector('#box');
+		var boxT = 0;
+				setInterval(function(){
+			    boxT += 10;
+			     box.style.top = boxT + 'px';
+			},100);
+		
+
+		document.onclick = function(){
+			setInterval(function(){
+			    boxT -= 10;
+			     box.style.top = boxT + 'px';
+			     box.style.borderRadius = '0%';
+			},100);
+		}
+	</script>
+</body>
+</html>

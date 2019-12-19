@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/*.box1{*/
+			/*background: url('images/1.png') no-repeat 0 0;*/
+		/*	width: 46px;
+			height: 46px;
+			background-image:url(images/1.png);
+			background-repeat:no-repeat;
+			background-position: 0 18px;
+		}*/
+		.box1{
+
+		}
+		ul{
+			list-style:none;
+		}
+		.a1{
+			display: block;
+			background: url('images/1.png') no-repeat 0 -41px;
+			width: 25px;
+			height: 25px;
+		}
+		.a1:hover{
+			background-position: -54px 0px;
+		}
+		.a2{
+			display: block;
+			/*background: url('images/1.png') no-repeat 0 -41px;
+			width: 25px;
+			height: 25px;*/
+			background: url('imgs/1.png') no-repeat 0 -82px;
+			width: 25px;
+			height: 25px;
+		}
+		.a2:hover{
+			background-position: -54px 10px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 
+		雪碧图,css sprites css精灵
+
+		css sprites(图像拼合技术): 将多张图片合在一张图片中,减少服务器压力, 使用css background-position技术实现
+
+
+	 -->
+	 <div class="box1">
+	 	<ul>
+	 		<li><a href="" class="a1"></a></li>
+	 		<li><a href="" class="a2"></a></li>
+	 		<li><a href="" class="a3"></a></li>
+	 		<li><a href="" class="a4"></a></li>
+	 		<li><a href="" class="a5"></a></li>
+	 	</ul>
+	 </div>
+	
+</body>
+</html>

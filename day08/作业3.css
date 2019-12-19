@@ -1,0 +1,86 @@
+.box1{
+	width:1349px;
+	height:127px;
+	background-color:#333;
+}
+.box1 .box1-1{
+	text-align:center;
+	padding-top:15px;
+}
+.box1 .box1-1 img{
+	width:141px;
+	height:46px;
+}
+.box1 p{
+	text-align:center;
+	padding-top:17px;
+}
+.box1 p a{
+	color:gray;
+	margin-left:122px;
+	text-decoration:none;
+}
+.box1 p a:hover{
+	color:#FFF;
+}
+.box2{
+	padding:24px 168px;
+}
+.box3{
+	padding-top:50px;
+}
+.box4{
+	padding-top:10px;
+	border-top: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+	padding-bottom:10px;
+	text-align:center;
+}
+.box4 p{
+	font-size:0.9em;
+	font-style:normal;
+	font-family: STKaiti, 微软雅黑;
+	color:#rgb;
+}
+.box5 img{
+	width:38px;
+	margin-right:15px;
+	margin-left:15px;
+	padding-top:25px;
+	padding-bottom:0px;
+}
+.box6{
+	text-align:center;
+}
+.box7 img{
+	margin-right:19px;
+}
+.box8{
+	background-color:#FFF;
+	width:970px;
+	height:217px;
+}
+.box9{
+	background-color:#e0e0e0;
+	width:970px;
+	height:197px;
+}
+.box9 img{
+	margin-right:10px;
+}
+.box10{
+	text-align:center;
+}
+.box11{
+	background-color:#e0e0e0;
+	width:522px;
+	height:197px;
+}
+.box12{
+	text-align:right;
+}
+.box10 span{
+	text-align:center;
+	font-size:8px;
+	padding-top:-2px;
+}

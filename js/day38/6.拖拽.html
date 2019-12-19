@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<style type="text/css">
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: black;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+
+		var box = document.querySelector('#box');
+		box.onmousedown = function(){
+			document.onmousemove = function(e){
+				var ev = window.event || e;
+				box.style.top = ev.clientY-box.clientWidth/2 + 'px';
+				box.style.left = ev.clientX-box.clientHeight/2 + 'px';
+				box.style.borderRadius = '50%';
+			}
+			
+		}
+		box.onmouseup = function(e){
+			// 抬起的时候变为空
+			document.onmousemove = null;
+		}
+	</script>
+</body>
+</html>

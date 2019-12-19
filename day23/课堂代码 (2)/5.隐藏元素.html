@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .wrap{
+            border: 1px solid #ccc;
+        }
+        .navBtn{
+            width: 40px;
+            height: 40px;
+            background-color: red;
+        }
+        nav li{
+            float: left;
+        }
+        ul{
+            list-style: none;
+            float: left;
+        }
+        .clearFix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .navBtn{
+            float: right;
+            display: none;
+        }
+        @media screen and (max-width: 700px) {
+            .navBtn{
+                display: block;
+            }
+            ul{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="wrap clearFix">
+        <nav>
+            <ul class="clearFix">
+                <li><a href="">我是a1</a></li>
+                <li><a href="">我是a2</a></li>
+                <li><a href="">我是a3</a></li>
+                <li><a href="">我是a4</a></li>
+                <li><a href="">我是a5</a></li>
+            </ul>
+        </nav>
+        <section class="navBtn"></section>
+
+    </section>
+</body>
+</html>

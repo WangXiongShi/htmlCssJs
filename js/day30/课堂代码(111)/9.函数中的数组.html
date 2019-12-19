@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // arguments,每个函数中都有一个arguments，他是用来存放参数的一个数组
+
+        // // 形参
+        // function fn(){
+        //     console.log(arguments);
+        // }
+
+        // // 实参
+        // fn('a','b','c');
+
+        // 求和的函数
+        function sum(){
+            // arguments   [1,2,3,4,5,6,1000]
+            var num = 0;
+            for(var i = 0; i < arguments.length; i++){
+                num = num + arguments[i];
+            }
+            return num;
+        }
+        sum(1,2,3,4,5,6,1000);
+
+
+    </script>
+</body>
+</html>

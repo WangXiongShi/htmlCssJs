@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>添加li</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+<script type="text/javascript">
+    var btn = document.querySelector('button');
+    var lis = document.querySelectorAll('li');
+    var uls = document.querySelector("ul");
+    // for(var i = 0; i < lis.length; i++){
+    //     lis[i].onclick = function(){
+    //         this.style.background = 'red';
+    //     }
+    // }
+
+    var a = 5;
+    btn.onclick = function(){
+        var li = document.createElement('li');
+        li.innerHTML = ++a;
+        this.nextElementSibling.appendChild(li);
+    }
+// 事件委托:可称之为事件代理，事件委托就是利用事件冒泡原理，只指定一个事件处理程序，就可以管理某一类型的所有事件。
+    uls.onclick = function(e){
+        var ev = e || window.event;
+        var a = ev.target || ev.srcElement;
+        if(a.nodeName == 'LI'){
+            ev.target.style.background = 'red';
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

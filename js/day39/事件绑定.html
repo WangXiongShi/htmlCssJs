@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件绑定</title>
+</head>
+<body>
+	<div id="box">
+		<button id="btn">按钮</button>
+	</div>
+	<script type="text/javascript">
+		// 事件捕获
+
+		// 第三个参数: useCapture是使用捕获,一般用false.
+
+		// 选择器id名字可以不用获取,直接使用
+		// 事件冒泡(默认false)是从子级向上传递到父级, 事件捕获(不默认true)是从父级向下传递到子级
+		btn.addEventListener('click',function(){
+			alert(1);
+		},true);
+		box.addEventListener('click',function(){
+			alert(2);
+		},true);
+		document.addEventListener('click',function(){
+			alert(3);
+		},true);
+	</script>
+</body>
+</html>

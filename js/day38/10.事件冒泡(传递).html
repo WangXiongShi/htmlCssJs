@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件传递</title>
+	<style type="text/css">
+		#wrap{
+			width: 400px;
+			height: 400px;
+			background-color: red;
+		}
+		#parent{
+			width: 300px;
+			height: 300px;
+			background-color: blue;
+		}
+		#child{
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="parent">
+			<div id="child"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// 事件冒泡(传递): 	事件从下到上的事件传递我们称为事件冒泡(事件向上传递)
+		// 子标签发生事件后, 向父级发送该事件, 一直追溯到document. 如: 点击一个嵌套在 body中的button, 则该button的onclick事件也会传递给body,document中,触发他们的onclick函数
+		var wrap = document.querySelector('#wrap');
+		var parent = document.querySelector('#parent');
+		var child = document.querySelector('#child');
+		wrap.onclick = function(e){
+			// var ev = window.event || e;
+			// ev.stopPropagation();//阻止点击事件向上冒泡
+			wrap.style.display = 'none';
+		}
+		parent.onclick = function(e){
+			var ev = window.event || e;
+			ev.stopPropagation();//阻止点击事件向上冒泡
+			parent.style.display = 'none';
+		}
+		child.onclick = function(e){
+			// var ev = window.event || e;
+			// ev.stopPropagation();//阻止点击事件向上冒泡
+			child.style.display = 'none';
+		}
+
+
+	</script>
+</body>
+</html>

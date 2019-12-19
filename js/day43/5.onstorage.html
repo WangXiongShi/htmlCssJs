@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#redDiv{
+			width: 188px;
+			height: 188px;
+			background-color: blue;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="redDiv"></div>
+	<script type="text/javascript">
+		// onstorage      
+		// [?]chrome在服务器环境下可以触发onstorage
+
+		var redDiv = document.querySelector('#redDiv');
+
+		redDiv.onmousedown = function(){
+			document.onmousemove = function(e){
+				var ev = e || window.event;
+
+				localStorage.x = ev.clientX - redDiv.offsetWidth / 2;
+				localStorage.y = ev.clientY - redDiv.offsetHeight / 2;
+
+				redDiv.style.left = localStorage.x + 'px';
+				redDiv.style.top = localStorage.y + 'px';
+			}
+		}
+		redDiv.onmouseup = function(){
+			document.onmousemove = null;
+		}
+
+		window.onstorage = function(){
+			redDiv.style.left = localStorage.x + 'px';
+			redDiv.style.top = localStorage.y + 'px';
+		}
+
+
+
+
+
+
+
+		// localStorage.name = '范冰冰';
+		// document.onclick = function(){
+		// 	localStorage.name = '林珍娜';
+		// }
+		// window.onstorage = function(){
+		// 	alert(1);
+		// }
+	</script>
+</body>
+</html>

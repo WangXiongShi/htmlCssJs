@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" name="" id="btn1" value="隐藏">
+    <div id="box"></div>
+    <script type="text/javascript">
+        // 获取按钮
+        var btn = document.getElementById('btn1');
+        // 获取box
+        var box = document.getElementById('box');
+
+        var bol = true;
+        // 添加点击事件
+        btn.onclick = function(){
+            if(bol){
+                box.style.display = 'none';
+                bol = !bol;
+            }else{
+                box.style.display = 'block';
+                bol = !bol;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            overflow: hidden;
+        }
+        #middle{
+            position: absolute;
+            width: 280px;
+        }
+        #sliderWrap{
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 20px;
+            background-color: #999;
+        }
+        #slider{
+            position: absolute;
+            height: 50px;
+            width: 20px;
+            background-color: red;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="middle">
+           “啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈“啊实打实的金卡手机壳的哈数据库等哈
+
+        </div>
+        <div id="sliderWrap">
+            <div id="slider"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var wrap = document.querySelector("#wrap");
+    var middle = document.querySelector("#middle");
+    var sliderWrap = document.querySelector("#sliderWrap");
+    var slider = document.querySelector("#slider");
+    // 计算比例
+    var scale = wrap.offsetHeight / middle.offsetHeight;
+
+    // slider的高度
+    var h = scale * sliderWrap.offsetHeight;
+
+    // 如果slider的高度，小于50px，slider的高度永远等于50px
+    if(h < 50){
+        h = 50;
+    }else if(h >= sliderWrap.offsetHeight){
+        sliderWrap.style.display = "none";
+    }
+    slider.style.height =  h + "px";
+    // 需求:
+    // 当点击键盘"下键"时,slider向下移动10px
+    // 当点击键盘"上键"时,slider向上移动10px
+
+    // 来记录slider 的位置
+    var sliderTop = 0;
+    var maxTop = wrap.offsetHeight - h;
+    document.onkeydown = function(e){
+        var ev = e || window.event;
+        switch(ev.keyCode) {
+            case 40:
+                sliderTop += 10;
+                moveFn();
+                break;
+            case 38:
+                sliderTop -= 10;
+                moveFn();
+                break;
+        }
+    }
+
+    // 给wrap添加滚轮事件(滚轮向上滚动，slider向下移动)
+    wrap.onmousewheel = function(e){
+        var ev = e || window.event;
+        if(ev.wheelDelta < 0){
+            console.log("向上滚动");
+            sliderTop += 10;
+            moveFn();
+
+        }else{
+            console.log("向下滚动");
+            sliderTop -= 10;
+            moveFn();
+        }
+
+    }
+
+    // 给slider添加拖拽效果
+    slider.onmousedown = function(){
+        slider.onmousemove = function(e){
+            var ev = e || window.event;
+            sliderTop = ev.clientY - 100 - h / 2;
+            moveFn();
+        }
+    }
+
+    // 鼠标抬起,清除鼠标移动事件
+    document.onmouseup = function(){
+        slider.onmousemove = null;
+    }
+
+    // 阻止默认事件(鼠标选取文字)
+    document.onmousedown = function(e){
+        var ev = e || window.event;
+        // 取消默认事件
+        // 1:return false   ->  只针对on事件有效
+        // 2:preventDefault()
+        ev.preventDefault();
+    }
+
+    // 阻止默认事件(滚轮事件)
+    document.onmousewheel = function(e){
+        var ev = e || window.event;
+        ev.preventDefault();
+    }
+
+    // 点击sliderwrap
+    sliderWrap.onmousedown = function(e){
+        var ev = e || window.event;
+        sliderTop = ev.clientY - 100 - h / 2;
+        moveFn();
+    }
+    // 来控制slider和middle移动
+    function moveFn(){
+        if(sliderTop >= maxTop){
+            sliderTop = maxTop;
+        }else if(sliderTop <= 0){
+            sliderTop = 0;
+        }
+        slider.style.top = sliderTop + "px";
+        var sliderScale = sliderTop / maxTop;
+        middle.style.top = - (middle.offsetHeight - wrap.offsetHeight) * sliderScale + "px";
+    }
+
+</script>
+</html>

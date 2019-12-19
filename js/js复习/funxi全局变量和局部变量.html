@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="password" name="" id="inpt">
+	<input type="button" name="" id="btn" value="按钮">
+
+	<select id="sel">
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+	</select>
+	<script type="text/javascript">
+		// var inpt = document.getElementById('inpt');
+		// var btn = document.getElementById('btn');
+		// var sel = document.getElementById('sel');
+		// // 获取input里面的值:value
+		// btn.onclick = function(){
+		// 	alert(sel.value);
+		// }
+		// 在函数内部声明的变量是局部变量 , 在函数外部并不能访问
+		// 在函数外部声明的变量是全局变量 , 在函数内部可以访问
+		// 所有变量都存在于一个执行环境(作用域)中, 这个执行环境决定了变量的声明周期,以及哪一部分代码可以访问其中的变量
+		// 变量分为: 全局变量和局部变量
+		// 局部变量, 在函数内部声明的变量, 只在当前作用域下生效
+		// 全局变量, 在函数最外部声明的变量, 对全局都生效
+
+		// 在函数内部声明的变量是全局变量, 在函数外部并不能访问
+		// 在函数外部声明的变量是全局变量, 在函数内部可以访问
+		// 所有变量都存在于一个执行环境(作用域)中, 这个执行环境决定了变量的声明周期, 以及哪一步分代码可以访问其中的变量
+		// 变量分为: 全局变量和局部变量
+		// 局部变量, 在函数内部声明的变量, 只在当前作用域下生效
+		// 全局变量, 在函数最外部声明的变量, 对全局都生效
+
+
+
+
+
+
+
+
+
+
+		var a = 100;	//1 浏览器从上到下执行 
+		function fn(){	//2 走到这个函数这里, 发现有个名字叫fn()的函数, 看是找fn();
+			var a = 200;	//4 名字fn函数内部的第一行,生命了变量200,继续往下走,到这个fn()函数内部找,并没有打印这个函数,此时,继续往下走到第5步
+			function foo(){		//5 这里发现有个叫foo()的函数, 开始找fn()
+				var a = 300;	//7 函数内部给a赋值了100,继续往下走
+				console.log(a);	//8 打印了a,此时是第一次打印  //a为300  函数内部走完
+			}
+			foo();	//6 找到函数foo(); 可以向函数里面走了
+		}
+		fn();	//3 走到这里找到了fn(); 开始执行函数内部
+		console.log(a);	//函数打印了第一行的全局变量100,此时是第二次打印 //a为100
+	</script>
+</body>
+</html>

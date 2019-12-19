@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.wrap{
+			background-color: red;
+			width: 300px;
+			height: 300px;
+			cursor:pointer;
+			transition-duration: 2s;
+		}
+		.style{
+			background-color: black;
+			height: 800px;
+			width: 100%;
+		}
+		.btn{
+			border: 1px solid #000;
+			width: 50px;
+			height: 50px;
+			background-color: yellow;
+			float: left;
+		}
+		.clear{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap" id="wrap">
+		<div class="btn">btn1</div>
+		<div class="btn">btn2</div>
+		<div class="btn">btn3</div>
+		<div class="clear"></div>
+		<p>内容1</p>
+		<p>内容2</p>
+		<p>内容3</p>
+	</div>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$('.wrap .btn').click(function(event) {
+			$(this).siblings('p').css('display','none');
+			var index = $(this).index('.btn');
+			$(this).siblings('p').eq(index).css('display','block');
+		});
+	</script>
+</body>
+</html>

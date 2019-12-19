@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            width: 200px;
+            height: 200px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script type="text/javascript">
+    // 鼠标按下(onmousedown)
+    // 鼠标抬起(onmouseup)事件
+    // 鼠标双击ondblclick:连续点击两次鼠标左键,则会触发鼠标的双击事件
+
+    //  鼠标右键:oncontextmenu
+
+    // document.onmousedown = function(){
+    //     console.log('鼠标按下');
+    // }
+    // document.onmouseup = function(){
+    //     console.log('鼠标抬起');
+    // }
+    // document.ondblclick = function(){
+    //     console.log('鼠标双击');
+    // }
+    // document.oncontextmenu = function(){
+    //     console.log('鼠标右击');
+    // }
+
+    var box = document.querySelector('#box');
+   box.onclick = function(){
+        this.style.background = 'red';
+   }
+
+   box.ondblclick = function(){
+        this.style.width = '500px';
+        this.style.height = '500px';
+   }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

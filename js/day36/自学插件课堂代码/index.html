@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css">
+    <style type="text/css">
+        .swiper-container {
+            width: 790px;
+            height: 340px;
+            border: 1px solid #ccc;
+        }
+        img{
+            /*width: 100%;*/
+        }
+        .swiper-button-next,.swiper-button-prev{
+           background-image: url('');
+           width: 40px;
+           height: 80px;
+           background-color: rgba(0,0,0,0.6);
+           font-size: 50px;
+           color: white;
+           text-align: center;
+           line-height: 80px;
+           display: none;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/1.jpg"></div>
+            <div class="swiper-slide"><img src="images/2.jpg"></div>
+            <div class="swiper-slide"><img src="images/3.jpg"></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-next">></div>
+        <div class="swiper-button-prev"><</div>
+
+        <!-- 如果需要滚动条 -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+    <!-- 导航等组件可以放在container之外 -->
+</body>
+<script type="text/javascript" src='js/swiper-3.4.2.min.js'></script>
+<script type="text/javascript">
+
+ var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay: 1000,
+
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+
+    // 自动播放禁用交互
+    // autoplayDisableOnInteraction : true,
+
+    //鼠标移入鼠标针变小手
+    grabCursor : true,
+
+    // 幻灯片浏览
+    // slidesPerView: 3,
+    // effect: 'fade',
+    // effect: 'cube',
+    // effect: 'coverflow',
+    effect: 'flip',
+    preventLinksPropagation : true,
+    onInit:function(swiper){
+        swiper.startAutoplay
+    }
+
+  });
+ console.log(mySwiper);
+ var swiperContainer = document.querySelector('.swiper-container');
+ var swiperSlide = document.querySelectorAll('.swiper-slide');
+
+ swiperContainer.onmouseenter = function(){
+    mySwiper.stopAutoplay();
+    document.querySelector('.swiper-button-next').style.display = 'block';
+    document.querySelector('.swiper-button-prev').style.display = 'block';
+ }
+ swiperContainer.onmouseleave = function(){
+    mySwiper.startAutoplay();
+
+    document.querySelector('.swiper-button-next').style.display = 'none';
+    document.querySelector('.swiper-button-prev').style.display = 'none';
+
+ }
+
+
+for(var i = 0; i < swiperSlide.length; i++){
+    swiperSlide[i].onclick = function(){
+        // alert(1);
+    }
+}
+
+
+
+
+
+
+
+</script>
+</html>

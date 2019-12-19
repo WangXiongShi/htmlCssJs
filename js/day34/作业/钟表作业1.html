@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.wrap{
+			width: 250px;
+			height: 250px;
+			border: 13px solid black;
+			margin: 0 auto;
+			border-radius: 50%;
+			position: relative;
+		}
+		#aa{
+			position: absolute;
+		    top: 120px;
+		    left: 119px;
+		    opacity: 0.6;
+		}
+		.shi{
+		    width: 8px;
+    		height: 73px;
+		    background-color: black;
+		    z-index: 8;
+		    transform-origin:top;
+		}
+		.fen{
+			width: 6px;
+    		height: 110px;
+		    background-color: purple;
+		    z-index: 9;
+		     transform-origin:top;
+		}
+		.miao{
+			width: 4px;
+   			height: 117px;
+   			z-index: 10;
+		    background-color: red;
+		    transform-origin:top;
+		}
+		.btn div{
+			position: absolute;
+		    font-size: 20px;
+		    top: 115px;
+		    left: 8px;
+		    width: 225px;
+		    height: 20px;
+		    text-align: center;
+		    line-height: 20px;
+		}
+		.btn div span{
+			width: 5px;
+			height: 20px;
+			display: block;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	 <section class="wrap">
+	 	<section class="btn">
+	 		<div><span>9</span></div>	 		
+	 		<div style="transform: rotate(30deg);"><span style="transform: rotate(-30deg);">10</span></div>
+	 		<div style="transform: rotate(60deg);"><span style="transform: rotate(-60deg);">11</span></div>
+	 		<div style="transform: rotate(90deg);"><span style="transform: rotate(-90deg);">12</span></div>
+	 		<div style="transform: rotate(120deg);"><span style="transform: rotate(-120deg);">1</span></div>
+	 		<div style="transform: rotate(150deg);"><span style="transform: rotate(-150deg);">2</span></div>
+	 		<div style="transform: rotate(180deg);"><span style="transform: rotate(-180deg);">3</span></div>
+	 		<div style="transform: rotate(210deg);"><span style="transform: rotate(-210deg);">4</span></div>
+	 		<div style="transform: rotate(240deg);"><span style="transform: rotate(-240deg);">5</span></div>
+	 		<div style="transform: rotate(270deg);"><span style="transform: rotate(-270deg);">6</span></div>
+	 		<div style="transform: rotate(300deg);"><span style="transform: rotate(-300deg);">7</span></div>
+	 		<div style="transform: rotate(330deg);"><span style="transform: rotate(-330deg);">8</span></div>
+	 	</section>
+	 	<section class="shi" id="aa"></section>
+	 	<section class="fen" id="aa"></section>
+	 	<section class="miao" id="aa"></section>
+	 </section>	
+	<script type="text/javascript">
+		var shi = document.querySelector('.shi');
+		var fen = document.querySelector('.fen');
+		var miao = document.querySelector('.miao');
+		setInterval(function(){
+			var date = new Date();
+			shi1 = date.getHours();
+			fen1 = date.getMinutes();
+			miao1 = date.getSeconds();
+			var aa = 6*fen1/360*30-180;
+			shi.style.transform = "rotate("+(shi1*30+aa)+"deg)";
+			var bb = 6*miao1/360*6-180;
+			fen.style.transform = "rotate("+(fen1*6+bb)+"deg)";
+			miao.style.transform = "rotate("+(miao1*6)+"deg)";
+		},500);
+		
+		
+	</script>
+</body>
+</html>

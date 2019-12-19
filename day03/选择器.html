@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>为元素应用样式</title>
+	<meta charset="utf-8"/>
+	<!--
+		直接给元素添加style属性
+		
+		在页面中书写样式表<style></style>
+	-->
+	<style>
+		/*
+			标记选择器：选中范围比较广
+			ID选择器：具有唯一性，相同ID只允许出现一次
+			类名选择器：可以重复出现
+		*/
+		
+		li{
+			color:red;
+		}
+		#green{
+			color:green;
+		}
+		.purple{
+			color:purple;
+		}
+		
+		#box span{
+			color:yellow;
+		}
+		h1{
+			font-size:40px;
+		}
+		h1:hover{
+			font-size:60px;
+		}
+	</style>
+</head>
+<body>
+	<ol class="list" id="box">
+		<li class="purple">宫保鸡丁<span>￥20</span></li>
+		<li id="green">鱼香肉丝</li>
+		<li>水煮肉片</li>
+		<li class="purple">辣子鸡丁</li>
+		<li>京酱肉丝</li>
+		<li class="purple">青椒肉丝</li>
+	</ol>
+	<h1 >滑过</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

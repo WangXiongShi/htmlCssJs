@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.redDiv{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="redDiv"></div>
+
+	<script type="text/javascript">
+		// 1.类和对象
+		// 类:具有相同特征和行为的事物的抽象
+
+		// 对象:对象是类的实例(对象是类创建出来的某一个具体事物),万事万物皆对象
+
+		// 类是对象的类型	例子:小明,小红 都是可以归为对象, 他们都是学生类
+
+		// 如何区分类和对象?
+		// 区分对象的黄金法则: 当我们看到某个概念的时候如果每个人的大脑中想到的都是同一个事物的时候, 此时就是对象; 反之则是类
+		// 具体到某一个事物
+
+		// 面向对象三道特征: 封装, 继承, 多态
+
+		// 面向过程的语言: C语言
+
+		// 面向对象语言:JAVA,C#,OC,swift,php,javascript
+
+		// 构造函数: 构造对象是使用new关键字, 并且构造函数的名字开头为大写
+		// 在我们JS中,类就是用构造函数模拟出来的.
+		// var arr1 = new Array();	//构造一个数组		arr1的类型是数组	arr1是数组的一个实例又是数组的一个对象
+		// var str = new String();	//构造一个字符串
+		// var date = new Date();	//构造一个时间
+		// var img = new Image();	//构造一个数组
+		// var number = new Number();	//构造一个数字
+		// var bol = new Boolean();	//构造一个布尔
+		// var reg = new RegExp();	//构造一个正则表达式
+
+
+
+		/*// 2.工厂设计模式
+		// var obj = {};	//这就是创建一个空的对象
+		// var	obj = new Object();
+
+		// // Object:是所有对象(arr,str,number....)的根类,也就是所有对象都继承于Object;
+
+		// var arr = [];
+		// var arr = new Array();
+		// 对象的根类是object
+		var fengxiang = {
+			// 特征(属性)
+			name:'丰翔', //存多个对象以逗号分割
+			age:'28',
+			size:'small',
+			speed:'fast',
+			sex:'ladyBoy',
+			// 行为(方法)
+			sayHi:function(){
+				alert('你好');
+			},
+			sayHello:function(){
+				alert('大家好!');
+			}
+		};
+		console.log(fengxiang.size);	//打印丰翔的特征(属性)
+		fengxiang.sayHi();	//打印丰翔的行为(方法)*/
+
+
+
+
+		/*// 3.构造函数
+		// 构造函数:就是JS中的'类, 虽然在JS中没有类的概念, 但是我们可以拿构造函数来模拟类.
+
+		// var arr = new Array();
+		// var obj = new Object();
+
+
+		// 创建一个人类
+		function Person(name){	//在函数里面写就是分号结束
+			this.name = name;	//name不能是一样的
+			this.sayHi = function(){
+				console.log('你好');	//行为可以创建多个
+			}
+
+		}
+
+		// 通过构造函数, 构造出来一个实例 (通过类创建一个对象)
+		var p1 = new Person('马瑞强');
+		p1.sayHi();
+
+		var p2 = new Person('李士杰');
+		p2.sayHi();		//p1.sayHi() === p2.sayHi()返回false	只要new了,就是一个新的东西*/
+
+
+
+		/*// 4.原型
+		// 原型: 就是构造函数的一个属性而已	
+		// 创建一个人类
+		function Person(name){	//在函数里面写就是分号结束
+			this.name = name;	//name不能是一样的
+			this.sayHi = function(){
+				console.log('你好');	//行为可以创建多个
+			}
+
+		}
+
+		Person.prototype.sayHello = function(){	//原型(prototype):就是构造函数的一个属性而已,原型里面有一个属性:constructor->构造函数
+			console.log('哈哈哈哈');
+		}
+
+		// 通过构造函数, 构造出来一个实例 (通过类创建一个对象)
+		var p1 = new Person('马瑞强');
+		p1.sayHi();
+
+		var p2 = new Person('李士杰');
+		p2.sayHi();		//p1.sayHi() === p2.sayHi()返回false	只要new了,就是一个新的东西*/
+
+
+
+		// 原型链
+		// 构造函数都有一个原型
+		// var a = [];	//字面量创建
+
+		// var a = new Array();
+		// console.log(a.__proto__);
+		// function Array(){
+		// 	this.push = function(){
+
+		// 	}
+		// }
+
+		// Object.prototype.haha = function(){
+		// 	console.log('哈哈我终于学会了原型链');
+		// }
+		// var a = 100;
+		// a.haha();
+
+		// var num = addFn(10,20);
+		// console.log(num);
+		// function addFn(a,b){
+		// 	return a+b;
+		// }
+
+
+		// 需求: 当redDiv, 调用colorF你方法时, 改变redDiv的颜色为蓝色
+		var redDiv = document.querySelector('.redDiv');
+		// function colorFn(div){
+		// 	div.style.background = 'blue';
+		// }
+		// document.onclick = function(){
+		// 	colorFn(redDiv);
+		// }
+
+		// 万物皆空
+		// Object.prototype.name = 'asd';
+		// Object.prototype.haha = function(){
+		// 	// this:谁调用代表谁
+		// }
+		// redDiv.colorFn();
+
+		Object.prototype.colorFn = function(){
+			this.style.background = 'yellow';
+		}
+		redDiv.colorFn();
+
+		var body = document.querySelector('body');
+		body.colorFn();
+	</script>
+</body>
+</html>

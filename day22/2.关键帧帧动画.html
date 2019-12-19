@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>关键帧帧动画</title>
+	<style type="text/css">
+		h2{
+			margin:0px auto;
+			display:inline-block;
+			text-align:center;
+			animation-name:move;
+			animation-duration:2s;
+			animation-fill-mode:forwards;
+			animation-direction:reverse;
+			animation-iteration-count:2;
+			transform:translate(-50%,-50%);
+		}
+		@keyframes move {
+			0% {  
+				opacity:1;
+				color:red;
+			}
+			20%{
+				opacity:0;
+				color:pink;
+				font-size:200px;
+			}
+			40%{
+				opacity:1;
+				color:green;
+				font-size:90px;
+			}
+			60%{
+				opacity:0;
+				font-size:100px;
+			}
+			100%{
+				opacity:1;
+				font-size:188px;
+				color:blue;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+	<h2>我是大帅哥</h2>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>怪异盒模型</title>
+	<style type="text/css">
+		.wrap{
+			/*height: 300px;*/
+			border:1px dashed red;
+			background-color:skyblue;
+		}
+		.wrap section{
+			width: 25%;
+			height: 300px;
+			background-color:pink;
+			float:left;
+			border:1px solid black;
+			box-sizing:border-box;
+		}
+		.clearFix::after{
+			content:'';
+			display: block;
+			clear:both;
+			/*清除浮动在子级浮动的时候,父级如果没有给固定高度,那么就会塌陷*/
+		}
+	</style>
+</head>
+<body>
+	<section class="wrap clearFix">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+	</section>
+</body>
+</html>

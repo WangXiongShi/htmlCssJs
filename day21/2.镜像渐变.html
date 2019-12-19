@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>径向渐变</title>
+	<style type="text/css">
+
+		body{
+			background-color:black;
+		}
+		.box{
+			width: 300px;
+			height: 300px;
+			margin:0px auto;
+			/*
+				径向渐变(radial-gradient)
+				默认由他们的中心定义
+			*/
+			/*background:-webkit-radial-gradient(top left,red,blue);*/
+			/*background:-webkit-radial-gradient(50% 50%,red,blue);*/
+			border-radius:50%;
+			background:-webkit-radial-gradient(30% 30%,#fff,black);
+		}
+	</style>
+</head>
+<body>
+	<section class="box"></section>
+</body>
+</html>

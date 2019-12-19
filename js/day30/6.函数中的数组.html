@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>6.函数中的数组</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		// arguments, 每个函数中都有一个arguments,它是用来存放参数的一个数组
+
+		// 形参
+		// function fn() {
+		// 	console.log(arguments);
+		// }
+		// // 实参
+		// fn('a','b');
+
+		// 求和的函数
+		function fn(){
+			// arguments: 	[1,2,3,4,5,6,7,111]
+			var sum = 0;
+			for(var i = 0; i < arguments.length; i++){
+				sum += arguments[i];
+				console.log(sum);
+			}
+			return sum;
+		}
+		fn(1,2,3,4,5,6,7,111);
+	</script>
+</body>
+</html>

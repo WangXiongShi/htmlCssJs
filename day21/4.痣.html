@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我最帅</title>
+	<style type="text/css">
+		.wrap{
+			width: 300px;
+			height: 300px;
+			border:1px solid transparent;
+			margin:100px auto;
+			position:relative;
+			overflow:hidden;
+		}
+		.box{
+			width: 30px;
+			height: 30px;
+			background:transparent;
+			margin:0px auto;
+			border-radius:50%;
+			transition-duration:0.5s;
+			border:1px solid transparent;
+			position:absolute;
+			top:0px;
+			left:50%;
+		}
+		.wrap:hover .box{
+			width: 500px;
+			height: 500px;
+			background:rgba(0,0,0,0.8);
+			top:-100px;
+			left:-100px;
+		}
+		h1{
+			color:transparent;
+			margin:130px 110px;
+			transition-duration:2s;
+		}
+		.wrap:hover h1{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<section class="wrap">
+		<section class="box"></section>
+		<h1>我最帅</h1>
+	</section>
+	
+</body>
+</html>

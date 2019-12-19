@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>litihezi</title>
+	<style type="text/css">
+		.wrap{
+			width: 100px;
+			height: 100px;
+			border:1px dashed #ccc;
+			margin:200px auto;
+			position:relative;
+			transform-style:preserve-3d;
+			perspective:5500px;
+			transition-duration:50s;
+		}
+		.box1,.box2,.box3,.box4,.box5,.box6{
+			width: 100px;
+			height: 100px;
+			position:absolute;
+			top:0px;
+			left:0px;
+			opacity:0.6;
+		}
+		.box1{
+			transform:translateZ(100px);
+			background-color:pink;
+
+		}
+		.wrap:hover{
+			transform:rotateX(4500deg) rotateY(4500deg);
+		}
+		.box2{
+			/*以下面为中心旋转*/
+			transform-origin:bottom;
+			transform:rotateX(-90deg);
+			background-color:orange;
+		}
+		.box3{
+			transform-origin:top;
+			transform: rotateX(90deg);
+			background-color:skyblue;
+		}
+		.box4{
+			transform-origin:right;
+			transform: rotateY(90deg);
+			background-color:green;
+		}
+		.box5{
+			transform-origin:left;
+			transform: rotateY(-90deg);
+			background-color:blue;
+		}
+		.box6{
+			background-color:yellow;
+		}
+	</style>
+</head>
+<body>
+	<section class="wrap">
+		<section class="box1">1</section>
+		<section class="box2">2</section>
+		<section class="box3">3</section>
+		<section class="box4">4</section>
+		<section class="box5">5</section>
+		<section class="box6">6</section>
+	</section>
+</body>
+</html>

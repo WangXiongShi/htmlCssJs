@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap{
+            width: 350px;
+            height: 480px;
+            border: 1px solid #ccc;
+            background-image: url('img/bg.jpg');
+        }
+        ul{
+            list-style: none;
+            border: 1px solid red;
+            position: relative;
+        }
+        li{
+            width: 62px;
+            height: 423px;
+            background-color: yellow;
+            position: absolute;
+            top: 0px;
+            left: 352px;
+        }
+        .duct_up{
+            height: 100px;
+            background-image: url('img/up_mod.png');
+            position: relative;
+        }
+        .duct_down{
+            width: 100%;
+            height: 223px;
+            background-image: url('img/down_mod.png');
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+        }
+        .duct_up img{
+            position: absolute;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <ul id="ductWrap">
+            <!-- <li id="duct"> -->
+        <!-- <div class="duct_up" style="height: 100px"><img src="img/up_pipe.png"></div><div class="duct_down" style="height: 223px"><img src="img/down_pipe.png"></div> -->
+            <!-- </li> -->
+        </ul>
+    </div>
+    <script type="text/javascript">
+    // 动态创建管道
+    var ductWrap = document.querySelector('#ductWrap');
+    setInterval(function(){
+        var li = document.createElement('li');
+        var upHeight = randFn(60, 263);
+        var downHeight = 423 - 100 - upHeight;
+
+        li.innerHTML = '<div class="duct_up" style="height: '+upHeight+'px"><img src="img/up_pipe.png"></div><div class="duct_down" style="height: '+downHeight+'px"><img src="img/down_pipe.png"></div>';
+        ductWrap.appendChild(li);
+        li.l = 352;
+        li.moveTimer = setInterval(function(){
+            li.l -= 3;
+            li.style.left = li.l + 'px';
+        },30);
+    },2000);
+
+
+
+
+
+
+    function randFn(min,max){
+        return parseInt(Math.random() * (max - min + 1) + min);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

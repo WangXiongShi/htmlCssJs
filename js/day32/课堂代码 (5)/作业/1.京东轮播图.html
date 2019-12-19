@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #wrap{
+            width: 550px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 0 auto;
+            background-image: url("img/0.jpg");
+            position: relative;
+        }
+        #leftBtn,#rightBtn{
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            font-size: 60px;
+            color: white;
+            background: grey;
+            line-height: 80px;
+            text-align: center;
+            top:55px;
+            display: none;
+        }
+        #leftBtn{
+            left: 0;
+        }
+        #rightBtn{
+            right:0;
+        }
+        #slider{
+            position: absolute;
+            bottom: 20px;
+            width: 260px;
+            left: 180px;
+            height: 30px;
+        }
+        ul,li{
+            list-style: none;
+            padding:0;
+            margin: 0;
+        }
+        ul li{
+            float: left;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: white;
+            margin-left: 20px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <p id="leftBtn"><</p>
+        <p id="rightBtn">></p>
+        <div id="slider">
+            <ul>
+                <li style="background: red">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+<script type="text/javascript">
+    window.onload = function(){
+
+        var wrap = document.getElementById('wrap');
+        var leftBtn = document.getElementById('leftBtn');
+        var rightBtn = document.getElementById('rightBtn');
+        var lis = document.getElementsByTagName('li');
+
+        // 图片下标
+        var index = 0;
+
+        // 定时器
+        var timer = null;
+
+        // 调用函数(实现自动轮播)
+        autoPlay();
+
+        // 鼠标移入事件
+        wrap.onmouseover = function(){
+            leftBtn.style.display = "block";
+            rightBtn.style.display = "block";
+            // 清除定时器
+            clearInterval(timer);
+        }
+
+        // 鼠标移出事件
+        wrap.onmouseout = function(){
+            leftBtn.style.display = "none";
+            rightBtn.style.display = "none";
+            // 鼠标移出，再次开启自动轮播
+            autoPlay();
+        }
+
+
+        // 点击下一张按钮
+        rightBtn.onclick = function(){
+            index++;
+            if(index > 4){
+                index = 0;
+            }
+            wrap.style.backgroundImage = "url(img/"+index+".jpg)";
+            // 调用改变小球颜色的函数
+            changeLiColor();
+        }
+
+        // 点击上一张按钮
+        leftBtn.onclick = function(){
+            index--;
+            if(index < 0){
+                index = 4;
+            }
+            wrap.style.backgroundImage = "url(img/"+index+".jpg)";
+            // 调用改变小球颜色的函数
+            changeLiColor();
+        }
+
+        // 函数声明(无参无返回值)
+        function autoPlay(){
+            // 自动轮播
+            timer = setInterval(function(){
+                index++;
+                if(index > 4){
+                    index = 0;
+                }
+                wrap.style.backgroundImage = "url(img/"+index+".jpg)";
+                // 调用改变小球颜色的函数
+                changeLiColor();
+            },2000)
+        }
+
+        // 该函数功能主要是改变li小圆点的颜色
+        function changeLiColor(){
+
+            // 改变所有li的颜色为白色
+            for(var i = 0; i < lis.length; i++){
+                lis[i].style.background = "white";
+            }
+            // 指定的li改变红色
+            lis[index].style.background = "red";
+        }
+
+        // 给所有li添加点击事件
+        for(var i = 0; i < lis.length; i++){
+            lis[i].a = i;
+            lis[i].onclick = function(){
+                index = this.a;
+                changeLiColor();
+                wrap.style.backgroundImage = "url(img/"+index+".jpg)";
+            }
+
+        }
+
+
+    }
+</script>
+
+</html>

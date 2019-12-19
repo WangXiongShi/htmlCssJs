@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>9.属性的操作方法</title>
+</head>
+<body>
+	<input type="button" name="wangxiongshi" a=100 b=200>
+	<script type="text/javascript">
+		var btn = document.querySelector('input');
+		btn.onclick = function(){
+			// getAttribut('属性名字') 获取元素属性的值
+			// console.log(btn.getAttribute('b'));
+
+			// setAttribute('属性名','属性值'): 给元素设置属性
+			// btn.setAttribute('fwy','sao');
+
+			// removeAttribute('删除属性')
+			btn.removeAttribute('a');
+		}
+	</script>
+</body>
+</html>

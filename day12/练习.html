@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>练习</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		*{
+			padding:0px;
+			margin:0px;
+		}
+		.warp{
+			width: 390px;
+			height: 45px;
+		}
+		.header{
+			width: 390px;
+			height: 45px;
+			background-color: #e77005;
+			padding-top: 10px;
+		}
+		.header1{
+			font-size: 26px;
+			color:#fffaf6;
+			margin-left:20px;
+		}
+		.header2{
+			font-size:14px;
+			color: #fffaf6;
+			margin-left:120px;
+			/*margin-bottom:40px;*/
+		}
+		 .mian{
+            text-align: center;
+            padding: 10px 0px;
+            border-bottom: 1px solid #ccc;
+            width: 370px;
+            margin-left:10px;
+        }
+        .mian span{
+            padding: 0px 5px;
+            border-right: 1px solid #d2d1d1;
+            font-size: 14px;
+            color: #ccc;
+            text-decoration: none;
+        }
+        .box1,.box2,.box3{
+        	padding:20px 0px;
+        	float:left;
+        }
+        .box1img{
+        	left:5px;
+        	top:20px;
+        	position: absolute;
+        }
+        .footer-top{
+        	position: absolute;
+        	margin-left:30px;
+        	/*background-color: yellow;*/
+        }
+        .box2img{
+        	left:115px;
+        	top:20px;
+        	position: absolute;
+        }
+        .box3img{
+        	left:225px;
+        	top:20px;
+        	position: absolute;
+        }
+        .box4,.box5,.box6{
+        	padding:20px 0px;
+        	float:left;
+        }
+        .box4img{
+        	left:5px;
+        	top:20px;
+        	position: absolute;
+        }
+        .footer-bottom{
+        	position: absolute;
+        	margin-left:30px;
+        }
+         .clearFix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .box5img{
+        	left:115px;
+        	top:20px;
+        	position: absolute;
+        }
+        .box6img{
+        	left:225px;
+        	top:20px;
+        	position: absolute;
+        }
+        .footer-bottom{
+        	top:300px;
+        	position:absolute;
+        	/*background-color: red;*/
+        }
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<span class="header1">排行榜</span>
+			<span class="header2">专属你的购物指南</span>
+		</div>
+		<div class="mian">
+			<div class="mian1">
+				<span>智能手环</span>
+				<span>粮油调味</span>
+				<span>早教启智</span>
+				<span>手机通讯</span>
+				<span style="border:none;">电脑音乐</span>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-top clearfix">
+				<div class="box1">
+					<img src="images/魔方.jpg" width="110px">
+					<img src="images/旗子.png" width="30px" height="40px" class="box1img">
+					<sapn>[京东超市] 澳贝 (AUBY) 益智玩</p>
+				</div>
+				<div class="box2">
+					<img src="images/魔方.jpg" width="110px">
+					<img src="images/旗子2.png" width="30px" height="40px" class="box2img">
+				</div>
+				<div class="box3">
+					<img src="images/魔方.jpg" width="110px">
+					<img src="images/旗子3.png" width="30px" height="40px" class="box3img">
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="box4">
+					<img src="images/玩具.jpg" width="110px">
+					<img src="images/旗子4.png" width="30px" height="40px" class="box4img">
+				</div>
+				<div class="box5">
+					<img src="images/玩具.jpg" width="110px">
+					<img src="images/旗子5.png" width="30px" height="40px" class="box5img">
+				</div>
+				<div class="box6">
+					<img src="images/玩具.jpg" width="110px">
+					<img src="images/旗子6.png" width="30px" height="40px" class="box6img">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

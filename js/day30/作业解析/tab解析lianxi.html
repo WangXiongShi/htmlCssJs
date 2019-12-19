@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab解析lianxi</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		ul{
+			list-style:none;
+		}
+		.wrap{
+			height: 344px;
+			width: 680px;
+			border:1px solid #ccc;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			overflow: hidden;
+		}
+		.left{
+			width: 35%;
+			float:left;
+		}
+		.right{
+			width: 65%;	
+			float: left;
+		}
+		.left ul li{
+			height: 86px;
+		}
+
+		.right div{
+			height: 344px;
+			font-size: 100px;
+			line-height: 344px;
+			text-align: center;
+		}
+		.icon{
+			width: 0px;
+			height: 0px;
+			border:10px solid transparent;
+			border-right-color: black;
+			position: absolute;
+			top:33px;
+			left:220px;
+			transition: 0.2s all;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="left">
+			<ul>
+				<li>a</li>
+				<li>b</li>
+				<li>c</li>
+				<li>d</li>
+			</ul>
+			<div class="icon"></div>
+		</div>
+		<div class="right">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var lis = document.getElementsByTagName('li');
+		var right = document.getElementsByClassName('right')[0];
+		var divs = right.getElementsByTagName('div');
+		var icon = document.getElementsByClassName('icon')[0];
+		for(var i = 0; i < lis.length; i++){
+			lis[i].index = i;
+			lis[i].onclick = function(){
+				// for(var j = 0; j < lis.length; j++){
+				// 	lis[j].style.backgroundColor = '';
+				// 	divs[j].style.display = 'none';
+				// }
+				changeColor();
+				this.style.backgroundColor = 'red';
+				divs[this.index].style.display = 'block';
+				icon.style.top = this.index * 86 + 33 + 'px';
+			}
+		}
+
+
+
+
+
+
+		
+		function changeColor(){
+			for(var j = 0; j < lis.length; j++){
+					lis[j].style.backgroundColor = '';
+					divs[j].style.display = 'none';
+				}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="btn" value="按钮">
+
+    <script type="text/javascript">
+
+    // 有参无返回值
+    // 函数声明的时候，参数为形参
+    // function fn(name,age,gender){
+    //     // alert(name);
+    //     alert(age);
+    // }
+
+    // // 函数调用,参数为实参
+    // fn(123,'大神大神大神大所','nv');
+
+
+
+    // 声明一个有多个参数，无返回值的函数，函数的名字叫alertInfo
+
+    // 参数有：name,age,gender,hobby
+
+    // 当点击按钮的时候，调用函数并传入实参，弹出name,age,gender,hobby的值
+
+    var btn = document.getElementById('btn');
+
+    // 函数声明
+    function alertInfo(name,age,gender,hobby){
+
+        alert('名字:' + name + '年龄:' + age + '性别:' + gender + '爱好:' + hobby);
+
+    }
+
+    btn.onclick = function(){
+        // 函数调用
+        alertInfo('李士杰',18,'男','编程');
+    }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

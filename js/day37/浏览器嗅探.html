@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// userAgent属性是一个只读的字符串, 声明于浏览器用于HTTP请求的用户代理头的值, 语法: navigator.userAgent
+
+
+		if(navigator.userAgent.indexOf("Chrome")!=-1){
+			console.log("谷歌浏览器");
+		}else if(navigator.userAgent.indexOf("Firefox")!=-1){
+			console.log("火狐浏览器");
+		}else{
+			console.log("其他浏览器");
+
+		}
+	</script>
+</body>
+</html>

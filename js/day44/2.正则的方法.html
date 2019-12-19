@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 正则的写法  正则就是一套匹配规则
+		// var arr = new Array(); 	//构造函数
+		// var arr = [];
+
+		var reg = new RegExp();		//创建正则的方法1
+		var reg = /hello/;			//找出字符串中有没有包含hello 创建正则的方法2
+
+		var str = 'hello dongshi'; 	//找出字符串中有没有包含hello
+		// test(): 		
+		// 返回值: false代表匹配失败, true代表匹配成功
+		// 参数: 将要匹配的文本
+		alert(reg.test(str));   //正则的方法
+
+	</script>
+</body>
+</html>

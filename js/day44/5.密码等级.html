@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" name="" id="inp">
+	<button id="btn"></button>
+	<script type="text/javascript">
+		var btn = document.querySelector('#btn');
+		var inp = document.querySelector('#inp');
+		btn.onclick = function(){
+			var str = inp.value;
+			// 初级密码: 纯数字或者纯字母,范围{1,8}
+			var low1Reg = /^\d{1,8}$/;
+			var low2Reg = /^[a-z]{1,8}$/i;
+			// 中级密码: 数字加字母,范围{6,12}
+			var middleReg = /^[\da-z]{6,12}$/i;
+			// 高级密码: 数字字母大小写特殊符号{8,16}
+		}
+	</script>
+</body>
+</html>

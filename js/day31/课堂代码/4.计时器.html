@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #red{
+            height: 20px;
+            width: 300px;
+            background-color: red;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 999;
+        }
+        #black{
+            height: 20px;
+            width: 300px;
+            background-color: black;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="red"></div>
+    <div id="black"></div>
+    <script type="text/javascript">
+    var redDiv = document.getElementById('red');
+    var w = 300;
+    var timer = setInterval(function(){
+        w -= 10;
+        if(w <= 0){
+            clearInterval(timer);
+        }
+        redDiv.style.width = w + 'px';
+    },100)
+
+    // var t = setTimeout(function(){
+    //     // 清除一次性定时器
+    //     clearTimeout(t);
+    // },3000)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>考试布局</title>
+	<link rel="stylesheet" type="text/css" href="考试布局.css">
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+</head>
+<body>
+	<!-- 最外层的盒子 -->
+	<section class="wrap">
+		<header>
+			<section class="dhl">
+				<!-- 导航栏 -->
+				<nav>
+					<section class="nav-xysbj" style="width: 100%;">
+						<section class="logo animated bounceInDown">
+						<a href="#">王雄师</a>
+						</section>
+						<section id="zz1">
+							<a href="#" class="clearFix">
+								<ul class="clearFix">
+									<li>首页</li>
+									<li>中文文档</li>
+									<li>入门指南</li>
+									<li>API</li>
+									<li>插件开发</li>
+									<li>常见问题</li>
+									<li>使用技巧</li>
+								</ul>
+							</a>
+						</section>
+						<section id="fk">
+							<span class="span1">　　</span>
+							<span class="span2">　　</span>
+							<span class="span3">　　</span>
+						</section>
+					</section>
+				</nav>
+			</section>
+			<!-- 中间主要部分 -->
+			<section class="main">
+				<section class="main-img  animated swing">
+					<img src="../images/866854ADB58D748E5F8AE32B56FBCC72.png" width="200px">
+				</section>
+				<section class="main-h1 animated bounceInLeft">
+					<h4>做自己喜欢的事情,不让自己后悔!</h4>
+				</section>
+				<section class="main-shiyong animated flip">
+					<a href="#">开始学习</a>
+				</section>
+			</section>
+		</header>
+		<main class="zhuti">
+			<section class="top clearFix">
+				<section class="top-left">
+					<h1 class="animated bounce">易于使用</h1>
+					<section class="top-left-1 animated bounceIn">
+						<b>通过代码优于配置的策略，Gulp 让简单的任务简单，复杂的任务可管理。</b>
+					</section>
+				</section>
+				<section class="top-right">
+					<h1 class="animated bounce">构建快速</h1>
+					<section class="top-left-1 animated bounceIn">
+						<b>利用 Node.js 流的威力，你可以快速构建项目并减少频繁的 IO 操作。</b>
+					</section>
+				</section>
+			</section>
+			<section class="bottom clearFix">
+				<section class="top-left">
+					<h1 class="animated bounce">插件高质</h1>
+					<section class="top-left-1 animated bounceIn">
+						<b>Gulp 严格的插件指南确保插件如你期望的那样简洁高质得工作。</b>
+					</section>
+				</section>
+				<section class="top-right">
+					<h1 class="animated bounce">易于学习</h1>
+					<section class="top-left-1 animated bounceIn">
+						<b>通过最少的 API，掌握 Gulp 毫不费力，构建工作尽在掌握：如同一系列流管道。</b>
+					</section>
+				</section>
+			</section>
+		</main>
+		<!-- 页脚部分 -->
+		<footer class="yejiao">
+			<section class="zuihou">
+				<section class="zuihou1" style="text-align:center;font-size:12px;color:#c7b1aa; width:100%;padding-top:20px;">
+					<a>© Gulp 中文网 2015</a>
+				</section>
+				<section class="zuihou2" style="text-align:center;font-size:12px;color:#c7b1aa;line-height: 35px;width:100%;">
+					<a style="width:100%;">京ICP备11008151号 | 京公网安备11010802014853</a>
+				</section>
+			</section>
+		</footer>
+	</section>
+	<script type="text/javascript">
+		var fk = document.getElementById('fk');
+		var zz1 = document.getElementById('zz1');
+		fk.onclick = function(){
+			if (zz1.style.display == 'none'){
+				zz1.style.display = 'block';
+			}
+			else {
+				zz1.style.display = 'none';
+			}
+		}
+	</script>
+</body>
+</html>

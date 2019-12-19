@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>瀑布流</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		ul{
+			list-style: none;
+			width: 25%;
+			float:left;
+		}
+		ul li img{
+			width: 100%;
+			/*解决图片空隙*/
+			display: block;
+		}
+		ul li {
+			width: 97%;
+			margin:3% 3%;
+		}
+		.clearFix::after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+		#mask{
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			/*border:20px solid white;*/
+			border-radius: 30px;
+			display: none;
+		}
+		#mask img{display: block;}
+	</style>
+</head>
+<body>
+	<div id="wrap" class="clearFix">
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+		<div id="mask"><img src=""></div>
+	</div>
+	<script type="text/javascript">
+		var mask = document.querySelector('#mask');
+		// onclick不支持捕获
+		mask.addEventListener('click',function(){
+			this.style.display = 'none';
+		})
+		document.addEventListener('click',function(){
+			mask.style.display = 'none';
+			// alert(2);
+		},true)
+		var uls = document.querySelectorAll('#wrap ul');
+		for(var i=1; i<39; i++){
+			// 创建li
+			var li = document.createElement('li');
+			// 给li添加图片
+			li.innerHTML = '<img src="imgs/'+i+'.jpg"/>';
+			li.addEventListener('click',function(e){
+				// alert(1);
+				// var ev = window.event || e;
+				// ev.stopPropagation();
+				var imgSrc = this.children[0].getAttribute('src');
+				// alert(imgSrc);
+				mask.style.display = 'block';
+				mask.children[0].src = imgSrc;
+
+			});
+			li.children[0].onload = function(){
+				console.log(1);
+				// 判断ul的高度,用来存放ul的高度
+				var ulHeightArr = [];
+				for(var j=0; j<uls.length; j++){
+					ulHeightArr.push(uls[j].offsetHeight);
+				}
+				var minHeight = ulHeightArr[0];
+				var minIndex = 0;
+				for(var k=0; k<ulHeightArr.length; k++){
+					if(minHeight > ulHeightArr[k]){
+						minHeight = ulHeightArr[k];
+						minIndex = k;
+					}
+				}
+				uls[minIndex].appendChild(this.parentNode);
+			}
+		}
+	</script>
+</body>
+</html>

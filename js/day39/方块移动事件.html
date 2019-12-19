@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+		var box = document.querySelector('#box');
+		// 鼠标按下
+		box.onmousedown =function(e){
+			// div将要移动的距离 = 鼠标的距离 - 鼠标离div最左侧边缘的距离
+
+			// 鼠标离div左侧边缘距离 = div点击的是鼠标距离 - div离窗口左边的距离
+
+			var ev = e || window.event;
+			// 获取鼠标点击离box左侧的距离
+			var x = ev.clientX - box.offsetLeft;
+			// 获取鼠标点击离box上侧的距离
+			var y = ev.clientY - box.offsetTop;
+			document.onmousemove = function(e){
+				var ev = window.event || e;
+				box.style.left = ev.clientX - x + 'px';
+				box.style.top = ev.clientY - y + 'px';
+			}
+		}
+		box.onmouseup = function(){
+			document.onmousemove = null;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function foo(){
+		var a = b = 200;
+	}
+	foo();
+	console.log(b);  //a是局部变量(打印报错) b是全局变量(打印200) 	面试题
+
+
+	// 变量提升
+	console.log(hah);
+	var hah = 200;	//有var 是变量提升			面试题
+	</script>
+</body>
+</html>

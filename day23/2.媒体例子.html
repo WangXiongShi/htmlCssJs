@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>媒体查询例子</title>
+	<style type="text/css">
+		.wrap{
+			width: 80%;
+			border:1px solid red;
+			margin:0px auto;
+		}
+		.wrap section[class^='box']{
+			width: 25%;
+			height: 200px;
+			background-color:pink;
+			float:left;
+		}
+		.qingchufudong::after{
+			content:'';
+			display:block;
+			clear:both;
+		}
+		@media screen and (max-width: 1000px) {
+				.wrap section[class^='box']{
+				width: 33.333333%;
+				height: 200px;
+				background-color:blue;
+			}
+		}
+		@media screen and (max-width: 800px) {
+				.wrap section[class^='box']{
+				width: 50%;
+				height: 200px;
+				background-color:yellow;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section class="wrap qingchufudong">
+		<section class="box1">1</section>
+		<section class="box2">2</section>
+		<section class="box3">3</section>
+		<section class="box4">4</section>
+	</section>
+</body>
+</html>

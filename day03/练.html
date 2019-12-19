@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>天猫</title>
+	<meta charset="utf-8"/>
+	<style>
+		/*
+			复合
+			background
+				-color
+				-image
+				-repeat
+				-position
+		*/
+		body{
+			font-size:12px;
+			color:#999;
+		}
+		a{
+			color:#666;
+			text-decoration:none;
+		}
+		ul,ol{
+			list-style:none;
+		}
+		body{			
+			background:red;
+			}
+		.nav{
+			width:200px;
+		}
+		.nav li{
+			line-height:30px;
+			color:#000;
+			background:url(../day04/image/dress.png) no-repeat 13px center;
+			text-indent:38px;
+		}
+		.nav li a {
+			color:#000;
+		}
+		.nav li:hover{
+			background-color:green;
+			color:#e54077;
+			background-image:url(../day04/image/dress_hover.png);
+		}
+		.nav li:hover a{
+			color:#e54077;
+		}
+		
+	</style>
+</head>
+<body>
+	<ul class="nav">
+		<li><a href="#">女装</a> /<a href="#">内衣</a></li>
+		<li><a href="#">男装</a> /<a href="#">运动户外</a></li>
+		<li><a href="#">女鞋</a> /<a href="#">男鞋</a> /<a href="#">箱包</a></li>
+		<li><a href="#">化妆品</a> /<a href="#">个人护理</a></li>
+		<li><a href="#">腕表</a> /<a href="#">珠宝饰品</a> /<a href="#">眼睛</a></li>
+		<li><a href="#">手机</a> /<a href="#">数码</a> /<a href="#">电脑办公</a></li>
+	</ul>
+</body>
+</html>

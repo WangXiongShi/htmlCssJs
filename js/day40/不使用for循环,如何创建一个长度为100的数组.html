@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 问题描述：在不使用循环的条件下，如何创建一个长度为100的数组，并且数组的每一个元素是该元素的下标？
+		// 这是一个比较经典的前端面试题，也可以当笔试题，咋一看，好像难度不大，实际上考察的知识点还不少，值得写篇文章来备忘！废话不多说，直接进入正文！
+
+		// 使用for方法
+		// var arr = new Array(100);
+		// for(var i=0; i<arr.length; i++){
+		// 	arr[i] = i;
+		// }
+		// console.log(arr);
+
+		// 或者是
+		// var arr = new Array();
+		// for(var i=0; i<100; i++){
+		// 	arr.push(i);
+		// }
+		// console.log(arr);
+
+		var arr = Array.from({length:100}, (v,k) => k);
+    console.log(arr);
+	</script>
+</body>
+</html>

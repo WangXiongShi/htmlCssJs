@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2.do..while循环</title>
+</head>
+<body>
+	<ul>
+		<li>我是li1</li>
+		<li>我是li2</li>
+		<li>我是li3</li>
+		<li>我是li4</li>
+		<li>我是li5</li>
+		<li>我是li6</li>
+		<li>我是li7</li>
+		<li>我是li8</li>
+		<li>我是li9</li>
+		<li>我是li10</li>
+	</ul>
+	<script type="text/javascript">
+
+		// 不管条件成立不成立, 都会先执行一次		面试题!
+		// do{
+		// 	语句
+		// }while(条件);
+
+		// do{
+		// 	console.log(1);
+		// }while(false);
+
+		var lis = document.getElementsByTagName('li');
+		var i = 0;
+		do{
+			console.log(lis[i].innerHTML);
+			i++;
+		}while(i < lis.length);
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.轮播图</title>
+	<style type="text/css">
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<!-- 鼠标移入移出事件
+			1:鼠标移入 onmouseenter
+			2:鼠标移出 onmouseleave
+	 -->
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		box.onmouseenter = function(){
+			box.style.backgroundColor = 'blue';
+			box.style.width = '300px';
+		}
+		box.onmouseleave = function(){
+			box.style.backgroundColor = 'black';
+			box.style.width = '200px';
+		}
+	</script>
+</body>
+</html>

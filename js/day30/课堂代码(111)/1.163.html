@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            list-style: none;
+        }
+        .wrap{
+            width: 680px;
+            height: 344px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .left{
+            width: 35%;
+            float: left;
+            position: relative;
+        }
+        .right{
+            width: 65%;
+            float: left;
+        }
+        .left ul li{
+            height: 86px;
+        }
+        .right div{
+            height: 344px;
+            font-size: 100px;
+            line-height: 344px;
+            text-align: center;
+        }
+        .icon{
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-right-color: black;
+            position: absolute;
+            top: 33px;
+            right: 0px;
+            transition: 0.3s all;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="left">
+            <ul>
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+                <li>d</li>
+            </ul>
+            <div class="icon"></div>
+        </div>
+        <div class="right">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // 获取所有按钮
+        var lis = document.getElementsByTagName('li');
+
+        // 获取所有的div
+        var right = document.getElementsByClassName('right')[0];
+
+        // 根据right找到right下面所有的div
+        var divs = right.getElementsByTagName('div');
+
+        // 获取小三角
+        var icon = document.getElementsByClassName('icon')[0];
+
+        // 给所有按钮添加点击事件
+        for(var i = 0; i < lis.length; i++){
+            // 自定义属性
+            lis[i].index = i;
+            // 点击事件
+            lis[i].onclick = function(){
+                // 在点击的时候，先对所有的div隐藏
+                for(var j = 0; j < lis.length; j++){
+                    divs[j].style.display = 'none';
+                    lis[j].style.backgroundColor = '';
+                }
+                this.style.backgroundColor = 'red';
+                // 对当前点击按钮对应的div显示
+                divs[this.index].style.display = 'block';
+                // 改变小三角的top值
+                icon.style.top = this.index * 86 + 33 + 'px';
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.DOM删除案例</title>
+</head>
+<body>
+	<button id="btn">点击添加li</button>
+	<ul id="uls"></ul>
+	<!-- <h1 onclick="this.innerHTML='hello!'">请点击这段文本！</h1> -->
+	<script type="text/javascript">
+		var btn = document.querySelector('#btn');
+		var uls = document.querySelector('#uls');
+		var a = 0;
+		btn.onclick = function(){
+			var li = document.createElement('li');
+			a++;
+			li.innerHTML = '我是li' + a + '<a href="#">删除</a>';
+			uls.appendChild(li);
+			var del = document.querySelectorAll('li a');
+			for(var j = 0; j < del.length; j++){
+				del[j].onclick = function(){
+					uls.removeChild(this.parentNode);
+				}
+			}
+			
+		}
+	</script>
+</body>
+</html>

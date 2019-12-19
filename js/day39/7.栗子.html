@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin:100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+		var box = document.querySelector('#box');
+		document.addEventListener('mousewheel',function(e){
+			var ev = e || window.event;
+			if(ev.wheelDelta > 0){
+				box.style.width = box.offsetWidth + 10 + 'px';
+				box.style.height = box.offsetHeight + 10 + 'px';
+			}else{
+				box.style.width = box.offsetWidth - 10 + 'px';
+				box.style.height = box.offsetHeight - 10 + 'px';
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 随机数
+        // (0 ~ 1)不包含0,1
+        // (0 ~10)不包含0,10
+        // var rand = Math.random() * 10;
+        // console.log(rand);
+
+
+        // parseInt();
+
+        // var a = 10.9578997456789076;
+
+        // var b = '23a12as213';
+
+        // console.log(parseInt(b));
+
+        //随机数公式:random() * (max - min + 1) + min
+
+        for(var i = 0; i < 100; i++){
+            console.log(randFn(22,55));
+        }
+
+
+        function randFn(min,max){
+            var rand = Math.random() * (max - min + 1) + min;
+            return parseInt(rand);
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件</title>
+	<style type="text/css">
+		#box{
+			width: 166px;
+			height: 166px;
+			border:1px solid red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+		// onkeydown : 按下
+		// onkeyup : 按键抬起
+		// 事件对象中携带的一个参数是: keyCode, 这个参数里的是每个按键的编码,我们可以通过编码来判断用户按的是哪个按键
+
+		// document.onkeydown = function(e){
+		// 	var ev = window.event || e;
+		// 	// console.log(ev.keyCode);
+		// 	switch(ev.keyCode){
+		// 		case 37:
+		// 			console.log('左键');
+		// 			break;
+		// 		case 38:
+		// 			console.log('上键');
+		// 			break;
+		// 		case 39:
+		// 			console.log('右键');
+		// 			break;
+		// 		case 40:
+		// 			console.log('下键');
+		// 			break;
+		// 		default:
+		// 			console.log('不是方向键');
+		// 			break;
+		// 	}
+		// }
+
+		// 补充
+		// element.offsetLeft: 获取该元素离父级元素左边的距离
+		// element.offsetTop: 获取该元素离父级元素上边的距离
+
+
+		var box = document.querySelector('#box');
+		document.onkeydown = function(e){
+			var ev = window.event || e;
+			switch(ev.keyCode){
+				case 37:
+					console.log('左键');
+					box.style.left = box.offsetLeft - 10 + 'px';
+					break;
+				case 38:
+					console.log('上键');
+					box.style.top = box.offsetTop - 10 + 'px';
+
+					break;
+				case 39:
+					console.log('右键');
+					box.style.left = box.offsetLeft + 10 + 'px';
+
+					break;
+				case 40:
+					console.log('下键');
+					box.style.top = box.offsetTop + 10 + 'px';
+
+					break;
+				default:
+					console.log('不是方向键');
+					break;
+			}
+		}
+	</script>
+</body>
+</html>

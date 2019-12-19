@@ -1,0 +1,18 @@
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <title>选字游戏</title> <style type="text/css"> *{ padding: 0; margin: 0; } #wrap{ width: 450px; height: 600px; background: #CCC; border-radius: 5px; margin: 20px auto 0px; position: relative; } #shengyuTime{ font-size: 30px; position: absolute; left: 20px; top: 20px; } #wancheng{ position: absolute; top:20px; right: 20px; font-size: 30px; } #show{ position: absolute; height: 100px; top:180px; left: 155px; font-size: 120px; } #introduce{ position: absolute; top:350px; left: 20px; width: 390px; /*text-indent: 2em;*/ font-size: 30px; } #list{ list-style: none; position: absolute; bottom: 20px; } #list li { float: left; font-size: 70px; margin-left: 17px; cursor: pointer; } </style> </head> <body> <div id="wrap"> <div id="shengyuTime">剩余时间:20</div> <div id="wancheng">完成:0</div> <div id="show">红</div> <div id="introduce">根据上面的字的颜色从下面选择正确的字，选择正确自动开始</div> <ul id="list"> <li>红</li> <li>蓝</li> <li>绿</li> <li>黄</li> <li>黑</li> </ul> </div> </body> <script type="text/javascript"> function game(){ //获取必要标签
+ var shengyuDiv = document.getElementById("shengyuTime"); var wanchengDiv = document.getElementById("wancheng"); var showDiv = document.getElementById("show"); var listLiArray=document.getElementsByTagName("li"); var colorArray =["red","green","blue","yellow","black"]; var fontArray=["红","绿","蓝","黄","黑"]; //随机改变show这块区域的文字和颜色
+  //功能函数：实现随机min-max之间的随机整数
+   function RandNum(min,max){
+   	//形式参数（形参）
+   	 return parseInt(Math.random()*(max-min+1)+min); } //处理show这块区域的一个函数
+   	  function showFun(){ showColorIndex = RandNum(0,4); //随机出来颜色 
+   	  	showFontIndex = RandNum(0,4); //随机出来文字 //区域设置文字颜色 
+   	  	showDiv.style.color=colorArray[showColorIndex]; //区域设置文字 
+   	  	showDiv.innerHTML=fontArray[showFontIndex]; } showFun(); function compare(num){ var arr=[]; while(arr.length<num){ var i = RandNum(0,4); while(arr.indexOf(i)!=-1){ i=RandNum(0,4); } arr.push(i); } return arr; } //处理list区域的函数 
+   	  	function listFun(){ var listFonts = compare(5); var listColors = compare(5) //为所有的li标签添加对应的文字 
+   	  		for(var i=0;i<listLiArray.length;i++){ listLiArray[i].innerHTML= fontArray[listFonts[i]]; listLiArray[i].style.color= colorArray[listColors[i]]; //自定义属性记录li标签当前显示的文字在fontArray中的下标是多少 
+   	  			listLiArray[i].selectIndex=listFonts[i]; } } listFun(); //初始化函数 
+   	  			function init(){ //给每一个li标签绑定事件 
+   	  				for(var i =0; i<listLiArray.length;i++){ var a = 0; listLiArray[i].onclick = function(){ // alert(i); 
+   	  					if(this.selectIndex == showColorIndex){ 
+   	  					//刷新show区域和list区域的内容 
+   	  					showFun(); listFun(); a++; wanchengDiv.innerHTML="完成 : "+a; } } } } init(); function time(){ var timer = null;var t=20; timer=setInterval(function(){ t--; shengyuDiv.innerHTML="剩余时间:&nbsp"+t; console.log(t); if(t<=0){ clearInterval(timer); alert("Time Out"); } },1000) } time(); } game(); </script> </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="txt1">
+    <br>
+    <input type="text" name="" id="txt2">
+    <br>
+    <input type="button" name="" value="提交" id="btn">
+    <ul id="uls">
+
+    </ul>
+    <script type="text/javascript">
+    var txt1 = document.querySelector("#txt1");
+    var txt2 = document.querySelector("#txt2");
+    var btn = document.querySelector("#btn");
+    var uls = document.querySelector("#uls");
+
+    btn.onclick = function(){
+        if(txt1.value == '' || txt2.value == ''){
+            alert('标题或者内容不能为空');
+        }else{
+            var li = document.createElement('li');
+            li.innerHTML = '<p>' + txt1.value + '</p><p>' + txt2.value + '<a href="#">删除</a></p>';
+            uls.insertBefore(li,uls.children[0]);
+            txt1.value = '';
+            txt2.value = '';
+        }
+        var del = document.querySelectorAll('p a');
+        for(var i = 0; i < del.length; i++){
+            del[i].onclick = function(){
+                uls.removeChild(this.parentNode.parentNode);
+            }
+        }
+
+    }
+    </script>
+</body>
+</html>

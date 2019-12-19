@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景图重复</title>
+	<!-- 背景图重复repeat
+		X轴重复repeat-x
+		Y轴重复repeat-y
+		禁止背景图重复no-repeat
+
+		background-size:	第一个值为宽  /   第二个值为高	也可以用百分比换单位
+	 -->
+	 <style type="text/css">
+		.box{
+			height:600px;
+			/*width:600px;*/
+			background-image:url(images/8.png);
+			/*background-image: url(https://www.baidu.com/img/bd_logo1.png);*/
+			/*background-repeat:no-repeat;*/
+			/*background-repeat:repeat-x;*/
+			/*background-repeat:repeat-y;*/
+			background-size:100px 50px;  /*第一个值为宽,第二个值为高*/
+			background-size:100%;
+			border:100px solid transparent;
+			/*border:100px solid red;*/
+			/*
+				背景排版的原点
+						content-box(默认)
+						border-box()
+			*/
+			/*background-origin:border-box;*/
+			background-origin:content-box;
+			/*
+				background-attachment:背景(图片)是否跟着滚动;
+				fixed(固定)
+				scorll(默认)滚动
+			*/
+			background-attachment: scorll;
+			/*background-attachment: fixed;*/
+		}
+		</style>
+</head>
+<body>
+	<div class="box"><p>11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</p></div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>1</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: #000;
+		}
+	</style>
+
+</head>
+<body>
+	<p>你点我，我就会消失。</p>
+	<p>点我!</p>
+	<p>点我!</p>
+	<div></div>
+	<button class="hide">隐藏</button>
+	<button class="show">显示</button>
+	<div>
+		<span>111</span>
+	</div>
+
+	<script src="jquery.js"></script>
+	<script>
+	$("p").click(function(){	//获取p标签, 给p标签添加点击事件	
+		$(this).hide();		//点击这个p标签的时候就会隐藏当前这个标签
+	});
+
+	$('div').click(function(){
+		$(this).hide();
+	});
+
+	$('document').click(function(){
+		$('div').show();
+	})
+	$(".show").click(function(){
+		$("p").show();
+		$("div").show();
+	});	
+	$("span").parents().css({"color":"red","border":"2px solid red"});	//给自己添加颜色.给父级添加border
+	</script>
+</body>
+</html>

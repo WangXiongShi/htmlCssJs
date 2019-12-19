@@ -1,0 +1,14 @@
+.warp{
+	width: 500px;
+	border:1px solid #ccc;
+	margin:0px auto;
+}
+.header{
+	width:100px;
+	height:100px;
+	background-color:green;
+	float:left;
+}
+.clearFix::after{
+	
+}

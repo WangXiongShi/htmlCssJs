@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2.字符串属性和方法</title>
+</head>
+<body>
+	<h1 id="h1"></h1>
+	<div id="box"></div>
+	<script type="text/javascript">
+		// 数组
+		// length: 	返回字符串的长度
+		// charAt(): 	返回指定索引位置的字符
+		// indexOf(): 	返回字符串中检索指定字符串第一次出现的位置
+		// lastIndexOf(): 	返回字符串中检索指定字符串最后一次出现的位置
+		// replace(): 	替换匹配字符
+
+		// var a = '02090994'
+		// console.log(a.length);
+		// var b = '221'
+		// console.log(b.charAt(2));//通过下标返回值
+
+
+
+		// var str = '回字符串中检索指定字符串第一次出现的位回字符串中检索指定字符串第一次出现的位回字符串中检索指定字符串第一次出现的位回字符串中检索指定字符串第一次出现';
+		// var h1 = document.querySelector('#h1');
+		// var i = 0;
+		// var timer = setInterval(function(){
+		// 	h1.innerHTML += str[i];
+		// 	i++
+		// 	// 当读取完成之后,清除定时器
+		// 	if(i >= str.length){
+		// 		clearInterval(timer);
+		// 	}
+		// },50)
+
+		// var str = 'isjdisa';
+		// alert(str.indexOf('a'));
+
+		// var p = 'ajsjnnaa';
+		// alert(p.lastIndexOf('a'));
+
+		// var ll = 'hello wangxiongshi';
+		// alert(ll.replace('hello','shuaige'));
+
+		// slice(): 	根据下标提取字符串的片断,返回被提取的部分
+		// var a = 'hello';
+		// alert(a.slice(1,4));//可以写负数
+		//substring(): 	提取字符串中两个指定的索引号之间的字符
+		var a = 'hello';
+		alert(a.substring(1,4));
+
+		//slice()与substring()不同: substring()负的参数是无效的
+
+		//split(): 		把字符串分割为字符串数组
+		//toString(): 	转换为字符串
+		// var num = 123;
+		// console.log(num.toString());
+		// var num = [1,2,3,4,5,622,];
+		// console.log(num.toString());
+		// //toUpperCase(): 把字母转换为大写
+		// var str = 'abc';
+		// console.log(str.toUpperCase());
+		// //toLowerCase(): 把字母转换为小写
+		// var str = 'ABC';
+		// console.log(str.toLowerCase());
+
+		
+
+		// var str = 'hello';
+		// var str = [];
+		// document.write(str.reverse());
+		// alert(str.reverse(str));
+
+		// 数组的方法 转换为字符串   join(); //将数组转换为字符串
+		// var a = [1,2,3,4,5];
+		// console.log(a.join('+'));
+
+		
+
+		// 经典面试题:字符串反转
+		//例如: str = 'hello' ,输出结果是: 'olleh';
+		// var str = 'hello';
+		// // 将字符串转换为数组
+		// var arr1 = str.split('');
+		// // 将数组中的元素反转
+		// var arr2 = arr1.reverse();
+		// // 将数组中转换为字符串
+		// var res = arr2.join('');
+		// // alert(res);
+
+		// console.log(str.split('').reverse().join(''));
+
+
+		
+
+
+
+
+
+	</script>
+</body>
+</html>

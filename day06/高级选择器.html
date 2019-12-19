@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>高级选择器</title>
+	<meta charset="utf-8"/>
+	<style>
+		
+		.nav>ul{
+				background:red;
+			}
+		.nav>ul>li{
+			font-size:30px;
+			color:#F90;
+		}
+		.nav ul ul>li{
+			color:green;
+			font-size:20px;
+		}
+	</style>
+</head>
+<body>
+	 <div class="nav">
+		<ul>
+			<li>列表项</li>
+			<li>列表项</li>
+			<li>列表项</li>
+			<li>列表项</li>
+			<li>
+				<ul>
+					<li>这是另一个列表项</li>
+					<li>这是另一个列表项</li>
+				</ul>
+			</li>
+		</ul>
+	 </div>
+	 
+	 <div class="sec_nav">
+		第二个div
+	 </div>
+	 <p class="trd_nav">
+		第三个div
+	 </p>
+	 <style>
+		.p_nav{
+			background:#03ccbb;
+		}
+	 </style>
+</body>
+</html>

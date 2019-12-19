@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>伪元素</title>
+	<meta charset="utf-8"/>
+	<style>
+		/*
+			伪类：一般用于描述某种状态或者复合某种条件
+			伪元素：相当于添加了一个标记
+			
+				
+				before:之前
+				after:之后
+		*/
+		p::first-letter{
+			font-size:100px;
+			color:#F90;
+		}
+		p::first-line{
+			color:#03ccbb;
+		}
+		p::before{
+			content:"之前";
+			display:block;
+		}
+		p::after{
+			content:"之后";
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		伪类：一般用于描述某种状态或者复合某种条件<br/>
+		伪元素：相当于添加了一个标记
+	</p>
+</body>
+</html>

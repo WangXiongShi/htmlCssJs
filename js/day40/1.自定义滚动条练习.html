@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#wrap{
+			width: 300px;
+			height: 400px;
+			border: 1px solid #ccc;
+			position: relative;
+			overflow: hidden;
+		}
+		#middle{
+			width: 280px;
+			background-color: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		#sliderWrap{
+			width: 20px;
+			background-color: #ccc;
+			height: 400px;
+			position: absolute;
+			right: 0px;
+			top: 0px;
+		}
+		#slider{width: 20px;height: 40px;background-color: yellow;border-radius: 20px;position: absolute;}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="middle">window对象document对Document对象的只读引用navigator 对 Navigator 对象的只读引用。
+                screen                                 对 Screen 对象的只读引用。
+                history                         对 History 对象的只读引用。
+                location                         用于窗口或框架的 Location 对象。
+                frames                                 返回窗口中所有命名的框架。该集合是 Window 对象的数组，每个 Window 对象在窗口中含有一个框架。
+                length                                 设置或返回窗口中的框架数量。
+                innerHeight                 返回窗口的文档显示区的高度。
+                innerWidth                         返回窗口的文档显示区的宽度。
+                outerHeight                 返回窗口的外部高度，包含工具条与滚动条。
+                outerWidth                         返回窗口的外部宽度，包含工具条与滚动条。
+                screenLeft                         返回相对于屏幕窗口的x坐标
+                screenTop                         返回相对于屏幕窗口的y坐标
+                screenX                         返回相对于屏幕窗口的x坐标
+                screenY                         返回相对于屏幕窗口的y坐标
+                pageXOffset                 设置或返回当前页面相对于窗口显示区左上角的 X 位置。
+                pageYOffset                 设置或返回当前页面相对于窗口显示区左上角的 Y 位置。
+                name                                 设置或返回窗口的名称。
+                top                                 返回最顶层的父窗口。
+                parent                                 返回父窗口。
+                self                                 返回对当前窗口的引用。
+                opener                                 返回对创建此窗口的窗口的引用。
+                closed                                 返回窗口是否已被关闭。
+                defaultStatus                 设置或返回窗口状态栏中的默认文本。
+                status                                 设置窗口状态栏的文本。        
+        window方法
+                alert()                         显示带有一段消息和一个确认按钮的警告框。
+                confirm()                         显示带有一段消息以及确认按钮和取消按钮的对话框。
+                prompt()                         显示可提示用户输入的对话框。
+                blur()                                 把键盘焦点从顶层窗口移开。
+                focus()                         把键盘焦点给予一个窗口。
+                setInterval()                 按照指定的周期（以毫秒计）来调用函数或计算表达式。
+                setTimeout()                 在指定的毫秒数后调用函数或计算表达式。
+                clearInterval()         取消由 setInterval() 设置的 timeout。
+                clearTimeout()                 取消由 setTimeout() 方法设置的 timeout。
+                createPopup()                 创建一个 pop-up 窗口。
+                open()                                 打开一个新的浏览器窗口或查找一个已命名的窗口。
+                close()                         关闭浏览器窗口。
+                moveBy()                         可相对窗口的当前坐标把它移动指定的像素。
+                moveTo()                         把窗口的左上角移动到一个指定的坐标。
+                resizeBy()                         按照指定的像素调整窗口的大小。
+                resizeTo()                         把窗口的大小调整到指定的宽度和高度。
+                scroll() 
+                scrollBy()                         按照指定的像素值来滚动内容。
+                scrollTo()                         把内容滚动到指定的坐标。
+                print()                         打印当前窗口的内容。        
+        Navigator 对象
+                appCodeName                        返回浏览器的代码名。
+                appMinorVersion                返回浏览器的次级版本。
+                appName                                返回浏览器的名称。
+                appVersion                        返回浏览器的平台和版本信息。
+                browserLanguage                返回当前浏览器的语言。
+                cookieEnabled                返回指明浏览器中是否启用 cookie 的布尔值。
+                cpuClass                        返回浏览器系统的 CPU 等级。
+                onLine                                返回指明系统是否处于脱机模式的布尔值。
+                platform                        返回运行浏览器的操作系统平台。
+                systemLanguage                返回 OS 使用的默认语言。
+                userAgent                        返回由客户机发送服务器的 user-agent 头部的值。
+                userLanguage                返回 OS 的自然语言设置。
+                geolocation                     定位
+        方法
+                getCurrentPosition() 方法来获得用户的位置。
+                        正确时返回值
+                                coords.latitude         十进制数的纬度
+                                coords.longitude         十进制数的经度
+                                coords.accuracy         位置精度
+                                coords.altitude         海拔，海平面以上以米计
+                                coords.altitudeAccuracy         位置的海拔精度
+                                coords.heading         方向，从正北开始以度计
+                                coords.speed         速度，以米/每秒计
+                                timestamp         响应的日期/时间
+                        错误时返回值
+                                PERMISSION_DENIED                         用户拒绝对获取地理位置的请求
+                                POSITION_UNAVAILABLE             位置信息是不可用的
+                                TIMEOUT                                            请求用户地理位置超时
+                                UNKNOWN_ERROR                           未知错误
+                watchPosition() - 返回用户的当前位置，并继续返回用户移动时的更新位置
+                clearWatch()    停止 watchPosition() 方法
+        screen对象
+                availHeight         返回屏幕的高度（不包括Windows任务栏）
+                availWidth         返回屏幕的宽度（不包括Windows任务栏）
+                colorDepth         返回目标设备或缓冲器上的调色板的比特深度
+                height                 返回屏幕的总高度
+                pixelDepth         返回屏幕的颜色分辨率（每象素的位数）
+                width                 返回屏幕的总宽度
+        History 对象
+                属性
+                        length                         返回历史列表中的网址数
+                方法
+                        back()                         加载 history 列表中的前一个 URL
+                        forward()                 加载 history 列表中的下一个 URL
+                        go()                         加载 history 列表中的某个具体页面
+                        
+        
+        Location 对象
+                属性
+                        hash                 返回一个URL的锚部分
+                        host                 返回一个URL的主机名和端口
+                        hostname         返回URL的主机名
+                        href                 返回完整的URL
+                        pathname         返回的URL路径名。
+                        port                 返回一个URL服务器使用的端口号
+                        protocol         返回一个URL协议
+                        search                 返回一个URL的查询部分
+                方法
+                        assign()                 载入一个新的文档
+                        reload()                 重新载入当前文档
+                        replace()                 用新的文档替换当前文档
+        全局对象
+                cookie
+                localstorage / sessionstorag
+                ajax
+                flie对象
+                FileReader</div>
+		<div id="sliderWrap">
+			<div id="slider"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var wrap = document.querySelector('#wrap');
+		var middle = document.querySelector('#middle');
+		var sliderWrap = document.querySelector('#sliderWrap');
+		var slider = document.queryselector('#slider');
+		// 求比例
+		var scale = middle.offsetHeight / wrap.offsetHeight;
+		// 计算slider的高度
+		var sliderH = sliderWrap.offsetHeight / scale;
+		console.log(sliderH);
+
+		// 滚轮事件
+		
+	</script>
+</body>
+</html>

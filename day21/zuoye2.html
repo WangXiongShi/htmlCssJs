@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>zuoye2.html</title>
+	<style type="text/css">
+		.wrap{
+			width: 800px;
+			height: 800px;
+			border:1px solid black;
+			margin:0px auto;
+			position:relative;
+		}
+		.box1{
+			width:100px;
+			height: 100px;
+			background-color:red;
+			opacity:0.3;
+			transition-duration:1s;
+			transform:translateZ(100px);
+		}
+		.wrap:hover .box1{
+			transform:rotateX(45deg) rotateY(45deg);
+		}
+		.box2{
+			width:100px;
+			height: 100px;
+			background-color:blue;
+			opacity:0.3;
+			transition-duration:1s;
+			transform:rotateX(90deg) translateZ(100px);
+		}
+		.wrap:hover .box2{
+			/*transform:rotateX(45deg) rotateY(45deg);*/
+		}
+		.box3{
+			width:100px;
+			height: 100px;
+			background-color:blue;
+			opacity:0.3;
+			transition-duration:1s;
+			position:absolute;
+			top:0px;
+			left:100px;
+			transform:rotateX(90deg) translateZ(-100px);
+		}
+		.wrap:hover .box3{
+			transform:rotateX(45deg) rotateY(45deg);
+		}
+	</style>
+</head>
+<body>
+	<section class="wrap">
+		<section class="box1"></section>
+		<section class="box2"></section>
+		<section class="box3"></section>
+		<section class="box4"></section>
+		<section class="box5"></section>
+	</section>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>4.获取input里面的值</title>
+	<style type="text/css">
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<select id="sel">
+		<option value="a">宽度</option>
+		<option value="b">高度</option>
+		<option value="c">颜色</option>
+		<option value="d">字体大小</option>
+		<option value="e">自定义字体</option>
+	</select>
+	<input type="text" name="" id="inpt">
+	<input type="button" name="" id="btn" value="确定">
+	<div id="box">王</div>
+	<script type="text/javascript">
+		// 获取按钮确定
+		var btn = document.getElementById('btn');
+		// 获取按钮
+		var inp = document.getElementById('inpt');
+		
+		var box = document.getElementById('box');
+
+		btn.onclick = function(){
+			var val = inp.value;
+
+			switch(sel.value){
+				case 'a':
+					box.style.width = val + 'px';
+					break;
+				case 'b':
+					box.style.height = val + 'px';
+					break;
+				case 'c':
+					box.style.backgroundColor = val;
+					break;
+				case 'd':
+					box.style.fontSize = val + 'px';
+					break;
+				case 'e':
+					box.style.fontFamily = val;
+					break;
+			}
+		}
+	</script>
+</body>
+</html>

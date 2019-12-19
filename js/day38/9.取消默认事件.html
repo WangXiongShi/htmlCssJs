@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		document.oncontextmenu = function(e){
+			var ev = window.event || e;
+			// submit按钮默认是执行表单提交的. 如何做才能不让他跳转呢? 这就需要我们拦截系统默认的事件, 我们可以通过 return false来拦截系统默认的事件, 我们还可以使用 preventDefault来拦截,只是 preventDefault 对ie6--ie8不兼容
+
+			// 取消默认事件  	面试考试必考
+			// alert(1);
+			// return false;
+			ev.preventDefault();
+			// alert(1);
+		}
+	</script>
+</body>
+</html>

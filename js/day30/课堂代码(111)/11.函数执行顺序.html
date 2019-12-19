@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" value="按钮1">
+    <input type="button" name="" value="按钮2">
+    <input type="button" name="" value="按钮3">
+
+    <script type="text/javascript">
+
+    // function fn(){
+    //     console.log('111111111 world');
+    // }
+
+    // console.log('222222222');
+    // fn();
+    var btns = document.getElementsByTagName('input');
+
+    for(var i = 0; i < btns.length; i++){
+        btns[i].onclick = function(){
+            alert(i);
+        }
+    }
+
+    // alert(i);
+
+
+
+
+    </script>
+</body>
+</html>

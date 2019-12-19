@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2.随机一组不相同的数1</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		// 随机一组(5个数)不相同的数   面试题
+		var arr = [];
+		while (arr.length < 5) {
+			var rand = randFn(20, 26);
+			// 定义开关
+			var bol = true;
+			// 随机数和数组中所有的数进行对比,查看是否相同
+			for(var i = 0; i < arr.length; i++){
+				// 如果相同就把开关改成false,不让往数组中添加数
+				if(arr[i] == rand){
+					bol = false;
+				}
+			}
+			// 判断,如果开关为
+			if(bol == true){
+				arr.push(rand);
+			}
+		}
+
+
+
+
+
+		// 第一步定义随机函数  
+		function randFn(min,max){
+			return parseInt(Math.random() * (max - min +1)+ min);
+		}
+		console.log(arr);
+	</script>
+</body>
+</html>

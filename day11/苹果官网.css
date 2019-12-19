@@ -1,0 +1,130 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+ul{
+	/*去掉前面的点 或者 12345*/
+	list-style:none;
+}
+.header-top{
+	height:40px;
+	background-color:#444;
+	line-height:40px;
+}
+.header-top p{
+	width:80%;
+	text-align:right;
+	font-size:13px;
+	color:#a8a8aa;
+}
+.header ul li{
+	float:left;
+	margin:0px 35px;
+	/*padding-top:12px;*/
+	/*font-size:13px;*/
+}
+.header ul li a{
+	font-size:13px;
+	color:#ccc;
+	text-decoration:none;
+}
+.pad {
+	padding-top:5px !important;
+}
+.clearfix::after{
+	content: '';
+	display:block;
+	clear:both;
+}
+.header ul{
+	width:960px;
+	margin:0px auto;
+	padding-top:10px;
+}
+/*相邻选择器 同级用*/
+.header-top+div{
+	background-color:#323232;
+	height:44px;
+}
+.main-top{
+	text-align:center;
+}
+body{
+	background-color: #fafafa;
+	min-width: 980px;
+}
+.main-top+div img{
+	/*图片占整行的百分之25,也就是一行的四分之一*/
+	width:25%;
+	/*浮动可以去解决这个图片的间隙*/
+	float:left;
+}
+.footer-top,.footer-bottom{
+	width:980px;
+	/*让这个div居中*/
+	margin:0px auto;
+}
+.footer-top a{
+	color:#555;
+	font-size:12px;
+}
+.footer-top ul{
+	float:left;
+	width:20%;
+}
+strong{
+	font-size:12px;
+	color:#333;
+}
+.footer-top a:hover{
+	/*给a链接加滑过显示下划线*/
+	text-decoration:underline;
+}
+.footer-bottom p,.footer-left span{
+	color:#888;
+	font-size:12px;
+}
+.footer-bottom p a{
+	color:#0070c9;
+}
+.box{
+	border-top:1px solid #ccc;
+	margin-top:8px;
+}
+.footer-bottom{
+	margin-top:40px;
+}
+.footer-top{
+	margin-top:30px;
+}
+.footer-left a{
+	color:#555;
+	font-size:12px;
+	padding:0px 10px;
+	border-left:1px solid #ccc;
+}
+.footer-left span{
+	margin-right:30px;
+}
+.footer-left{
+	float:left;
+	width: 700px;
+}
+.footer-right{
+	float:right;
+	width: 200px;
+	padding-top:4px;
+}
+.footer-right img{
+	/*让文字与同行的图片居中*/
+	width:21px;
+	vertical-align:top;
+}
+.footer-right span{
+	font-size:12px;
+	color:#555;
+}
+.footer-left a:hover{
+	text-decoration:underline;
+
+}

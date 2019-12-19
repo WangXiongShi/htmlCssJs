@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>zuoye1</title>
+	<style type="text/css">
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" name="" id="btn1" value="显示隐藏">
+	<section id="box"></section>
+	<script type="text/javascript">
+		var btn1 = document.getElementById('btn1');
+		var box = document.getElementById('box');
+		var a = true;
+		// 只有点击事件才会循环执行
+		btn1.onclick = function(){
+			if (a) {
+				box.style.display = 'none';
+				a = !a;
+			}else{
+				box.style.display = 'block';
+				a = !a;
+			}
+		}
+	</script>
+</body>
+</html>

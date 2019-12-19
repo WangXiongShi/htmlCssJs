@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		body{
+			height: 6000px;
+		}
+		ul{
+			list-style: none;
+		}
+		header, footer{
+			background-color: #ccc;
+			height: 800px;
+			width: 100%;
+			font-size: 50px;
+			text-align: center;
+		}
+		div{
+			width: 800px;
+			height: 500px;
+			margin: 20px auto;
+			font-size: 50px;
+			text-align: center;
+		}
+		.slider{
+			display: none;
+			width: 62px;
+			position: fixed;
+			top: 50%;
+			left: 3px;
+			transform: translateY(-50%);
+		}
+		.slider li{
+			border-radius: 50%;
+			width: 62px;
+			height: 62px;
+			color: #888;
+			text-align: center;
+			border: 1px solid #ccc;
+			cursor: pointer;
+			background-color: white;
+		}
+		.slider li p{
+			font-size: 17px;
+			margin: 12px 0px 3px;
+		}
+		.slider li span{
+			font-size: 13px;
+		}		
+		.slider .bg1{
+			background: plum;
+		}		
+		.slider .bg2{
+			background: orange;
+		}	
+		.slider .bg3{
+			background: yellow;
+		}	
+		.slider .bg4{
+			background: green;
+		}	
+		.slider .bg5{
+			background: skyblue;
+		}	
+		.slider .bg6{
+			background: aqua;
+		}	
+		.slider .fontS{
+			color: white;
+			font-size: 18px;
+			line-height: 40px;
+		}
+	</style>
+</head>
+<body>
+	<header>头部</header>
+	<div style="background: plum;">1 乌龙茶</div>
+	<div style="background: orange;">2 红茶</div>
+	<div style="background: yellow;">3 绿茶</div>
+	<div style="background: green;">4 花草茶</div>
+	<div style="background: skyblue;">5 普洱茶</div>
+	<div style="background: aqua;">6 白茶</div>
+	<footer>尾部</footer>
+
+	<ul class="slider">
+		<li><p>1F</p><span>乌龙茶</span>
+			<!-- <p class="fontS">乌龙茶</p> -->
+		</li>
+		<li><p>2F</p><span>红茶</span></li>
+		<li><p>3F</p><span>绿茶</span></li>
+		<li><p>4F</p><span>花草茶</span></li>
+		<li><p>5F</p><span>普洱茶</span></li>
+		<li><p>6F</p><span>白茶</span></li>
+	</ul>
+
+	<script>
+		// 左侧导航栏
+		var slider = document.querySelector('.slider');
+		// 左侧导航栏中的单个导航
+		var lis = document.querySelectorAll('.slider li');
+		// 每层div
+		var divs = document.querySelectorAll('div');
+
+		// 1 监视滚动条让导航出现/隐藏
+		// document.documentElement.clientHeight 获取浏览器(可视区域)的高度
+		var h1 = divs[0].offsetTop - document.documentElement.clientHeight;	//
+		var h2 = divs[5].offsetTop + 300;
+
+		window.onscroll = function(){
+			console.log(document.body.scrollTop);
+			if (document.documentElement.scrollTop + document.body.scrollTop >= h1) {
+				slider.style.display = 'block';
+			} else{
+				slider.style.display = 'none';
+			}
+			if(document.documentElement.scrollTop + document.body.scrollTop >= h2){
+				slider.style.display = 'none';
+			}
+			// 3 监视滚动条改变样式
+			for(var k = 0; k < divs.length; k++){
+				if (document.documentElement.scrollTop + document.body.scrollTop >= divs[k].offsetTop - 100) {
+					changeFn(k);
+				}
+			}
+		}
+
+		// 2 鼠标移入移出的效果
+		lis[0].name = '乌龙茶';
+		lis[1].name = '红茶';
+		lis[2].name = '绿茶';
+		lis[3].name = '花草茶';
+		lis[4].name = '普洱茶';
+		lis[5].name = '白茶';
+		for(var i = 0; i < lis.length; i++){
+			lis[i].index = i;
+			lis[i].onmouseenter = function(){
+				clearFn();
+				this.className = 'bg' + (this.index+1);
+				this.innerHTML = '<p class="fontS">' + this.name + '</p>';
+			}
+			lis[i].onmouseleave = function(){
+				clearFn();
+			}
+			// 点击li到对应层
+			lis[i].onclick = function(){
+				var that = this;
+				var speed = 30;
+				var timer2 = setInterval(function(){
+					if (document.documentElement.scrollTop + document.body.scrollTop > divs[that.index].offsetTop) {
+						document.body.scrollTop -= speed;
+						if (document.body.scrollTop <= divs[that.index].offsetTop) {
+							clearInterval(timer2);
+						}
+					} else{
+						document.body.scrollTop += speed;
+						if (document.body.scrollTop >= divs[that.index].offsetTop) {
+							clearInterval(timer2);
+						}
+					}
+				}, 10);
+			}
+		}
+
+		// 封装函数：让li恢复样式
+		function clearFn(){
+			for(var j = 0; j < lis.length; j++){
+				lis[j].className = '';
+				lis[j].innerHTML = '<p>'+ (lis[j].index+1) +'F</p><span>'+ lis[j].name +'</span>';
+			}
+		}
+
+		// 封装函数：改变指定li的样式
+		function changeFn(n){
+			clearFn();
+			lis[n].className = 'bg' + (lis[n].index+1);
+			lis[n].innerHTML = '<p class="fontS">' + lis[n].name + '</p>';
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+		// lis[0].text = '乌龙茶';
+		// lis[1].text = '红茶';
+		// lis[2].text = '绿茶';
+		// lis[3].text = '花草茶';
+		// lis[4].text = '普洱茶';
+		// lis[5].text = '白茶';
+		// lis[6].text = '茶具';
+		// lis[7].text = '茶盘';
+		// for(var i = 0; i < lis.length; i++){
+		// 	lis[i].index = i;
+		// 	lis[i].onmouseenter = function(){
+		// 		for(var j = 0; j < lis.length; j++){
+		// 			lis[j].className = '';
+		// 			lis[j].style.border = '';
+		// 			for(var k = 0; k < lis.length; k++){
+		// 				lis[k].innerHTML = '<p>'+ (k+1) +'F</p><span>'+ lis[k].text +'</span>';
+		// 			}
+		// 		}
+		// 		this.className = 's-bg' + (this.index+1);
+		// 		this.innerHTML = '<p class="whiteNav">' + this.text + '</p>';
+		// 		this.style.border = '1px solid transparent';
+		// 	}
+		// 	lis[i].onmouseleave = function(){
+		// 		for(var j = 0; j < lis.length; j++){
+		// 			lis[j].className = '';
+		// 			lis[j].style.border = '';
+		// 			for(var k = 0; k < lis.length; k++){
+		// 				lis[k].innerHTML = '<p>'+ (k+1) +'F</p><span>'+ lis[k].text +'</span>';
+		// 			}
+		// 		}
+		// 	}
+		// 3 
+	</script>
+</body>
+</html>

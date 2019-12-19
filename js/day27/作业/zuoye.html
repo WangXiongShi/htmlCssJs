@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>zuoye</title>
+	<style type="text/css">
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color:blue;
+		}
+		ol{
+			list-style: none;
+			/*display: none;*/
+		}
+	</style>
+</head>
+<body>
+	<input type="button" name="" id="anniu1" id="anniu2" value="显示隐藏">
+	<section id="box">
+		<ol>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+	</section>
+
+	<script type="text/javascript">
+		// 获取按钮
+		var anniu1 = document.getElementById('anniu1');
+		// var anniu1 = document.getElementById('anniu2');
+		// 获取盒子box
+		// var a = true;
+		var box = document.getElementById('box');
+		anniu1.onclick = function(){
+			// var a = 100;
+			if (box.style.display == 'none'){
+				box.style.display = 'block';
+				// a = !a;
+			}
+			else {
+				box.style.display = 'none';
+				// a = !a;
+			}
+			// box.style.display = 'none';
+		}
+		// anniu2.onclick = function(){
+		// 	box.style.display = 'inline-block';
+		// }
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1.动画</title>
+	<style type="text/css">
+		.box{
+			/*
+				animation:动画;
+			*/
+			/*width: 300px;
+			height: 300px;*/
+			width: 100px;
+			height: 100px;
+			border-radius:50%;
+			background-color:black;
+			/*animation:;*/
+			/*
+				动画名字
+			*/
+			animation-name:move;
+			position:absolute;
+			/*动画持续时间*/
+			animation-duration:1s;
+			/*
+				动画重复次数		直接在后面写 1或者10000
+						无限播放:infimite;
+			*/
+			animation-iteration-count:1;
+			/*
+			动画播放方向:
+					反方向播放:reverse;
+					alternate:方向轮流播放;
+				
+			*/
+			animation-direction:alternate;
+			/*
+				动画运动方式	
+			*/
+			animation-timing-function:ease-out;
+			/*动画延时执行*/
+			animation-delay:2s;
+			/*动画结束后的状态
+						forwards:动画结束后保持最后一个状态*/
+			animation-fill-mode:forwards;
+		}
+		/*
+			keyframes关键帧
+		*/
+		@keyframes move{
+			from{
+				left:0px;
+				top:0px;
+				/*width: 100px;
+				height: 100px;*/
+			}
+			to{
+				left:800px;
+				top:200px;
+				/*width: 500px;
+				height: 500px;*/
+			}
+		}
+	</style>
+</head>
+<body>
+	<section class="box"></section>
+</body>
+</html>

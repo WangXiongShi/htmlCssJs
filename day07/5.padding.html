@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>margin</title>
+		<meta charset="utf-8"/>
+		<style>
+			.box5{
+				width:100px;
+				height:100px;
+				background-color:red;
+				
+			}
+			.box4{
+				width:100px;
+				height:100px;
+				padding:50px;
+				background-color:yellow;
+				
+			}
+			.box3{
+				width:200px;
+				height:200px;	
+				background-color:blue;
+				padding:50px;
+				
+			}
+			.box2{
+				width:300px;
+				height:300px;
+				padding:50px;
+				background-color:gray;
+				
+			
+				
+			}
+			.box1{
+				width:400px;
+				height:400px;
+				padding:50px;
+				background-color:green;
+			
+			}
+			div{
+				border-radius:50%;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			同级盒子用margin
+			父子盒子用padding
+		-->
+		<div class="box1">
+			<div class="box2">
+				<div class="box3">
+					<div class="box4">
+						<div class="box5">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

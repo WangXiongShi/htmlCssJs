@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transition</title>
+	<style type="text/css">
+		/*
+			transition:  过渡
+		*/
+		.box{
+			width: 300px;
+			height: 300px;
+			background-color:red;
+			margin:200px auto;
+			
+			/*
+				过渡那些属性
+			*/
+			/*transition-property:width,height,top,bottom;*/
+			/*
+				过渡只能带数值的属性
+			*/
+			transition-property:all;
+			/*
+				过渡时间
+			*/
+			transition-duration:2s;
+			/*
+				过渡效果的方式
+			*/
+			transition-timing-function:ease;
+			
+			transition-timing-function:cubic-bezier(0.3,-0.15, 0.19, 1.32);
+			/*
+				过渡延时执行
+			*/
+			transition-delay:1s;
+			/*
+				transition复合属性
+			
+			transition:all 2s ease-in-out 2s;
+
+			*/
+		}
+		.box:hover{
+			width: 400px;
+			height: 400px;
+			background-color:blue;
+			/*border-radius:50%;*/
+		}
+		h1{
+			font-size:10px;
+		}
+		h1:hover{
+			font-size:100px;
+		}
+	</style>
+</head>
+<body>
+	<section class="box">
+	</section>
+	<h1>过渡字体大小</h1>
+</body>
+</html>

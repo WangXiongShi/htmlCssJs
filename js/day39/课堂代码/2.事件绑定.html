@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="box">
+    <button id="btn">按钮</button>
+</div>
+
+</body>
+<script type="text/javascript">
+    var btn = document.querySelector('#btn');
+    var box = document.querySelector('#box');
+    // 事件捕获（事件向下传递/下沉）,
+    // 第三个参数:useCapture是否使用捕捉,一般用 false 。
+    btn.addEventListener('click',fn,false);
+
+    function fn(){
+        alert(1);
+        btn.removeEventListener('click',fn);
+    }
+
+    box.addEventListener('click',function(){
+        alert(2);
+    },false);
+
+    // target.removeEventListener(type,listener,useCapture);
+</script>
+</html>

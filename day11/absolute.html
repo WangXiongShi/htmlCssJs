@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>absolute</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<!-- 
+		position里面的值:
+			relative:
+				1:相对定位(相对与自身来定位) 
+				2:不会脱离文档流
+				
+			absolute:
+
+				1:	绝对定位(相对于父级有定位属性的元素进行定位,如果父级没有定位属性,则相当于父父级有定位元素的属性,如果上层都没有定位元素的话,相当于文档定位),如果父级和父父级都有定位属性,则相当于最近的有定位属性的元素进行定位
+
+				2:脱离文档流
+
+			fixed:
+				相对于窗口固定定位
+
+			static(默认的值)
+
+		配合position的属性:
+				top:向上
+				left:向左
+				right:向右
+				bottom:向下
+				z-index:堆叠顺序(默认值为0)  当大于0时被覆盖,当小于0时显示出来
+				
+	-->
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</body>
+</html>

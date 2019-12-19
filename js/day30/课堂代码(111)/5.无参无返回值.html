@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" value="按钮" id="btn">
+    <script type="text/javascript">
+        var btn  = document.getElementById('btn');
+        // 无参数无返回值函数
+        function fn(){
+
+        }
+
+        //调用
+        fn();
+
+
+        function clickFn(){
+            alert('我是一个无参数无返回值的函数');
+        }
+
+        btn.onclick = function(){
+            clickFn();
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

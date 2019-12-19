@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    // 随机10个，20~55之间的数，放在数组中，并且从小到大排序
+    var arr = [];
+    for(var i = 0; i < 10; i++){
+        var num = randFn(20, 55);
+        // push()在数组末尾添加元素
+        arr.push(num);
+
+    }
+
+    // 对数组进行排序(从小到大排，从大到小排)
+    arr.sort(function(a,b){
+        return a > b;
+    });
+
+    console.log(arr);
+
+
+
+    function randFn(min,max){
+        return parseInt(Math.random() * (max - min + 1) + min);
+    }
+
+
+
+    // var arr = [34,12,235,2,12,8,5,2412,412];
+    // arr.sort(function(a,b){
+    //     return a > b;
+    // });
+    // console.log(arr);
+
+
+
+
+
+
+</script>
+</html>

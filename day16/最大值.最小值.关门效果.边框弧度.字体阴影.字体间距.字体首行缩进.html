@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+         <head>
+                   <meta charset="UTF-8">
+                   <title></title>
+                   <style type="text/css">
+                            *{padding: 0;margin: 0;}
+                            #box{
+                                     width: 300px;
+                                     height: 400px;
+                                     background: url(images/IMG_1258.JPG);
+                                     background-size:cover;
+                                     margin: 150px auto;
+                                     position: relative;
+                                     overflow: hidden;
+                            }
+                            .left{width: 100%;
+                                     height: 100%;
+                                     background: rgba(122,0,0,0.5);
+                                     position: absolute;
+                                     top: 0;
+                                     left: -100%;
+                                     transition: all 20s;
+                            }
+                            .right{
+                                     width: 100%;
+                                     height: 100%;
+                                     background: rgba(0,0,135,0.5);
+                                     position: absolute;
+                                     top: 0;
+                                     left: 100%;
+                                     transition: all 20s;
+                            }
+                            #box:hover .left{
+                                     left:-50%
+                            }
+                            #box:hover .right{
+                                     left:50%
+                            }
+                            .main{
+                            	min-height:50px;	/*显示main这个块的高度最小不能低于50像素*/
+                            	max-height:500px;	/*显示main这个块的高度最大不能高于500像素:
+
+                            												并且main这个块的高度随着内容的增加而增加	
+
+                            												main这个块的高度随着内容的减少而减少*/
+                            	background-color:red;
+                            	cursor:move;
+                            }
+                            .main p{
+                            	text-indent:20px;	/*设置p段落中第一行的文本缩进20像素*/
+                            	letter-spacing:5px; /*设置p段落中字与字之间的距离宽是5像素*/
+								text-shadow:5px 2px 6px #000;	/*设置p段落中文字的阴影  
+																	1:第一个数值代表:代表阴影距离5px显示;
+																	2:第二个数值代表:代表阴影距离文字上2px显示;
+																	3:第三个数值代表:代表阴影大小范围;
+																	4:第四个数值代表:代表阴影显示的颜色值;
+																*/
+								border:1px solid #000;
+								border-radius:10px 50px 30px 40px;	/*border-radius代表设置这个边框四个圆角的弧度
+																		1:第一个数值代表(左上角圆角):代表边框左上角 10像素 的圆角;
+																		2:第二个数值代表(右上角圆角):代表边框右上角 50像素 的圆角;
+																		3:第三个数值代表(右下角圆角):代表边框右下角 30像素 的圆角;
+																		4:第四个数值代表(左下角圆角):代表边框左下角 40像素 的圆角;
+																		*/
+                            }
+                            .main a{
+                            	
+                            }
+                   </style>
+         </head>
+         <body>
+                   <div id="box">
+                            <div class="left"></div>
+                            <div class="right"></div>
+                   </div>
+                   <div class="main">
+						<p>
+                   			我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文字我是一个段落文一个段落文字我是是一个段落文是一个段落文是一个段落文是一个段落文
+                   		</p>
+                   		<a href="#">我是一只小小的a标签</a>
+                   </div>
+         </body>
+</html>

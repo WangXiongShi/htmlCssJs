@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业2</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.wrap{
+			background-image:url(images/bg.jpg);
+			width: 375px;
+			height: 667px;
+			margin:0px auto;
+			position:relative;
+			overflow: hidden;
+		}
+		.img1{
+			animation-duration: 1s;
+  			animation-fill-mode: both;
+			backface-visibility: visible;
+ 			backface-visibility: visible;
+  			animation-name: flip;
+  			position:absolute;
+  			top:400px;
+  			left:-150px;
+		}
+		@keyframes flip {
+			0%{
+				transform:translateX(10px) translateY(10px);
+			animation-timing-function:ease-out;
+			}
+			100%{
+				transform:translateX(600px) translateY(200px);
+			animation-timing-function:ease-out;
+			}
+		}
+		.img2{
+			animation-duration: 1s;
+  			animation-fill-mode: both;
+			backface-visibility: visible;
+ 			backface-visibility: visible;
+  			animation-name: img2;
+  			position:absolute;
+  			top:200px;
+  			right:-150px;
+		}
+		@keyframes img2 {
+			0%{
+				transform:translateX(-10px) translateY(-10px);
+			animation-timing-function:ease-out;
+			}
+			100%{
+				transform:translateX(-600px) translateY(-200px);
+			animation-timing-function:ease-out;
+			}
+		}
+		.img3{
+			animation-duration: 1s;
+  			animation-fill-mode: both;
+			backface-visibility: visible;
+  			animation-name: img3;
+  			position:absolute;
+  			top:400px;
+  			right:-180px;
+		}
+		@keyframes img3 {
+			0%{
+				transform:translateX(-85px) translateY(-85px);
+			animation-timing-function:ease-out;
+			}
+			100%{
+				transform:translateX(-570px) translateY(200px);
+			animation-timing-function:ease-out;
+			}
+		}
+		.img4{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img4;
+		position:absolute;
+		top:100px;
+		left:100px;
+		}
+		@keyframes img4 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img5{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img5;
+		position:absolute;
+		top:220px;
+		left:95px;
+		}
+		@keyframes img5 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img6{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img6;
+		    position: absolute;
+    top: 103px;
+    right: 20px;
+    width: 226px;
+		}
+		@keyframes img6 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+			.img7{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img7;
+		position:absolute;
+		top:250px;
+		right:20px;
+		}
+		@keyframes img7 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+			.img8{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img8;
+		position:absolute;
+		top:100px;
+		right:80px;
+		}
+		@keyframes img8 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+			.img9{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img9;
+		position:absolute;
+		top:100px;
+		right:90px;
+		}
+		@keyframes img9 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+			.img10{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img10;
+		position:absolute;
+		top:160px;
+		right:160px;
+		}
+		@keyframes img10 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img11{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img11;
+		position:absolute;
+		top:186px;
+		left:98px;
+		}
+		@keyframes img11 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img12{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img12;
+		position:absolute;
+		top:197px;
+		left:110px;
+		}
+		@keyframes img12 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img13{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img13;
+		position:absolute;
+		top:197px;
+		left:153px;
+		}
+		@keyframes img13 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img14{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img14;
+		position:absolute;
+		top: 208px;
+    	left: 163px;
+    	width: 20px;
+		}
+		@keyframes img14 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img15{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img15;
+		position:absolute;
+		top: 175px;
+	    left: 195px;
+	    width: 35px;
+		}
+		@keyframes img15 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img16{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img16;
+		position:absolute;
+		top: 169px;
+    	left: 233px;
+		}
+		@keyframes img16 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img17{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img17;
+		position:absolute;
+		top: 341px;
+    	left: 204px;
+    	width: 151px;
+		}
+		@keyframes img17 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+			.img18{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img18;
+		position:absolute;
+		top: 484px;
+	    left: 90px;
+	    width: 200px;
+		}
+		@keyframes img18 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img19{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img19;
+		position:absolute;
+		top: 390px;
+    	left: 10px;
+		}
+		@keyframes img19 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img20{
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		backface-visibility: visible;
+		animation-name: img20;
+		position:absolute;
+		top: 427px;
+    	left: 50px;
+		}
+		@keyframes img20 {
+			from {
+		    	opacity: 1;
+		    	transform: scale3d(.475, .475, .475) translate3d(0, 1000px, 0);
+		    	animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  				}
+
+  			60% {
+		    opacity: 0;
+		    transform: scale3d(.1, .1, .1) translate3d(0, -60px, 0);
+		    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+		  }
+		}
+		.img21{
+			animation-duration: 1s;
+  			animation-fill-mode: both;
+			backface-visibility: visible;
+  			animation-name: img21;
+  			position:absolute;
+  			bottom:20px;
+			left:40px;
+		}
+		@keyframes img21 {
+			0%{
+				transform:translateX(-10px) translateY(-10px);
+			animation-timing-function:ease-out;
+			}
+			100%{
+				transform:translateX(-600px) translateY(-200px);
+			animation-timing-function:ease-out;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section class="wrap">
+			<img src="images/l1.png" class="img1">
+			<img src="images/l2.png" class="img2">
+			<img src="images/l3.png" class="img3">
+			<img src="images/re.png" class="img4">
+			<img src="images/hh.png" class="img5">
+			<img src="images/rr.png" class="img6">
+			<img src="images/yy.png" class="img7">
+			<img src="images/ccc.png" class="img8">
+			<img src="images/gg.png" class="img9">
+			<img src="images/qq.png" class="img10">
+			<img src="images/dd.png" class="img11">
+			<img src="images/pd.png" class="img12">
+			<img src="images/pr.png" class="img13">
+			<img src="images/dda.png" class="img14">
+			<img src="images/pe.png" class="img15">
+			<img src="images/pm.png" class="img16">
+			<img src="images/maker.png" class="img17">
+			<img src="images/Cddd.png" class="img18">
+			<img src="images/Cdd.png" class="img19">
+			<img src="images/Cd.png" class="img20">
+			<img src="images/slide.png" class="img21">
+	</section>
+</body>
+</html>

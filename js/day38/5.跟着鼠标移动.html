@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color:red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+	// onclick	鼠标点击事件
+		// var box = document.querySelector('#box');
+		// document.onclick = function(e){
+		// 	var ev = window.event || e;
+		// 	box.style.top = ev.clientY + 'px';
+		// 	box.style.left = ev.clientX + 'px';
+		// }
+
+	// onmousemove	鼠标移动事件
+		var box = document.querySelector('#box');
+		document.onmousemove = function(e){
+			var ev = window.event || e;
+			box.style.top = ev.clientY-box.clientWidth/2 + 'px';
+			box.style.left = ev.clientX-box.clientHeight/2 + 'px';
+		}
+	</script>
+</body>
+</html>

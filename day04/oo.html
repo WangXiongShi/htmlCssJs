@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>伪类</title>
+	<meta charset="utf-8"/>
+	<style>
+		a{
+			color:#666;
+			text-decoration:none;
+		}
+		.nav{
+			font-size:14px;
+			color:#333;
+		}
+		.nav a:hover/*hover滑过*/{
+			color:#e45353;/*字体颜色#e45353*/
+		}
+		.nav li{
+			line-height:80px;/*字体行间高度40像素*/
+			list-style-image:url(image/list_bg.png);
+		}
+		//li{
+		//	color:#0F0;
+		//	font-size:40px;
+		//}
+		//li:hover{
+		//	color:#000;
+		//	font-size:120px;
+		//	
+		//}
+		.nav li{
+			line-height:40px;
+			list-style:none;
+			background:url(image/list_bg.png) no-repeat left center ;
+			text-indent:10px;
+		}
+	</style>
+</head>
+<body>
+	<ul class="nav">
+		<li><a href="#">大事记</a></li>
+		<li><a href="#">基金会简介</a></li>
+		<li><a href="#">理事会</a></li>
+		<li><a href="#">基金会章程</a></li>
+		<li><a href="#">联系我们</a></li>
+	</ul>
+</body>
+</html>

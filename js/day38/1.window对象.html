@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		// 事件: 	onclick onload 
+
+		// 等到HTML和图片加载完毕之后执行的回调函数 ,从上到下执行顺序, 这样在body标签上面写就不会找不到btn 按钮
+		window.onload = function(){
+			var btn = document.querySelector('#btn');
+			btn.style.background = 'red';
+		}
+	</script>
+</head>
+<body>
+	<button id="btn">按钮</button>
+	
+</body>
+</html>

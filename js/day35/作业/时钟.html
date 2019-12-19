@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时钟</title>
+	<style type="text/css">
+		#wrap{
+			width: 300px;
+			height: 300px;
+			background: -webkit-linear-gradient(top,white,black);
+			border-radius:50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			/*position: relative;*/
+		}
+		.clock{
+			width: 280px;
+			height: 280px;
+			background-color: white;
+			border-radius:50%;
+			margin: 10px 10px; 
+		}
+		.clock div{
+			position: absolute;
+			top: 46%;
+			left: 25px;
+			width: 270px;
+			height: 20px;
+		}
+		span{
+			display: block;
+			width: 30px;
+			height: 30px;
+			font-size:20px;
+		}
+		.miao{
+			width: 2px;
+			height: 140px;
+			background-color: red;
+			position: absolute;
+			top:150px;
+			left: 150px;
+			transform-origin: top;
+		}
+		.fen{
+			width: 4px;
+			height: 90px;
+			background-color: green;
+			position: absolute;
+			top:150px;
+			left: 150px;
+			transform-origin: top;
+		}
+		.shi{
+			width: 6px;
+			height: 60px;
+			background-color: yellow;
+			position: absolute;
+			top:150px;
+			left: 150px;
+			transform-origin: top;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="clock">
+			<div><span>9</span></div>
+			<div><span>10</span></div>
+			<div><span>11</span></div>
+			<div><span>12</span></div>
+			<div><span>1</span></div>
+			<div><span>2</span></div>
+			<div><span>3</span></div>
+			<div><span>4</span></div>
+			<div><span>5</span></div>
+			<div><span>6</span></div>
+			<div><span>7</span></div>
+			<div><span>8</span></div>
+		</div>
+		<section class="shi"></section>
+		<section class="fen"></section>
+		<section class="miao"></section>
+	</div>
+	<script type="text/javascript">
+		// 获取所有数字
+		var nums = document.querySelectorAll('.clock div');
+		// 获取所有的span
+		var spans = document.querySelectorAll('.clock span');
+		var shi1 = document.querySelector('.shi');
+		var fen1 = document.querySelector('.fen');
+		var miao1 = document.querySelector('.miao');
+		for (var i = 0; i < nums.length; i++) {
+			nums[i].style.transform = 'rotate('+i*30+'deg)';
+			spans[i].style.transform = 'rotate('+i*-30+'deg)';
+		}
+
+		clockInit();
+
+		setInterval(function(){
+			clockInit();
+		},500)
+		function clockInit(){
+			var time = new Date();
+			var shi = time.getHours();
+			var fen = time.getMinutes();
+			var miao = time.getSeconds();
+			// console.log(shi);
+			shi1.style.transform = 'rotate('+(shi*30-180)+'deg)';
+			fen1.style.transform = 'rotate('+(fen*6-180)+'deg)';
+			miao1.style.transform = 'rotate('+ (miao*6-180) +'deg)';
+		}
+
+	</script>
+</body>
+</html>

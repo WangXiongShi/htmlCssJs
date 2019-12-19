@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>隐藏元素</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		.box-top{
+
+			height: 300px;
+			background-color:red;
+			/*
+				display:none与visibility作用是什么?
+						他们两个的区别是什么?;
+							这两者都是用来隐藏元素的,
+							其中display:none 是不占用文档的空间,
+							而visibility占用文档空间;
+			*/
+		}
+		.box-bottom{
+			height: 200px;
+			background-color: blue;
+		}
+		.box3{
+			background-color: green;
+			height: 200px;
+		}
+		.box3 p{
+			color:red;
+			background-color:rgba(0,0,0,0.8);
+			/*background-color: blue;*/
+			/*
+				opacity:透明度,所有内容都透明,透明度的值:0~1;
+
+				rgb:
+					r:红色	值:0~255;
+					g:绿色	值:0~255;
+					b:蓝色	值:0~255;
+
+				rgba:
+					r:红色	值:0~255;
+					g:绿色	值:0~255;
+					b:蓝色	值:0~255;
+					a:透明度	值:0~1;
+
+				opacity与rgba透明度的区别:	
+											opacity是对内容全部透明,rgba只针对背景透明;
+											两种方法不能同时在一个盒子里使用,
+			*/
+			/*opacity: 0.7;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box-top"></div>
+	<div class="box-bottom"></div>
+	<div class="box3"><p>woship</p></div>
+</body>
+</html>

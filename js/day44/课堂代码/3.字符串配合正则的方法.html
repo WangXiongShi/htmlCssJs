@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    // 字符串的方法
+    //1: match()接受一个参数,正则去匹配字符串,如果匹配成功,就返回匹配成功的数组,如果匹配不成功,就返回null
+    // var str = '21213123sdasdasdh3gj12g3hg123gh12g3hjg12h3g12';
+    // \d:代表数字 eg:1/2/3/4
+    // \d+:代表多个元素加起来的数字 123
+    // g:global全局,在全局查找
+    // var reg = /\d/g;
+    // var arr = str.match(reg);
+    // console.log(arr);
+
+    //2：search()参数与match相同,返回字符串中第一个匹配项的索引,没有匹配项返回-1
+    // var str = 'jasdjashdhzjkashdas2312';
+    // var reg = /z/;
+    // console.log(str.search(reg));
+
+    //3:replace()用于替换,接受两个参数,第一个是匹配项,第二个可以是字符串或是一个函数
+    var str = '我日他妈、草你妈好吗！ 一天 太阳给草打电话 太阳：喂，草你吗？我日。 草：我草，你谁啊？ 太阳：我日啊 草：我草，你到底谁啊 太阳： 我日啊，你草吧 草：TMD，你到底是谁啊，我草 太阳：我日，我日啊 草：我草。 太阳的妈妈抢过电话：草，我日他妈，草你妈好吗？';
+    // []:中括号里面的元素是"或"的关系
+    var reg = /[日草妈]/g;
+    str = str.replace(reg,'*');
+    console.log(str);
+
+
+
+
+
+
+    </script>
+</body>
+</html>

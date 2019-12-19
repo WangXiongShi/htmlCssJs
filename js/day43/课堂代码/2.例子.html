@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    用户名:<input type="text" name="" id="inp1"><br />
+    密码:<input type="password" name="" id="inp2"><br />
+    <button id="btn">登陆</button>
+    <script type="text/javascript">
+        // 点击登陆的时候，把用户名和密码存到cookie里面
+        var btn = document.querySelector('#btn');
+        var inp1 = document.querySelector("#inp1");
+        var inp2 = document.querySelector('#inp2');
+
+        btn.onclick = function(){
+            setCookieFn('userName', inp1.value, 7);
+            setCookieFn('pwd', inp2.value, 10);
+        }
+        // js加载的时候把用户名和密码直接显示
+        if(getCookieFn('userName') != undefined && getCookieFn('pwd') !=undefined){
+            inp1.value = getCookieFn('userName');
+            inp2.value = getCookieFn('pwd');
+        }
+
+        function setCookieFn(key,val,days){
+            var time = new Date();
+            time.setDate(time.getDate() + days);
+            document.cookie = key + '=' + val + ';expires=' + time;
+        }
+        // 获取cookie的值
+        function getCookieFn(name){
+            // 获取cookie，注意:cookie存取都是字符串
+            // console.log(document.cookie);
+            var arr = document.cookie.split('; ');
+            for(var i = 0; i < arr.length; i++){
+                var arr2 = arr[i].split('=');
+                if(arr2[0] == name){
+                    return arr2[1];
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>4.常见的节点操作</title>
+</head>
+<body>
+	<ul id="uls"></ul>
+	<script type="text/javascript">
+		// 增删改查
+
+		// 创建标签节点
+		var li = document.createElement('li');
+
+		// 创建文本节点
+		document.createTextNode('hello dongshi');
+
+		// 创建注释节点
+		document.createComment('这是一个注释');
+
+		// appendChild(): 向节点末端添加节点
+		var uls = document.querySelector('#uls');
+		uls.appendChild(li);
+	</script>
+</body>
+</html>

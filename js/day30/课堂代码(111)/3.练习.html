@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <div class="wrap">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+    <script type="text/javascript">
+
+    var boxs = document.getElementsByClassName('box');
+    var btns = document.getElementsByTagName('button');
+
+    // btns[0].a = 0;
+    // btns[1].a = 1;
+    // btns[2].a = 2;
+    // btns[3].a = 3;
+
+    // boxs[0]
+    // boxs[1]
+    // boxs[2]
+    // boxs[3]
+
+    for(var i = 0; i < btns.length; i++){
+
+        // console.log(i);//0 1 2 3
+        // btns[0].a = 0;
+        // btns[1].a = 1;
+        // btns[2].a = 2;
+        // btns[3].a = 3;
+        btns[i].a = i;
+        btns[i].onclick = function(){
+            for(var j = 0; j < boxs.length; j++){
+                boxs[j].style.background = '';
+
+            }
+            boxs[this.a].style.background = 'red';
+        }
+
+    }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

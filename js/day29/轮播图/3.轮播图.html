@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.轮播图</title>
+    <style type="text/css">
+        .wrap{
+            width: 1000px;
+            height: 600px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+
+        }
+        .banner{
+            width: 9999px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transition: 1s all;
+        }
+        .banner img{
+            float: left;
+        }
+        #last,#next{
+            font-size: 60px;
+            position: absolute;
+            bottom: 0px;
+            right: 90px;
+        }
+        #next{
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="banner">
+            <img src="img/01.jpg" alt="">
+            <img src="img/02.jpg" alt="">
+            <img src="img/03.jpg" alt="">
+            <img src="img/04.jpg" alt="">
+        </div>
+        <button id="last"><</button>
+        <button id="next">></button>
+    </div>
+
+    <script type="text/javascript">
+    // 获取banner
+    var banner = document.getElementsByClassName('banner')[0];
+    // 下一个按钮
+    var nextBtn = document.getElementById('next');
+    // 上一个按钮
+    var lastBtn = document.getElementById('last');
+
+        var a = 0;
+    nextBtn.onclick = function(){
+           a++;
+           if(a > 3){
+                a = 0;
+           }
+        banner.style.left = -1000 * a + 'px';
+        // 下标
+        // console.log(a);
+    }
+    lastBtn.onclick = function(){
+        a--;
+        if(a < 0){
+            a = 3;
+        }
+        banner.style.left = -1000 * a + 'px';
+         // 下标 
+         // console.log(a);
+    }
+
+    </script>
+</body>
+</html>

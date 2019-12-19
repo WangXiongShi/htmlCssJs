@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #bird{
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background: blue;
+            width: 100px;
+            height: 100px;
+
+        }
+        #duct{
+            position: absolute;
+            top: 100px;
+            left: 600px;
+            width: 100px;
+            height: 400px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id='bird'></div>
+    <div id="duct"></div>
+
+<script type="text/javascript">
+    // 由在一些小游戏中,我们需要检测,例如贪吃蛇的蛇是否碰到了食物,在这里就需要用到“碰撞检 测”。碰撞检测的核心算法是:(碰撞物体的宽度+碰撞物体距离边框的距离 )和 (被 碰撞物体距离边框的距离)进行比较,如果前边条件大于后边条件,则可以认为已经 发生碰撞了。
+
+    // 检测两个矩形是否发生了碰撞,就是检测矩形的上下左右四个边是否发生重叠交叉。 以下是发生碰撞的条件:
+    // 左侧碰撞:碰撞物体的右边距 > 被碰撞物体左边距
+    // 右侧碰撞:碰撞物体的左边距 < 被碰撞物体的右边距
+    // 顶部碰撞:碰撞物体的底部 > 被碰撞物体的顶部
+    // 底部碰撞:碰撞物体的顶部 < 被碰撞物体的底部
+
+    var bird = document.querySelector('#bird');
+    var duct = document.querySelector("#duct");
+    bird.onmousedown = function(){
+        document.onmousemove = function(e){
+            var ev = e || window.event;
+            bird.style.left = ev.clientX - bird.offsetWidth / 2 + 'px';
+            bird.style.top = ev.clientY - bird.offsetHeight / 2 + 'px';
+            // 小鸟的左边
+            // var birdLeft = bird.offsetLeft;
+
+            // // 小鸟的右边
+            // var birdRight = birdLeft + bird.offsetWidth;
+
+            // // 小鸟的上边
+            // var birdTop = bird.offsetTop;
+
+            // // 小鸟的下边
+            // var birdBottom = birdTop + bird.offsetHeight;
+
+            // // 管道的左边
+            // var ductLeft = duct.offsetLeft;
+
+            // // 管道的右边
+            // var ductRight = ductLeft + duct.offsetWidth;
+
+            // // 管道的上边
+            // var ductTop = duct.offsetTop;
+
+            // // 管道的下边
+            // var ductBottom = ductTop + duct.offsetHeight;
+
+            // 1:小鸟的右边 大于等于 管道的左边
+            // 2:小鸟的下边 大于等于 管道的上边
+            // 3:小鸟的左边 小于等于 管道的右边
+            // 4:小鸟的上边 小于等于 管道的下边
+            // if(birdRight >= ductLeft &&  birdBottom >= ductTop && birdLeft <= ductRight && birdTop <= ductBottom){
+            //     duct.style.background = 'red';
+            // }else{
+            //     duct.style.background = '#ccc';
+            // }
+                collideFn(bird,duct);
+        }
+    }
+    bird.onmouseup = function(){
+        document.onmousemove = null;
+    }
+
+    // 封装碰撞检测,封装
+    // var bol = collideFn(bird,duct);
+    // if(bol){
+    //     console.log('碰撞了');
+    // }else{
+    //     console.log('没碰撞');
+    // }
+
+
+    function collideFn(bird,duct){
+        // var boolcollide = true;
+        // 小鸟的左边
+            var birdLeft = bird.offsetLeft;
+
+            // 小鸟的右边
+            var birdRight = birdLeft + bird.offsetWidth;
+
+            // 小鸟的上边
+            var birdTop = bird.offsetTop;
+
+            // 小鸟的下边
+            var birdBottom = birdTop + bird.offsetHeight;
+
+            // 管道的左边
+            var ductLeft = duct.offsetLeft;
+
+            // 管道的右边
+            var ductRight = ductLeft + duct.offsetWidth;
+
+            // 管道的上边
+            var ductTop = duct.offsetTop;
+
+            // 管道的下边
+            var ductBottom = ductTop + duct.offsetHeight;
+
+            if(birdRight >= ductLeft &&  birdBottom >= ductTop && birdLeft <= ductRight && birdTop <= ductBottom){
+                duct.style.background = 'red';
+                // boolcollide = true;
+                return true;
+                // console.log('碰撞了');
+            }else{
+                // duct.style.background = '#ccc';
+                //  boolcollide = false;
+                //   console.log('没碰撞');
+                return false;
+            }
+        // return boolcollide;
+    }
+
+
+
+
+</script>
+</body>
+
+</html>

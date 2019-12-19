@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	用户名:<input type="text" name="" value="" id="inp1"><br />
+	密　码:<input type="password" name="" value="" id="inp2"><br />
+	<button id="btn">登录</button>
+	<script type="text/javascript">
+		// 点击登录的时候, 把用户名和密码存到cookie里面
+		var btn = document.querySelector('#btn');
+		var inp1 = document.querySelector('#inp1');
+		var inp2 = document.querySelector('#inp2');
+
+		// js 加载的时候把用户名和密码直接显示
+		if(localStorage.name != undefined && localStorage.age != undefined){
+			inp1.value = localStorage.name;
+			inp2.value = localStorage.age;
+		}
+
+		
+		btn.onclick = function(){
+			localStorage.name =  inp1.value;
+			localStorage.age = inp2.value;
+		}
+	</script>
+</body>
+</html>

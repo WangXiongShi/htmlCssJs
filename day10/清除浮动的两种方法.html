@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>清除浮动的两种方法</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		/*第一个方法*/
+		.nav{
+			background-color: red;
+		}
+		.l{
+			width: 300px;
+			height:300px;
+			background-color:blue;
+			/*浮动元素可以设置所有的css样式*/
+			float:right;
+		}
+		.clearfix{
+			clear: both;
+		}
+		/*第二个方法*/
+		.box1{
+			background-color: gray;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+			float:right;
+		}
+		.box1::after{
+			content:'';
+			display: block;
+			/**/
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<span class="l">woshi </span>
+		<div class="clearfix"></div>
+	</div>
+	<div class="box1">
+		<div class="box2"></div>
+	</div>
+</body>
+</html>

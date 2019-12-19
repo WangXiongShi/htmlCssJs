@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>swiper</title>
+    <style>
+        .swiper-container {
+            width: 600px;
+            height: 300px;
+        }  
+        .swiper-slide{
+            width: 600px;
+            height: 300px;
+        }
+        .swiper-slide img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="../dist/css/swiper.min.css">
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="http://gaopin-preview.bj.bcebos.com/133103710285.jpg"/>
+            </div>
+            <div class="swiper-slide"><img src="http://gaopin-preview.bj.bcebos.com/133104923319.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="http://gaopin-preview.bj.bcebos.com/133106878045.jpg" alt=""></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+        <!-- 如果需要滚动条 -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+    <script src="../dist/js/swiper.min.js"></script>
+    <script type="text/javascript">
+
+    var mySwiper = new Swiper('.swiper-container',{
+    autoplay : 1000,
+
+     // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+
+    pagination: '.swiper-pagination',
+
+    pagination : '.swiper-pagination',
+    paginationClickable :true,
+
+    effect : 'cube',
+    cube: {
+      slideShadows: true,
+      shadow: true,
+      shadowOffset: 100,
+      shadowScale: 0.6
+    }
+
+    })
+    $('#btn1').click(function(){
+    mySwiper.stopAutoplay();
+    })
+    $('#btn2').click(function(){
+    mySwiper.startAutoplay();
+    })
+
+    
+    </script>
+</body>
+</html>

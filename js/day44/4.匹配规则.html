@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" name="" id="inp">
+	<button id="btn">验证</button>
+	<script type="text/javascript">
+		//元字符
+		// 1: ^(脱字符) 	表示字符串的开始位置
+		var inp = document.querySelector('#inp');
+		var btn = document.querySelector('#btn');
+
+		// var reg = /^1/;  //匹配规则: 开头数字为1的
+		// var str = '2iu32uh3491';
+		// alert(reg.test(str));
+		// btn.onclick = function(){
+		// 	var str = inp.value;
+		// 	alert(reg.test(str));
+		// }
+
+		// 2: $ 	表示字符串的结束位置
+		// var reg = /a$/;		//匹配最后一位是不是a
+		// var reg = /\d$/;	//匹配最后一位的数字
+		// var reg = /^1\d+$/;		//第一位是1,结尾(从1开始往后)是数字  [中间必须也是数字]
+		// btn.onclick = function(){
+		// 	var str = inp.value;
+		// 	alert(reg.test(str));
+		// }
+
+		// 3: {} 	表示匹配次数,用大括号{}表示, {n}表示重复n次, {n,}表示至少重复n次,{n,m}表示n-m次
+		// var reg = /^\d{3,}$/;  //输入内容时候至少输入三个数字
+		// btn.onclick = function(){
+		// 	var str = inp.value;
+		// 	alert(reg.test(str));
+		// }
+		//匹配用户输入的是否为1开头的11位数字(手机号)
+		// 匹配规则:
+		// 1: 开头为数字1
+		// 2: 一共有11位数字
+		// var reg = /^1\d{10}$/; 	//正则里面有开始就有结束$
+		// btn.onclick = function(){
+		// 	var str = inp.value;
+		// 	alert(reg.test(str));
+		// }
+
+		// 4: ? 表示某个模式出现0次或1次, 等同于{0, 1}
+		// 需求:http:www.baidu.com或者www.baidu.com
+		// var reg = /(^http:)?www.\d{5,8}.com/ 	//代表这个开头http:可有可无
+
+		// 5: * 表示某个模式出现0次或多次, 等同于{0,}
+		// var reg = /\d*/;	//有没有数字都能匹配成功
+
+		// 6: + 表示某个模式出现1次或多次, 等同于{1,}
+		// var reg = /\d+/;
+
+		// 7: [] 表示有一系列字符可供选择, 只要匹配其中一个就可以,所有可供选择的字符都放在方括号内, 如: [adc]  表示a, b, c之中任选一个匹配.
+		// var reg = /[abc]/; 	//只要其中有一个匹配就匹配成功
+		// var reg = /^1[34578]\d{9}$/;
+		// var reg = /^[123456789]\d{4,9}$/;
+
+		// 8: ^ 表示如果方括号内出现^代表取非,如: [^adc]表示除了a,b,c之外都可以匹配(取非)
+		// var reg = /[^adc]/;
+
+		// 9: - 表示字符的连续范围, 如:[abc]可写成[a-c], [0123456789]可写成[0-9],[A-Z]表示26个大写字母 \d [0123456789]  [0-9]
+		// var reg = /[0-9a-zA-Z]/;
+
+
+		// 要求:匹配邮箱
+		// var reg = /^[\da-zA-Z_]{6,12}@[\da-zA-Z]{2,4}\.[a-zA-Z]{2,4}$/;
+
+
+		// 10: \s 匹配空格,包括Tab键,空格符,断行符等
+		// var reg = /\s/;
+
+		// 11: 修饰符: i不区分字母大小写
+		// var reg = /[a-z]/i;
+		// var reg = /^www\.[\da-z_][a-z]{2,4}/i;
+		// var reg = /^www\.[\da-z_]{1,}[a-z]{2,4}$/i;
+		// var reg = /^(http(s)?:\/\/)?www\.[\da-z_]{1,}[a-z]{2,4}/i;
+		var reg = /^(http(s)?:\/\/)?w{3}\.[\da-z_]{1,}\.[a-z]{2,4}$/i;
+
+
+		// 12: . 匹配所有的.....
+
+
+
+		btn.onclick = function(){
+			var str = inp.value;
+			alert(reg.test(str));
+		}
+	</script>
+</body>
+</html>

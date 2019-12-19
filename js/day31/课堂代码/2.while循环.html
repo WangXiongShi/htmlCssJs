@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <ul>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+        <li>我是li5</li>
+        <li>我是li6</li>
+        <li>我是li7</li>
+        <li>我是li8</li>
+        <li>我是li9</li>
+        <li>我是li10</li>
+    </ul>
+    <script type="text/javascript">
+    // 获取所有的li，并打印(console.log)li标签内的内容(innerHTML)
+
+        // while循环
+        // var a = 5;
+        // while(a < 10){
+        //     // ....
+        //     a++;
+        //     console.log(a);
+        // }
+
+
+        // 获取所有li
+        var lis = document.getElementsByTagName('li');
+        // for(var i = 0; i < lis.length; i++){
+        //     if(i % 2 == 0){
+        //         lis[i].style.backgroundColor = 'red';
+        //     }else{
+        //         lis[i].style.backgroundColor = 'blue';
+        //     }
+        // }
+
+
+
+
+
+        // var i = 0;
+        // while(i < lis.length){
+        //     if(i % 2 == 0){
+        //         lis[i].style.backgroundColor = 'blue';
+
+        //     }else if(i % 2 != 0){
+        //         lis[i].style.backgroundColor = 'red';
+        //     }
+        //     i++;
+        // }
+
+        // 变量为奇数的时候改变颜色为红色，为偶数的时候改变颜色为蓝色
+        var i = 0;
+        do{
+            console.log(lis[i].innerHTML);
+            i++;
+        }while(i < lis.length);
+
+
+        // do  while循环
+
+        // 不管条件成不成立，都会先执行一次
+        // do{
+        //     语句
+        // }while(条件);
+
+        // do{
+        //     alert(1111111111);
+        // }while(false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

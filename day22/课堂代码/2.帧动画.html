@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="animate.css">
+    <style type="text/css">
+        h1{
+            color: #f35626;
+            text-align: center;
+            font-size: 96px;
+            font-weight: bold;
+      /*      animation-name: flash;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;*/
+        }
+        /*@keyframes flash{*/
+           /* from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }*/
+          /*  0%{
+                opacity: 1;
+            }
+            10%{
+                opacity: 0;
+                color: red;
+            }
+            50%{
+                opacity: 1;
+                font-size: 60px;
+                color: orange;
+            }
+            90%{
+                opacity: 0;
+                font-size: 200px;
+                color: yellow;
+            }
+            100%{
+                opacity: 1;
+                font-size: 96px;
+                color: green;
+            }
+        }*/
+        h2{
+            position: absolute;
+            left: -1000px;
+            animation-name: left-move;
+            animation-duration: 0.6s;
+            animation-fill-mode: forwards;
+
+        }
+        @keyframes left-move{
+            0%{
+                left: -1000px;
+                transform: translate(-50%,-50%)
+            }
+            25%{
+                left: 70%;
+                transform: translate(-50%,-50%)
+                /*transform: translate(-50%,-50%);*/
+            }
+            50%{
+                left: 60%;
+                transform: translate(-50%,-50%)
+            }
+            75%{
+                left: 70%;
+                transform: translate(-50%,-50%)
+            }
+            100%{
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+
+        }
+    </style>
+</head>
+<body>
+  <!--   <h1>Animate.css</h1>
+    <h2>打造精通前端+后台+服务器的</h1> -->
+    <h3 class="tada animated" style="margin-left: 300px;margin-top: 100px;">全栈工程师，顺势而生</h3>
+</body>
+</html>

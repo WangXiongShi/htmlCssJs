@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="button" name="" id="btn1" value="显示">
+    <input type="button" name="" id="btn2" value="隐藏">
+    <section id="box"></section>
+    <script type="text/javascript">
+        // 获取按钮1
+        var btn1 = document.getElementById('btn1');
+
+        // 获取按钮2
+        var btn2 = document.getElementById('btn2');
+
+        // 获取box
+        var box = document.getElementById('box');
+        // var bol = true;
+        btn1.onclick = function(){
+           box.style.display = 'block';
+        }
+        btn2.onclick = function(){
+            box.style.display = 'none';
+        }
+
+
+
+
+    </script>
+</body>
+</html>

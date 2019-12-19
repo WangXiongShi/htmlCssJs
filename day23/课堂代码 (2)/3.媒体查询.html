@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>media</title>
+    <style type="text/css">
+        /*
+            @media only screen and:固定格式
+            max-width:屏幕最大值;
+            min-width:屏幕最小值;
+            【注意】
+            1:and后面一定要加空格;
+            2:only可有可无;
+            3:可以写范围查询条件以and连接;
+            4:【一定注意】范围小的写到范围大的下面;
+            5:媒体查询一定要写在选择器的下面;
+        */
+         /*
+            外部链接，判断屏幕大小
+            <link rel="stylesheet" type="text/css" href="index2.css" media="(max-width:1000px)">
+        */
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            height: 800px;
+            background: red;
+        }
+        h1{
+            font-size: 100px;
+        }
+        @media screen and (max-width: 1000px) {
+            .wrap{
+                background: blue;
+            }
+
+        }
+
+        @media screen and (min-width: 700px) and (max-width: 800px) {
+            .wrap{
+                background: green;
+            }
+        }
+       @media screen and (max-width: 600px) {
+            .wrap{
+                background: pink;
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>撒打算打算打算</h1>
+    </div>
+</body>
+</html>

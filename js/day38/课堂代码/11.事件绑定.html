@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">asdasd</div>
+    <script type="text/javascript">
+        var box = document.querySelector("#box");
+        // 普通绑定
+        // box.onclick = function(){
+        //     alert(1);
+        // }
+        // box.onclick = function(){
+        //     alert(2);
+        // }
+
+// element.addEventListener(type,listener);
+
+// element: 文档节点、document、window 或 XMLHttpRequest。 
+
+// type: 字符串,事件名称,不含“on”,比如“click”、“mouseover”、“keydown”等。
+
+// listener :实现了 EventListener 接口或者是 JavaScript 中的函数。
+
+// 事件绑定
+box.addEventListener('click',function(){
+    alert(1);
+});
+
+box.addEventListener('click',function(){
+    alert(2);
+});
+
+    </script>
+
+
+
+
+</body>
+</html>

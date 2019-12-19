@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    用户名:<input type="text" name="" id="user"><br />
+
+    密码<input type="password" name="" id="pwd"><br />
+
+    <button id="btn">登陆</button>
+    <p id="userName"></p>
+    <script type="text/javascript">
+        var user = document.querySelector('#user');
+        var pwd = document.querySelector('#pwd');
+        var btn = document.querySelector("#btn");
+        var userName = document.querySelector("#userName");
+        if(localStorage.name != undefined && localStorage.pwd != undefined){
+            user.value = localStorage.name;
+            pwd.value = localStorage.pwd;
+            userName.innerHTML = localStorage.name;
+
+        }
+
+        btn.addEventListener('click', function(){
+            if(user.value == '' || pwd.value == ''){
+                alert('用户名或密码不能为空');
+            }else{
+                localStorage.name = user.value;
+                localStorage.pwd = pwd.value;
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

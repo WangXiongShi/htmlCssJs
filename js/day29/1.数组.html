@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1.数组</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		/*// 基本数组
+		// number, string, null,boolean,undefined
+
+		// 数组
+		// 声明数组
+		// var arr = new Array();
+
+		// 一个变量名可以存储多个数据,我们称之为数组
+		var arr = new Array('奔驰','奔驰','宝马','特斯拉','劳斯莱斯','凯迪拉克',1000,2000);
+		// console.log(arr);
+		// 取出数组 中括号里是下标顺序
+		// console.log(arr[6]);
+
+		// 更改数组里面数据的值: 	更改数组
+		arr [6] = '法拉利';
+		arr [2] = '乐儿';
+		console.log(arr);
+		// arr [0] = '法拉利';
+		// console.log(arr[0]);
+
+		// 字面量形式: 		用字面量形式更改数组
+		// var arr = [1,2,3,4,5,6,7];
+		// console.log(arr);
+
+		// var arr = [1];
+		// console.log(arr);
+		
+
+		// 随机一组5个不相同的数
+		var arr = [];
+		while(arr.length < 5){
+			var num = randFn(1,10);
+			if(arr.indexOf(num) == -1){
+				arr.push(num);
+			}
+		}
+		console.log(arr);
+		function randFn(min,max){
+			return parseInt(Math.random()*(max-min+1)-min);
+		}
+		
+
+		// 找出数组中最小的数,并返回其下标
+		var arr = [3,23,12,41,24,12,32,1];
+		var index = 0;
+		var a = arr[0];
+		for(var i = 0; i < arr.length; i++){
+			if(a > arr[i]){
+				a = arr[i];
+				index = i;
+			}
+		}
+		console.log(a,index);
+		
+
+		// 事件委托: 把自己的事情交给别人去做, 利用事件冒泡原理, 将事件添加到父级, 触发执行效果. 优点:减少事件注册, 提升性能
+
+		*/
+		if(navigator.userAgent.indexOf('Chrome') != -1){
+			console.log('谷歌浏览器')  ;
+		}else if(navigator.userAgent.indexOf('Firefox') != -1){
+			console.log('火狐浏览器');
+		}else{
+			console.log('其他浏览器');
+		}
+
+	</script>
+</body>
+</html>

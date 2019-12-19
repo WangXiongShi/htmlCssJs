@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .wrap{
+            /*
+                对父级设置弹性盒子，其子元素将会按照inline-block排列
+            */
+            display: flex;
+            height: 1000px;
+            border: 1px dashed #ccc;
+            /*
+                justify-content：设置主轴的排列顺序
+            */
+            /*主轴开始*/
+            /*justify-content: flex-start;*/
+
+            /*主轴结束*/
+            /*justify-content: flex-end;*/
+
+            /*主轴居中*/
+            /*justify-content: center;*/
+
+            /*主轴空间平分*/
+            /*justify-content: space-between;*/
+
+            /*主轴四周空间平分*/
+            /*justify-content: space-around;*/
+
+            /*调整主轴方向*/
+            /*
+                横向排列默认是：row
+                横轴反向排列: row-reverse;
+                纵向排列：column
+                纵轴反向排列：column-reverse
+            */
+            /*[注意]设置flex后,float / clear / vertical-align 将失效*/
+            flex-direction: row;
+            justify-content: space-around;
+            /*元素换行*/
+            flex-wrap: wrap;
+            /*
+                调整侧轴space-between/space-around的时候，必须要有多行，否则不生效
+            */
+            align-content: space-between;
+            align-items:;
+            /*
+                1:给div设置一个足够的宽度
+                2:要求div换行;
+                3:按照侧轴均分元素之间距离;
+            */
+        }
+        .wrap div{
+            width: 1000px;
+            height: 100px;
+            background-color: pink;
+
+
+        }
+        .wrap div:nth-child(2){
+            /*float: right;*/
+        }
+    </style>
+</head>
+<body>
+    <!--伸缩布局，弹性布局-->
+    <div class="wrap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

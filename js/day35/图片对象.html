@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片预加载</title>
+</head>
+<body>
+	<div id="wrap"></div>
+	<script type="text/javascript">
+		// 图片对象
+		var img = document.createElement('img');//第一种方法
+		var img = new Image();//第二种方法
+		img.src = 'img/1.png';
+
+		// 图片加载完毕后, 执行的函数
+		img.onload = function(){
+			// alert(1);//当他打印的时候说明这个图片已加载完 	
+			alert(img.clientHeight);//如果在执行的函数外面放的话打印图片的宽高为0
+		}
+		var wrap =document.querySelector('#wrap');
+		wrap.appendChild(img);
+	</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3.数组的常用方法</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		// push(元素): 		向数组的末尾添加一个或更多元素,并返回新的长度.
+		// var arr = [1,2,3];
+		// arr.push('aaa','bbb');
+		// console.log(arr);
+
+		// unshift(元素): 		向数组头部(最前)端添加一个或更多元素,并返回新的长度;
+		// var arr = [1,2,3];
+		// arr.unshift('aaa','bbb');
+		// console.log(arr);
+
+		// pop()删除数组中最后一个元素并返回删除元素.
+		// var arr = [1,2,3,4,56,777];
+		// arr.pop();
+		// console.log(arr);
+
+		// shift(): 	从头删除元素;
+		// var arr = [1,2,3];
+		// arr.shift(1);
+		// console.log(arr);
+
+		// // splice(): 	从数组中添加或删除元素;
+		// // API
+		// var arr = ['a','b','c','d','e','f','g'];
+		// // 1:开始的下标
+		// // 2:删除的数量
+		// // 3:4;5;6;: 	后面添加的元素
+		// arr.splice(1,3,'王雄师');
+		// console.log(arr);
+
+		// // reverse(): 	将数组反向排序()
+		// var arr = [1,2,3];
+		// arr.reverse();
+		// console.log(arr);
+
+		// 需求:右一个数组[1,2,3,4,5,6,7],在数组中添加字符串'hello'到2与3之间,最后的结果是[1,2,'hello',3,4,5,6,7] 	面试题
+		// var arr = [1,2,3,4,5,6,7];
+		// arr.splice(2,0,'hello');
+		// console.log(arr);
+
+		// // indexOf():		返回数组中的下标
+		// // 如果该元素在数组中存在则返回对应的下标,如果不存在则返回-1
+		// var arr = ['a','b','c','d'];
+		// var index = arr.indexOf('c');
+		// console.log(index);
+
+		// var arr = ['a','b','c','d'];
+		// // 数组越界		返回未定义
+		// console.log(arr[4]);
+
+		// join() 将数组转换为字符串
+		// var arr = [1,2,34,5,67,8];
+		// console.log(arr.join(';'));
+
+
+		// charAt():   返回指定索引位置的字符
+		// var b = '221';
+		// console.log(b.charAt(1));
+
+
+
+
+
+
+
+		// 数组
+        // length:    	 返回字符串的长度
+        // charAt():     返回指定索引位置的字符
+        // indexOf():     返回字符串中检索指定字符串第一次出现的位置
+        // lastIndexOf():     返回字符串中检索指定字符串最后一次出现的位置
+        // replace():     替换匹配字符
+
+        // var a = '02090994'
+        // console.log(a.length);
+        // var b = '221'
+        // console.log(b.charAt(2));//通过下标返回值
+
+
+
+        // var str = '回字符串中检索指定字符串第一次出现的位回字符串中检索指定字符串第一次出现的位回字符串中检索指定字符串第一次出现的位回字符串中检索指定字符串第一次出现';
+        // var h1 = document.querySelector('#h1');
+        // var i = 0;
+        // var timer = setInterval(function(){
+        //     h1.innerHTML += str[i];
+        //     i++
+        //     // 当读取完成之后,清除定时器
+        //     if(i >= str.length){
+        //         clearInterval(timer);
+        //     }
+        // },50)
+
+        // var str = 'isjdisa';
+        // alert(str.indexOf('a'));
+
+        // var p = 'ajsjnnaa';
+        // alert(p.lastIndexOf('a'));
+
+        // var ll = 'hello wangxiongshi';
+        // alert(ll.replace('hello','shuaige'));
+
+        // slice():     根据下标提取字符串的片断,返回被提取的部分
+        // var a = 'hello';
+        // alert(a.slice(1,4));//可以写负数
+        //substring():     提取字符串中两个指定的索引号之间的字符
+        // var a = 'hello';
+        // alert(a.substring(1,4));
+
+        //slice()与substring()不同: substring()负的参数是无效的
+
+        //split():         把字符串分割为字符串数组
+        //toString():     转换为字符串
+        // var num = 123;
+        // console.log(num.toString());
+        // var num = [1,2,3,4,5,622,];
+        // console.log(num.toString());
+        // //toUpperCase(): 把字母转换为大写
+        // var str = 'abc';
+        // console.log(str.toUpperCase());
+        // //toLowerCase(): 把字母转换为小写
+        // var str = 'ABC';
+        // console.log(str.toLowerCase());
+
+
+
+        // var str = 'hello';
+        // var str = [];
+        // document.write(str.reverse());
+        // alert(str.reverse(str));
+
+        // 数组的方法 转换为字符串   join(); //将数组转换为字符串
+        // var a = [1,2,3,4,5];
+        // console.log(a.join('+'));
+
+
+
+        // 经典面试题:字符串反转
+        //例如: str = 'hello' ,输出结果是: 'olleh';
+        // var str = 'hello';
+        // // 将字符串转换为数组
+        // var arr1 = str.split('');
+        // // 将数组中的元素反转
+        // var arr2 = arr1.reverse();
+        // // 将数组中转换为字符串
+        // var res = arr2.join('');
+        // alert(res);
+
+        // console.log(str.split('').reverse().join(''));
+
+
+
+         	// function fn() {
+	        //     var a = 0;
+	        //     for(var i =0;i<arguments.length;i++){
+	        //         a += arguments[i];
+	        //     }
+	        //     return a;
+	        // }
+	        // console.log(fn(122,10)) ;
+
+
+
+
+
+
+	        // 求和函数
+			//function fn(){
+			//      //arguments:      [1,2,3,4,5,6,7,111]
+			//      var sum = 0;
+			//      for(var i = 0; i < arguments.length; i++){
+			//           sum +=arguments[i];
+			          
+			//      }
+			//      return sum;
+			// }
+			// console.log(fn(1,2,3,4,5,6,7,111));
+
+
+
+
+			// var arr = "12345678";//87654321
+			// console.log(arr.split('').reverse().join(''));
+
+			var a = '12571';
+			console.log(a.charAt(3));
+       		
+
+	</script>
+</body>
+</html>

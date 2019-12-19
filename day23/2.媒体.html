@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>媒体查询</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.wrap{
+			height: 1000px;
+			background-color:red;
+		}
+		h1{
+			font-size:100px;
+			text-align:center;
+		}
+		/*
+			最小的一定要按大小顺序排列
+			
+			@media only screen and:固定格式;
+			max-width:屏幕最大宽度值;
+			min-width:屏幕最小宽度值;
+				[注意]
+					1:and后面一定要加空格;
+					2:only可有可无;
+					3:可以写范围查询条件以and连接;
+					4:[一定要注意]:	范围小的写到范围大的后面;
+					5:媒体查询一定要写在选择器下面;
+		
+		*/
+		/*
+			外部链接,判断屏幕大小
+			<link rel="stylesheet" type="text/css" href="index2.css" media="(max-width:1000px)">
+		*/
+		@media screen and (max-width:1000px){
+			.wrap{
+				background-color:blue;
+			}
+			h1{
+			font-size:80px;
+			color:yellow;
+			}
+		}
+		@media screen and (max-width:800px){
+			.wrap{
+				background-color:yellow;
+			}
+			h1{
+			font-size:50px;
+			color:green;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section class="wrap">
+		<h1>变变变</h1>
+	</section>
+</body>
+</html>

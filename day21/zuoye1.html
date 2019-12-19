@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>zuoye1</title>
+	<style type="text/css">
+		.box{
+			width: 148px;
+			height: 447px;
+			background-image:url(111.png);
+			background-size:100% 100%;
+			margin:200px auto;
+			position:relative;
+			overflow:hidden;
+			transition-duration:0.5s;
+			border:1px solid red;
+			float:left;
+		}
+		.box1{
+			width:289px;
+			height: 446px;
+			background-image:url(222.png);
+			background-size:100% 100%;
+			position:absolute;
+			top:-447px;
+			left:-70px;
+			transition-duration:0.5s;
+		}
+		.box:hover .box1{
+			/*width: 289px;
+			height: 446px;*/
+			background-image:url(222.png);
+			top:0px;
+			left:0px;
+		}
+		.box:hover{
+			width: 289px;
+			height: 446px;
+		}
+		.box2{
+			width:289px;
+			height: 446px;
+			background-image:url(222.png);
+			background-size:100% 100%;
+			position:absolute;
+			top:-447px;
+			left:-70px;
+			transition-duration:0.5s;
+		}
+		.box:hover .box2{
+			background-image:url(222.png);
+			top:0px;
+			left:0px;
+		}
+	</style>
+</head>
+<body>
+	<section class="box">
+		<section class="box1"></section>
+	</section>
+	<section class="box">
+		<section class="box2"></section>
+	</section>
+	<section class="box">
+		<section class="box2"></section>
+	</section>
+	<section class="box">
+		<section class="box2"></section>
+	</section>
+	<section class="box">
+		<section class="box2"></section>
+	</section>
+</body>
+</html>

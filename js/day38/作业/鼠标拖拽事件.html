@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #wrap{
+            width: 200px;
+            height: 200px;
+            background: black;
+            position: absolute;
+            cursor: context-menu;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+</body>
+<script type="text/javascript">
+var wrap = document.querySelector('#wrap');
+wrap.onmousedown = function(e){
+    var ev = window.event || e;
+    var bb = ev.clientX - wrap.offsetLeft;
+    var cc = ev.clientY - wrap.offsetTop;
+    console.log(bb);
+    document.onmousemove = function(e){
+        var evv = window.event || e;
+        wrap.style.left = evv.clientX - bb + 'px';
+        wrap.style.top = evv.clientY - cc + 'px';
+    }
+}
+wrap.onmouseup = function(){
+    document.onmousemove = null;
+}
+</script>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业11</title>
+	<!-- <link rel="stylesheet" type="text/css" href="作业1.css"> -->
+	<style type="text/css">
+		*{
+	margin:0px;
+	padding:0px;
+}
+.clearFix::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.wrap{
+	width: 680px;
+	height: 344px;
+	/*background-color: red;*/
+	margin:100px auto;
+	border:1px dashed black;
+}
+.wrap_left{
+	width: 220px;
+	height: 344px;
+	/*background-color: blue;*/
+	float: left;
+}
+.wrap_right{
+	width: 460px;
+	height: 344px;
+	background-color: #666;
+	float:right;
+}
+.wrap_left_top,.wrap_left_center,.wrap_left_bottom,.wrap_left_bottom1{
+	width: 220px;
+	height: 86px;
+	/*background-color:yellow;*/
+}
+.wrap_left_top{
+	position: relative;	
+}
+.wrap_left_top div{
+	position: absolute;
+	top: 27px;
+	left: 47px;
+}
+.wrap_left_center{
+	/*background-color: pink;*/
+	position: relative;
+}
+.wrap_left_center div{
+	position: absolute;
+	top: 27px;
+	left: 47px;
+}
+.wrap_left_bottom{
+	/*background-color: skyblue;*/
+	position: relative;
+}
+.wrap_left_bottom div{
+	position: absolute;
+	top: 27px;
+	left: 47px;
+}
+.wrap_left_bottom1{
+	/*background-color: gray;*/
+	position: absolute;
+}
+.wrap_left_bottom1 div{
+	position: absolute;
+	top: 27px;
+	left: 47px;
+}
+.wrap_right div{
+	width: 460px;
+	height: 344px;
+	background-color: pink;
+}
+.wrap_right{
+	width: 460px;
+    height: 344px;
+    overflow: hidden;
+}
+
+	</style>
+</head>
+<body>
+	<section class="wrap clearFix">
+		<section class="wrap_left">
+
+			<div class="wrap_left_top" id="btn1">1
+				<section style="text-align: center;">
+					<img src="images/1.png">
+				</section>
+			</div>
+			<div class="wrap_left_center" id="btn2">2
+				<section style="text-align: center;">
+					<img src="images/2.png">
+				</section>
+			</div>
+			<div class="wrap_left_bottom" id="btn3">3
+				<section style="text-align: center;">
+					<img src="images/3.png">
+				</section>
+			</div>
+			<div class="wrap_left_bottom1" id="btn4">4
+				<section style="text-align: center;">
+					<img src="images/4.png">
+				</section>
+			</div>
+
+		</section>
+		<section class="wrap_right">
+
+			<div id="box1" style="text-align: center;font-size: 100px;color:#fff;font-weight:bold;line-height:344px;">1</div>
+			<div id="box2" style="text-align: center;font-size: 100px;color:#fff;font-weight:bold;line-height:344px;">2</div>
+			<div id="box3" style="text-align: center;font-size: 100px;color:#fff;font-weight:bold;line-height:344px;">3</div>
+			<div id="box4" style="text-align: center;font-size: 100px;color:#fff;font-weight:bold;line-height:344px;">4</div>
+
+		</section>
+	</section>
+	<script type="text/javascript">
+		var btn1 = document.getElementById('btn1');
+		var btn2 = document.getElementById('btn2');
+		var btn3 = document.getElementById('btn3');
+		var btn4 = document.getElementById('btn4');
+
+		var box1 = document.getElementById('box1');
+		var box2 = document.getElementById('box2');
+		var box3 = document.getElementById('box3');
+		var box4 = document.getElementById('box4');
+
+		box1.onclick = function(){
+			this.style.backgroundColor = '#cae5f6';
+		}
+		box2.onclick = function(){
+			this.style.backgroundColor = '#cae5f6';
+		}
+		box3.onclick = function(){
+			this.style.backgroundColor = '#cae5f6';
+		}
+		box4.onclick = function(){
+			this.style.backgroundColor = '#cae5f6';
+		}
+
+		// for(var i = 0; i < 4; i++){
+		// 	btn1[i].index = i;
+		// 	btn1[i].onclick = function(){
+		// 		for(var j = 0; j < 4; j++){
+		// 			btn1[j].style.backgroundColor = '';
+		// 			box1[j].style.display = 'none';
+		// 		}
+		// 		this.style.backgroundColor = '#cae5f6';
+  //               box1[this.index].style.display = 'block';
+
+		// 	}
+		// }
+
+		btn1.onclick = function(){
+			// alert('1');
+			// console.log('1');
+			this.style.backgroundColor = 'red';
+			btn2.style.backgroundColor = '';
+			btn3.style.backgroundColor = '';
+			btn4.style.backgroundColor = '';
+			box1.style.display = 'block';
+			box1.style.backgroundColor = 'red';
+			box2.style.display = 'none';
+			box3.style.display = 'none';
+			box4.style.display = 'none';
+		}
+		btn2.onclick = function(){
+			// alert('1');
+			this.style.backgroundColor = 'blue';
+			btn1.style.backgroundColor = '';
+			btn3.style.backgroundColor = '';
+			btn4.style.backgroundColor = '';
+			box1.style.display = 'none';
+			box2.style.backgroundColor = 'blue';
+			box2.style.display = 'block';
+			box3.style.display = 'none';
+			box4.style.display = 'none';
+		}
+		btn3.onclick = function(){
+			// alert('1');
+			this.style.backgroundColor = 'green';
+			btn1.style.backgroundColor = '';
+			btn2.style.backgroundColor = '';
+			btn4.style.backgroundColor = '';
+			box1.style.display = 'none';
+			box3.style.backgroundColor = 'green';
+			box2.style.display = 'none';
+			box3.style.display = 'block';
+			box4.style.display = 'none';
+		}
+
+		btn4.onclick = function(){
+			// alert('1');
+			this.style.backgroundColor = 'black';
+			btn1.style.backgroundColor = '';
+			btn2.style.backgroundColor = '';
+			btn3.style.backgroundColor = '';
+			box1.style.display = 'none';
+			box4.style.backgroundColor = 'black';
+			box2.style.display = 'none';
+			box3.style.display = 'none';
+			box4.style.display = 'block';
+		}
+
+
+
+		// for(var i = 0; i < 3; i++){
+		// 	btn4.onclick = function(){
+		// 			for(var j = 0; j < 3; j++){
+		// 				btn4.style.backgroundColor = '';
+		// 			}
+		// 			this.style.backgroundColor = '#cae5f6';
+		// 		}
+		// 	}
+
+
+		for(var i = 0; i < 4; i++){
+            divs[i].index = i;
+            divs[i].onclick = function(){
+                for(var j = 0; j < 4; j++){
+                    divs[j].style.backgroundColor = '';
+                    // boxs[j].style.display = 'block';
+                }
+                this.style.backgroundColor = 'red';
+                // boxs[this.index].style.display = 'none';
+            }
+        }
+
+	</script>
+</body>
+</html>

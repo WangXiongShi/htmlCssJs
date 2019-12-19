@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>伪类</title>
+	<meta charset="utf-8"/>
+	<style>
+		/*
+		color:#f89800
+		font-size:16px
+		*/
+		a:link{/* 默认样式 */
+			color:gold;
+		}
+		a:hover{/* 滑过样式 */
+			color:#03ccbb;
+		}
+		a:visited{/* 按下样式 */
+			color:#000;
+		}
+		a:active{/* 已访问样式 */
+			color:#F90;
+		}
+		input:focus{
+			color:#F90;
+		}
+		
+		h1{
+			font-size:40px;
+		}
+		h1:hover{
+			font-size:60px;
+		}
+		
+		.red{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<a href="#1">链接</a>
+
+	<h1>滑过</h1>
+	
+	<input type="text" value="文本"/>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta chaarset="utf-8">
+		<style>
+			.wrap{
+				height:600px;
+				border:1px dashed #000;
+				display:flex;
+			}
+			.wrap section {
+				flex:1;
+				height:100px;
+				background-color:blue;
+			}
+			.wrap section:nth-child(3){
+				flex:1.5;
+				order:1;
+				align-self:flex-end;
+			}
+		</style>
+	</head>
+	<body>
+		<section class="wrap">
+			<section>1</section>
+			<section>2</section>
+			<section>3</section>
+			<section>4</section>
+		</section>
+	</body>
+</html>

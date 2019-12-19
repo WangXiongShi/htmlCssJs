@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3.有参无返回值</title>
+</head>
+<body>
+	<button id="btn">按钮</button>
+	<script type="text/javascript">
+		// var btn = document.getElementById('btn');
+
+		// 有参无返回值
+		// 参数声明的时候,参数为形参	name是变量名	
+		// function fun(name,age) {
+		// 	alert(name);
+		// 	alert(age);
+		// }
+
+		// 函数调用,参数为实参		'wangxiongshi'是变量值
+		
+		// btn.onclick = function(){
+			// fun('wangxiongshi',18);
+		// }
+
+
+
+		// 声明一个有多个参数,无返回值的函数,函数的名字叫alertInfo
+
+		// 参数有:name,age,gender,hobby
+
+		// 当点击按钮的时候,调用参数并传入实参,弹出name,age,gender,hobby的值
+
+		var btn = document.getElementById('btn');
+		// 函数声明
+		function fun(name,age,gender,hobby){
+			alert('名字:' + name + '年龄:' + age + '性别:' + gender + '爱好:' + hobby);
+		}
+		btn.onclick = function(){
+			// 函数调用
+			fun('王雄师　','18　','男　','女　');
+		}
+	</script>
+</body>
+</html>

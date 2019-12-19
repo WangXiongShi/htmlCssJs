@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业留言板</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.wrap{
+			width: 600px;
+			height: 365px;
+			background-color:#f2f2f5;
+			margin:0px auto;
+			padding-top: 16px;
+			position: relative;
+			background-image: url(images/3.jpg);
+			background-size: 100% 100%;
+		}
+		#txt1,#txt2{
+			width: 500px;
+			height: 30px;
+			background-color:#f8f9fe;
+			border:1px solid #e4e7f8;
+			margin-top:40px;
+			margin-left: 75px;
+		}
+		#txt2{
+			margin-left: 74px;
+    		margin-top: 20px;
+		}
+		b{
+			color:#eb7350;
+			margin-left: 260px;
+		}
+		.im{
+			display: inline-block;
+    		margin-left: 35px;
+    		margin-top: 20px;
+		}
+		.im img{
+			position: absolute;
+			top:77px;
+			left:36px;
+		}
+		.im1 img{
+			position: absolute;
+			top:128px;
+			left:36px;
+		}
+		#btn{
+			width:80px;
+			height: 40px;
+			border:none;
+			background-color: #ffc09f;
+			color:#fff;
+			font-weight: bold;
+			font-size: 20px;
+			margin-left:500px;
+			margin-top: 30px;
+			border-radius: 20px;
+		}
+		ul{
+			list-style: none;
+			width: 450px;
+			height: 120px;
+			border:5px dashed red;
+			margin-left:75px;
+			margin-top: 10px;
+		}
+		ul li{
+			background-color:rgba(0,0,0,0.5);
+			height: 43px;
+		}
+		a{font-size: 18px;color:#fff;font-weight: bold;text-align: right;}
+		p{text-align:left;color:#fff;}
+	</style>
+</head>
+<body>
+	<section class="wrap">
+		<b>留言板</b>
+		<section class="im">
+			<img src="images/1.jpg" width="30px">
+		</section>
+		<input type="text" name="" id="txt1">
+		<section class="im1">
+			<img src="images/2.jpg" width="30px">
+		</section>
+		<input type="text" name="" id="txt2">
+		<input type="button" name="" value="评论" id="btn">
+    <ul id="uls">
+
+    </ul>	
+	</section>
+
+	<script type="text/javascript">
+	var txt1 = document.querySelector('#txt1');
+	var txt2 = document.querySelector("#txt2");
+    var btn = document.querySelector("#btn");
+    var uls = document.querySelector("#uls");
+    btn.onclick = function(){
+        if(txt1.value == '' || txt2.value == ''){
+            alert('标题或者内容不能为空');
+        }else{
+            var li = document.createElement('li');
+            li.innerHTML = '<p>' + txt1.value + '</p><p>' + txt2.value + '<a href="#">删除</a></p>';
+            uls.insertBefore(li,uls.children[0]);
+            txt1.value = '';
+            txt2.value = '';
+        }
+        var del = document.querySelectorAll('p a');
+        for(var i = 0; i < del.length; i++){
+            del[i].onclick = function(){
+                uls.removeChild(this.parentNode.parentNode);
+            }
+        }
+    }
+	</script>
+</body>
+</html>

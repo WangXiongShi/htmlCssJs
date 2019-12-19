@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机数应用</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            list-style: none;
+        }
+        #btn{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">开始</button>
+    <ul>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+        <li>我是li5</li>
+        <li>我是li6</li>
+        <li>我是li7</li>
+        <li>我是li8</li>
+        <li>我是li9</li>
+        <li>我是li10</li>
+        <li>我是li11</li>
+        <li>我是li12</li>
+        <li>我是li13</li>
+        <li>我是li14</li>
+        <li>我是li15</li>
+        <li>我是li16</li>
+        <li>我是li17</li>
+        <li>我是li18</li>
+        <li>我是li19</li>
+        <li>我是li20</li>
+    </ul>
+    <script type="text/javascript">
+        var lis = document.getElementsByTagName('li');
+        var btn = document.getElementById('btn');
+        var bol = true;
+        var timer = null;
+        var r = 0;
+        var a = 0;
+        btn.onclick = function(){
+            if(bol){
+                timer = setInterval(function(){
+                    a++;
+                    for(var i = 0; i < lis.length; i++){
+                        lis[i].style.backgroundColor = '';
+                    }
+                    r = randFn(0, lis.length - 1)
+                    lis[r].style.backgroundColor = 'rgb(' + randFn(0, 255) + ',' + randFn(0, 255) + ',' + randFn(0, 255)+')';
+                    if(a > randFn(6, 15)){
+                        for(var j = 0; j < lis.length; j++){
+                            lis[j].style.backgroundColor = '';
+                        }
+                        lis[2].style.backgroundColor = 'red';
+
+                        clearInterval(timer);
+                        // alert(lis[2].innerHTML);
+                    }
+                },100);
+                bol = !bol;
+                btn.innerHTML = '暂停';
+            }else{
+                clearInterval(timer);
+                bol = !bol;
+                btn.innerHTML = '开始';
+                // alert(lis[r].innerHTML)
+
+            }
+
+
+        }
+
+
+
+        function randFn(min,max){
+            var rand = Math.random() * (max - min + 1) + min;
+            return parseInt(rand);
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

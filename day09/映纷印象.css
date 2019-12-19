@@ -1,0 +1,137 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+.header{
+	background-color: #3d3d3d;
+}
+.header .logo{
+	text-align:center;
+	padding-top: 15px;
+}
+.header .logo img{
+	height: 44px;
+}
+.header .nav{
+	text-align: center;
+	padding-top: 12px;
+}
+.header .nav a{
+	color:#a3a3a3;
+	font-size:13px;
+	margin-right: 110px;
+	text-decoration: none;
+}
+.header .nav a:hover{
+	color:#fcfcfc;
+}
+.container{
+	width:960px;
+	height:1000px;
+	/*background-color: gray;*/
+	margin:0px auto;
+	margin-top:30px;
+}
+.container img{
+	width:960px;
+}
+.banner-text{
+	background-color: #808080;
+	text-align:center;
+	font-size:15px;
+	color:#f8f8f8;
+	margin-top:-5px;
+}
+.detail{
+	text-indent:3em;
+	font-family:STKaiti, 微软雅黑;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	padding:30px 0px;
+	margin-top:46px;
+}
+.container .about img{
+	width:47px;
+	margin-left:20px;
+}
+.about{
+	text-align:center;
+	padding:20px 0px;
+}
+.product-gif img{
+	width:310px;
+}
+.product-gif p{
+	color:#666;
+	width:310px;
+	text-align:center;
+}
+.product-gif a{
+	text-decoration:none;
+	display:inline-block;
+	margin-left:6px;
+}
+.row{
+	margin-bottom:40px;
+}
+/*.footer{
+
+	background-color:#e0e0e0;
+}
+.box1{
+	width:50%;
+	height:214px;
+	text-align:right;
+	display:inline-block;
+	vertical-align: top;
+	margin-right:20px;
+}
+.box3{
+	text-align:left;
+	display:inline-block;
+	border-left:1px solid #bcbcbc;
+}
+.box4 {
+    color: #666666;
+    font-size:8px;
+    margin-left:20px;
+}
+.box4 span{
+	line-height:26px;
+}*/
+.footer-left{
+	background-color: #e0e0e0;
+	height: 214px;
+	display:inline-block;
+	width:49.9%;
+	vertical-align:top;
+	text-align:right;
+}
+.footer-right{
+	background-color:#e0e0e0;
+	height: 260px;
+	display:inline-block;
+	width:39%;
+	padding-left:10px;
+	border-left:1px solid #ccc;
+}
+.footer-left img{
+	width:30px;
+/*	padding:10px;
+*/}
+.footer-right img{
+	width:143px;
+	/*padding-top:10px;*/
+	
+}
+.footer-right p{
+	color:#666;
+	font-size:11px;
+	margin:10px 0px;
+	margin-left:20px;
+}
+.footer{
+	background-color: #e0e0e0;
+	padding:10px 0px;
+}

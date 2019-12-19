@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <select id="sel">
+        <option value="a">宽度</option>
+        <option value="b">高度</option>
+        <option value="c">颜色</option>
+        <option value="d">字体大小</option>
+    </select>
+    <input type="text" name="" id="inp">
+    <input type="button" name="" id="btn" value="确定">
+    <div id="box"></div>
+    <script type="text/javascript">
+        var btn = document.getElementById('btn');
+        var inp = document.getElementById('inp');
+        var box = document.getElementById('box');
+        var sel = document.getElementById('sel');
+
+        btn.onclick = function(){
+
+            var val = inp.value;
+
+            switch(sel.value) {
+                case 'a':
+                    box.style.width = val + 'px';
+                    break;
+                case 'b':
+                    box.style.height = val + 'px';
+                    break;
+                case 'c':
+                    box.style.backgroundColor = val;
+                    break;
+                case 'd':
+                    box.style.fontSize = val + 'px';
+                    break;
+            }
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

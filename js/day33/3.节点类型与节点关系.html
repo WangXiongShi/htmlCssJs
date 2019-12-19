@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3.节点类型与节点关系</title>
+</head>
+<body>
+	<h1 id="h1">
+		<p>wowojoj</p>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3
+				<a href="#">a</a>
+			</li>
+		</ul>
+	</h1>
+	<script type="text/javascript">
+		// 节点类型
+		// 节点类型是包含了标签节点,注释节点,文本节点,doctype等在内的多种组合.
+
+		// nodeType: 	查看节点的类型,返回值是数字   
+		// 1代表标签节点
+		// 3代表文本节点(text)
+		// 8代表注释节点(comment)
+
+		// [注意]换行也是一个节点是文本节点
+		// var h1 = document.querySelector('#h1');
+		// console.log(h1.children);
+
+
+		// 节点的关系
+		// chikdNodes:获取所有的子节点(文本,注释,标签...)
+
+		// var h1 = document.querySelector('#h1');
+		// console.log(h1.children[1].children[2].children);
+
+		// var h1 = document.querySelector('#h1');
+		// console.log(h1.firstElementChild);
+
+		// firstElementChild(第一个子节点)
+
+		var h1 = document.querySelector('#h1');
+		console.log(h1.lastElementChild);
+		// lastElementChild(最后一个子节点)
+
+		var h1 = document.querySelector('#h1');
+		console.log(h1.parentNode);
+		// parentNode(父节点)
+
+
+		// children: 所有是标签类型的子节点
+		// parentNode: 父节点
+		// nextElementSibling: 下一个兄弟节点
+		// nextSibling(兼容ie)
+		// previouse
+
+
+	</script>
+</body>
+</html>

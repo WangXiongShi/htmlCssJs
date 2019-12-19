@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #fbWrap{
+        width: 350px;
+        height: 480px;
+        background: url("img/bg.jpg");
+        background-size: 100% 100%;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    #head{
+        position: absolute;
+        left: 50px;
+        top: 150px;
+    }
+    #head span{
+        background: url("img/bird0.png");
+        position: absolute;
+        right: 0;
+        top: 20px;
+        width: 40px;
+        height: 26px;
+        background-size: 100% 100%;
+    }
+    #scoring{
+        position: absolute;
+        left: 50%;
+        top: 40px;
+        z-index: 2;
+        font-size:  50px;
+    }
+    #menu{
+        position: absolute;
+        left: 40%;
+        top: 60%;
+    }
+    #bird{
+        position: absolute;
+        left: 30px;
+        top: 10%;
+        display: none;
+        z-index: 10;
+    }
+    .die{
+        transition: 0.5s;
+        top: 393px !important;
+        z-index: 99;
+    }
+    #ductWrap li{
+        position: absolute;
+        top: 0;
+        left: 350px;
+        width: 62px;
+        height: 423px;
+        list-style: none;
+
+    }
+    .duct_up{
+        background: url("img/up_mod.png") repeat-y;
+        height: 120px;
+        position: relative;
+    }
+    .duct_up img{
+        position: absolute;
+        bottom: 0;
+    }
+    .duct_down{
+        background: url("img/down_mod.png") repeat-y;
+        height: 203px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .duct_down img{
+        position: absolute;
+        top: 0;
+    }
+    </style>
+</head>
+<body>
+
+<audio autoplay="autoplay"  preload="auto"
+            src="img/game_music.mp3">
+      你的浏览器不支持audio标签
+</audio>
+
+    <div id="fbWrap">
+        <div id="head" class="animated slideOutUp">
+            <img src="img/head.jpg" alt="">
+            <span></span>
+        </div>
+        <div id="scoring">
+            0
+        </div>
+        <div id="menu">
+            <img id="start" src="img/start.jpg" alt="">
+        </div>
+        <div id="bird">
+            <img src="img/down_bird1.png" alt="">
+        </div>
+        <ul id="ductWrap">
+         </ul>
+    </div>
+    <script type="text/javascript" src='js/collide.js'></script>
+    <script type="text/javascript">
+        // 获取元素
+        var playBird = document.querySelector('#head');
+        var startBtn = document.querySelector('#start');
+        var menu = document.querySelector('#menu');
+        var bird = document.querySelector('#bird');
+        var ductWrap = document.querySelector('#ductWrap');
+        var aud = document.querySelector('audio');
+        var createDuctTimer = null;
+        var isDie = false;
+        var scoring = document.querySelector('#scoring');
+        var count = 0;
+        // 游戏开始
+        startBtn.onclick = function(){
+            playBird.style.display = 'none';
+            menu.style.display = 'none';
+            bird.style.display = 'block';
+
+            bird.speed = 0;
+            bird.moveTimer = setInterval(function(){
+                bird.speed += 1;
+                bird.style.top = bird.offsetTop + bird.speed + 'px';
+                // 判断小鸟是否到大屏幕顶部
+                if(bird.offsetTop <= 0){
+                    bird.style.top = 0;
+                }else if(bird.offsetTop >= 400){
+                    aud.src = 'img/game_over.mp3'
+                    // 小鸟死亡清除小鸟移动定时器
+                    clearInterval(bird.moveTimer);
+                    // 小鸟死亡清除创建管道定时器
+                    clearInterval(createDuctTimer);
+                    // 清除管道移动定时器
+                    isDie = true;
+                }
+                // 改变小鸟的样子
+                if(bird.speed > 0){
+                    bird.children[0].src = 'img/down_bird1.png';
+                }else{
+                    bird.children[0].src = 'img/up_bird1.png';
+                }
+                // 拿到所有的管道
+                var ducts = document.querySelectorAll('.duct_row');
+                // console.log(1222);
+                for(var i=0; i<ducts.length; i++){
+                    var bol = collideFn(bird,ducts[i]);
+                    if(bol){
+                        // console.log('碰撞了');
+                        // 碰撞后,清除定时器
+                        clearInterval(bird.moveTimer);
+                        // 碰撞后, 清除创建管道
+                        clearInterval(createDuctTimer);
+                        // 清除管道移动定时器
+                        isDie = true;
+                        // 改变死亡音乐
+                        aud.src = 'img/game_over.mp3';
+                        // 小鸟掉下来
+                        bird.className = 'die';
+                        alert('GAME OVER');
+                    }
+                }
+            },30);
+
+            // 创建管道
+            createDuctTimer = setInterval(function(){
+                var duct = document.createElement('li');
+                var upHeight = randFn(60, 263);
+                var downHeight = 423 - 100 - upHeight;
+                duct.innerHTML = '<div class="duct_up duct_row" style="height:'+upHeight+'px"><img src="img/up_pipe.png"></div><div class="duct_down duct_row" style="height: ' + downHeight + 'px"><img src="img/down_pipe.png"></div>';
+
+               
+                duct.l = 352;
+                duct.bol = true;
+                duct.moveTimer = setInterval(function(){
+                    if(isDie){
+                        clearInterval(duct.moveTimer);
+                    }
+                    duct.l -= 3;
+                    duct.style.left = duct.l + 'px';
+                    // 当管道完全离开屏幕, 清除定时器, 删除该管道 (提升性能,让电脑不卡)
+                    if(duct.l <= -62){
+                        ductWrap.removeChild(duct);
+                        clearInterval(duct.moveTimer);
+                    }else if(duct.l <= -35){
+                        // console.log('通过');
+                        if(duct.bol){
+                             count += 1;
+                            scoring.innerHTML = count;
+                        }
+                        duct.bol = false;
+                    }
+                },30);
+                 ductWrap.appendChild(duct);
+            },2500);
+
+            // 键盘按下事件
+            document.onkeydown = function(e){
+                var ev = e || window.event;
+                if(ev.keyCode == 32){
+                    bird.speed = -7;
+                    aud.src = 'img/bullet.mp3';
+                }
+            }
+        }
+
+        // 随机数
+        function randFn(min,max){
+            return parseInt(Math.random() * (max - min + 1) + min);
+        }
+    </script>
+</body>
+</html>

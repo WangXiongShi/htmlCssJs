@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>碰撞检测</title>
+	<style type="text/css">
+		*{margin:0px;padding:0px;}
+		#box{
+			width: 100px;
+			height: 400px;
+			background-color: black;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform:translate(-50%,-50%);
+		}
+		#bird{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			background-image: url(images/1.gif);
+			background-size: 100% 100%;
+			/*border:1px solid black;*/
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="bird"></div>
+	<div id="box"></div>
+	<script type="text/javascript">
+		var bird = document.querySelector('#bird');
+		var box = document.querySelector('#box');
+		bird.addEventListener('mousedown',function(){
+			document.addEventListener('mousemove',fn);
+		});
+		bird.addEventListener('mouseup',function(){
+			document.removeEventListener('mousemove',fn);
+		});
+		function fn(e){
+			var ev = e || window.event;
+			bird.style.left = ev.clientX - bird.offsetWidth / 2 + 'px';
+			bird.style.top = ev.clientY - bird.offsetHeight / 2 + 'px';
+			var birdL = bird.offsetLeft;
+			var birdR = birdL + bird.offsetWidth;
+			var birdT = bird.offsetTop;
+			var birdB = birdT + bird.offsetHeight;
+
+			var boxL = box.offsetLeft;
+			var boxR = boxL + box.offsetWidth;
+			var boxT = box.offsetTop;
+			var boxB = boxT + box.offsetHeight;
+
+			if(birdR >= boxL && boxB >= boxT && birdL <= boxR && birdT <= boxB){
+				box.style.background = 'red';
+			}else{
+				box.style.background = '';
+			}
+
+		}
+	</script>
+</body>
+</html>

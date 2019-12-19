@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素获取的三种方法</title>
+	<style type="text/css">
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<section id="box1">box1</section>
+	<section class="box2">box2</section>
+	<section class="box2">box2</section>
+	<section class="box2">box2</section>
+	<section class="box2">box2</section>
+	<section class="box2">box2</section>
+	<section class="box2">box2</section>
+	<section class="box2">box2</section>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<script type="text/javascript">
+		// 1:通过id获取元素
+		// document.getElementById('box1');
+
+
+
+
+		// 2:通过class名获取元素
+		document.getElementsByClassName('');
+
+		// 需求:获取box2并且改变背景颜色
+		// var box2 = document.getElementsByClassName('box2');
+		var box2 = document.getElementsByClassName('box2')[5];
+			box2.style.backgroundColor = 'blue';
+		
+
+
+		// 3:通过标签获取元素
+		// var lis = document.getElementsByTagName('li')[1];
+		// 	lis.style.backgroundColor = 'red';
+
+
+
+	</script>
+</body>
+</html>

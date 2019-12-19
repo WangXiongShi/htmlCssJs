@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.wrap{
+			position: relative;
+		}
+		span{
+			position: absolute;
+			bottom: 35px;
+		}
+		#day{
+			left: 20px;
+		}
+		#hour{
+			left: 65px;
+		}
+		#minute{
+			left: 116px;
+		}
+		#second{
+			left: 163px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<img src="indextuan_title.jpg" alt="">
+		<span id="day">天</span>
+		<span id="hour">时</span>
+		<span id="minute">分</span>
+		<span id="second">秒</span>
+	</div>
+
+	<script type="text/javascript">
+		// 获取元素
+		var day = document.querySelector('#day');	//天
+		var hour = document.querySelector('#hour');	//时
+		var minute = document.querySelector('#minute');	//分
+		var second = document.querySelector('#second');	//秒
+
+
+	
+		var timer = setInterval(function(){
+
+			fn();
+			// 获取当前的日期
+
+		},1000);
+		fn();
+		function fn() {
+			var now = new Date();	//当前时间
+			console.log(now);
+			var n = now.getTime();	//时间戳到当前时间的毫秒数
+			console.log(n);
+			var newDate = new Date('2017/10/1 00:00:00');	//到期时间
+			console.log(newDate);
+			var nd = newDate.getTime();	//时间戳到到期时间的毫秒数
+			console.log(nd);
+			var m = nd - n ; //总共经历的毫秒数
+			console.log(m);
+			var dayss = m / 1000 / 60 /60 / 24;
+			var days = parseInt(dayss);	//取整的天数
+			console.log('总天数: ' + days);
+			day.innerHTML = days;
+
+			var hourss = (dayss - days) * 24; //带小数点的小时数
+			console.log('小时数(带小数点):' + hourss );
+			var hours = parseInt(hourss);	//取整的小时数
+			console.log('小时数: ' + hours);
+			hour.innerHTML = hours;
+
+			var minutess = (hourss - hours) * 60; //带小数点的小时数
+			console.log('分钟数(带小数点):' + minutess );
+			var minutes = parseInt(minutess);	//取整的小时数
+			console.log('分钟数: ' + minutes);
+			minute.innerHTML = minutes;
+
+			var secondss = (minutess - minutes) * 60; //带小数点的小时数
+			console.log('分钟数(带小数点):' + secondss );
+			var seconds = parseInt(secondss);	//取整的小时数
+			console.log('分钟数: ' + seconds);
+			second.innerHTML = seconds;
+
+			if (m <= 0) {
+				clearInterval(timer);
+			}
+
+		}
+	</script>
+</body>
+</html>

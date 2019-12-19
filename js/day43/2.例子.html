@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	用户名:<input type="text" name="" value="" id="inp1"><br />
+	密　码:<input type="password" name="" value="" id="inp2"><br />
+	<button id="btn">登录</button>
+
+	<script type="text/javascript">
+		// 点击登录的时候, 把用户名和密码存到cookie里面
+		var btn = document.querySelector('#btn');
+		var inp1 = document.querySelector('#inp1');
+		var inp2 = document.querySelector('#inp2');
+
+		btn.onclick = function(){
+			setCookieFn('用户名', inp1.value, 100);
+			setCookieFn('密　码', inp2.value, 100);
+		// 	// alert(1);
+		}
+		// js 加载的时候把用户名和密码直接显示
+		if(getCookieFn('用户名') != undefined && getCookieFn('密　码') != undefined){
+			inp1.value = getCookieFn('用户名');
+			inp2.value = getCookieFn('密　码');
+		}
+
+
+
+
+
+		function setCookieFn(key,val,days){
+			var time = new Date();
+			time.setDate(time.getDate() + days);
+			document.cookie = key + '=' + val + ';expires=' + time;
+		}
+
+		// console.log(document.cookie); //获取cookie的值
+
+
+
+
+
+
+		//获取cookie的值
+		var val = getCookieFn('密　码'); 	//面试题
+		function getCookieFn(name){ //封装一个函数
+			// console.log(document.cookie); //获取cookie , 注意: cookie存取都是字符串
+			var arr = document.cookie.split('; ');
+			for(var i=0; i < arr.length; i++){
+				// console.log(arr[i]);
+				var arr2 = arr[i].split('=');
+				// console.log(arr2);
+				if(arr2[0] == name){
+					return arr2[1];
+				}
+			}
+		}
+	</script>
+</body>
+</html>

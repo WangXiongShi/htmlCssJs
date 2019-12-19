@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #userAlert{
+
+        }
+    </style>
+</head>
+<body>
+    <form action="http://www.baidu.com" method="GET" id="form1">
+        <input type="text" name="" placeholder="输入账号" id="userBtn">
+        <span id="userAlert"></span>
+        <br />
+        <input type="password" name="" placeholder="请输入密码">
+        <input type="submit" name="">
+    </form>
+
+</body>
+<script type="text/javascript">
+
+var form1 = document.querySelector("#form1");
+// 表单事件
+// form1.onsubmit = function(){
+//    alert('1');
+// }
+
+//聚焦onfocus：当页面或者元素获得焦点时,在相关元素上面触发。
+var userBtn = document.querySelector('#userBtn');
+var userAlert = document.querySelector('#userAlert');
+userBtn.onfocus = function(){
+    userAlert.innerHTML = '请输入手机号';
+}
+
+// 失焦onblur：当页面或元素失去焦点时,在相关元素上触发
+    userBtn.onblur = function(){
+    userAlert.innerHTML = '';
+}
+// onchange：当鼠标离开输入框时,在相关元素上触发
+userBtn.onchange = function(){
+    userBtn.onblur = null;
+    userAlert.innerHTML = '❎输入账号不合法';
+
+}
+
+// oninput  当输入的时候实时触发
+userBtn.oninput = function(){
+    console.log(this.value);
+}
+
+
+
+
+
+</script>
+</html>

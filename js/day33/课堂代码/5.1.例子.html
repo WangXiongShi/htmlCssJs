@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="btn" value="按钮">
+    <ul id="uls"></ul>
+    <script type="text/javascript">
+        var uls = document.querySelector('#uls');
+        var btn = document.querySelector('#btn');
+        var i = 0;
+        btn.onclick = function(){
+            i++;
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            var span = document.createElement('span');
+            span.innerHTML = '我是li' + i;
+            a.innerHTML = '删除';
+            a.href = '#';
+            li.appendChild(span);
+            li.appendChild(a);
+            uls.appendChild(li);
+            a.onclick = function(){
+                uls.removeChild(this.parentNode);
+            }
+        }
+    </script>
+</body>
+</html>
